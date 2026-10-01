@@ -21,6 +21,9 @@ This page keeps the repository aligned with the core learning sequence represent
 | 13. Learning Resources | `LEARNING-RESOURCES.md` | official docs and practice platforms |
 | 14. Exercises & Solutions | `EXERCISES-AND-SOLUTIONS.md`, stage challenges | beginner → production/interview practice |
 | Production operations extension | `14-production-operations/` | backups/recovery, monitoring, incident runbooks and RCA |
+| PostgreSQL reference extension | `15-postgresql-internals/` through `40-final-production-lab/` | internals, HA/DR, migrations, advanced types, JSON, administration, observability, testing, PG18, reliability, CDC, search, temporal modeling and production simulation |
+| Runnable lab extension | `41-runnable-labs/` | executable locks/queues, notifications, materialized views, bulk load, timezone/collation, partitions, RLS and query statistics |
+| Production pattern extension | `42-production-patterns/` | pooling, schema drift, performance regression and backup verification |
 
 ## Recommended learner route
 
