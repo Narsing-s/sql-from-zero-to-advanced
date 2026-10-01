@@ -518,3 +518,21 @@ A concept is complete only when the learner can answer:
 ## Implementation rule
 
 This checklist is intentionally broader than one SQL file. Concepts should be distributed across theory documents, runnable SQL, exercises, projects, scenarios and interview material. Do not add a query without explaining the concept behind it.
+
+
+## 23. Newly audited execution-depth gaps
+The broad topic coverage is now supplemented by dedicated runnable/operational material:
+- [x] advisory locks and SKIP LOCKED worker queues
+- [x] LISTEN/NOTIFY boundaries
+- [x] materialized-view concurrent refresh
+- [x] COPY bulk-loading workflow
+- [x] timezone/DST and collation exercises
+- [x] partition lifecycle/pruning exercise
+- [x] RLS tenant-isolation lab
+- [x] pg_stat_statements query-statistics lab
+- [x] connection-pool production checklist
+- [x] schema-drift and performance-regression checklist
+- [x] backup verification and restore-drill procedure
+
+### Remaining validation rule
+Coverage alone is not enough. A module should be promoted to complete only after its SQL is executable on the documented PostgreSQL version, has setup/cleanup instructions, expected observations, and a verification step. Theory-only material should remain explicitly labeled as theory.
