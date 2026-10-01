@@ -4,6 +4,31 @@ Welcome to a **theory-first, practical SQL learning journey**.
 
 This repository is designed for someone who may be completely new to SQL. **SQL is not only queries.** Learn the definitions, theory and mental models first, then prove the concepts by running SQL.
 
+## 🛠️ Installation — Start Here
+
+**New to SQL? Start with the installation guide before opening the numbered lessons.**
+
+**[📥 Complete Installation Guide](INSTALLATION.md)**
+
+It explains:
+
+- what PostgreSQL is and what you are installing
+- Windows, macOS and Linux setup
+- PostgreSQL official download links
+- pgAdmin and `psql`
+- Git clone and GitHub ZIP download
+- creating the `sql_learning` database
+- connecting to PostgreSQL
+- running the first repository scripts
+- verifying the server, database and user
+- optional Docker setup
+- optional SQL Learning Hub UI
+- PATH, password, port and connection troubleshooting
+- safe learning-database practices
+- what to do after installation
+
+**Beginner path:** Install → Verify → Create `sql_learning` → Download repository → Run setup → Read theory → Start `01-beginner`.
+
 ## ⬇️ Download & Setup
 
 New to the repository? Start here for **official PostgreSQL download links, Git/ZIP download instructions, Windows/macOS/Linux setup, psql, pgAdmin, database creation, running scripts, troubleshooting, and the optional web UI**.
