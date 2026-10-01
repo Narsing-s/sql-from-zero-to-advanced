@@ -51,6 +51,17 @@ This repository combines the beginner-friendly learning style of a SQL 101 cours
 | 12 | Data engineering and analytics |
 | 13 | Real-world projects |
 | 14 | Production database operations: recovery, monitoring, incidents, capacity and RCA |
+| 15 | PostgreSQL internals: catalogs, WAL, vacuum and planner statistics |
+| 16 | Replication, high availability and disaster recovery |
+| 17 | Backup, restore and PITR recovery labs |
+| 18 | Safe schema migrations and zero/minimal-downtime patterns |
+| 19 | Advanced PostgreSQL data types and identity/sequences |
+| 20 | SQL/JSON, JSON path and JSON_TABLE |
+| 21 | PostgreSQL administration, roles, configuration and FDW |
+| 22 | Observability, locks, waits and query statistics |
+| 23 | Database testing and CI/CD |
+| 24 | PostgreSQL 18 features and upgrade readiness |
+| 25 | Production capstone projects |
 
 ## 🛠️ Installation — Start Here
 
@@ -170,6 +181,17 @@ For every topic:
 12-data-engineering/
 13-real-world-projects/
 14-production-operations/
+15-postgresql-internals/
+16-replication-and-ha/
+17-backup-and-recovery-labs/
+18-schema-migrations/
+19-advanced-types/
+20-sql-json/
+21-postgresql-administration/
+22-observability/
+23-testing-and-cicd/
+24-postgresql-18/
+25-capstone-projects/
 datasets/
 docker/
 web/
