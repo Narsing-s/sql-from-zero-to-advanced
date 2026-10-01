@@ -1,29 +1,54 @@
 # 04 — Database Design
 
-Good SQL starts with good data modeling.
+## Goal
+Design data structures that preserve correctness, reduce unnecessary duplication and support future queries.
 
-## What is database design?
-It decides what information exists, how it is represented, and how records relate.
+## Mental model
+Business requirement → Entities → Relationships → Keys → Constraints → Tables → Indexes
 
-Banking example: Customer → Account → Transaction. One customer can own multiple accounts; one account can have many transactions.
+Banking example: Customer → Account → Transaction.
 
-## Primary key
-Uniquely identifies a row.
-```sql
-customer_id BIGINT PRIMARY KEY
-```
-
-## Foreign key
-Connects one table to another.
-```sql
-customer_id BIGINT REFERENCES customers(customer_id)
-```
+## Keys
+- Primary key — uniquely identifies a row
+- Foreign key — references a key in another table
+- Candidate key — any valid unique identifier
+- Natural key — meaningful business identifier
+- Surrogate key — generated identifier
 
 ## Constraints
-NOT NULL means required. UNIQUE prevents duplicates. CHECK enforces a condition. PRIMARY KEY identifies a row. FOREIGN KEY protects relationships.
+- NOT NULL — required value
+- UNIQUE — prevents duplicates
+- PRIMARY KEY — row identity
+- FOREIGN KEY — relationship integrity
+- CHECK — domain/business condition
+- EXCLUDE — prevents conflicting values or ranges
 
 ## Normalization
-Normalization reduces unnecessary duplication. Customer information belongs in the customer table rather than being repeated on every transaction.
+Study 1NF → 2NF → 3NF → BCNF.
 
-## Denormalization
-Reporting systems may intentionally precompute or duplicate data for faster reads. That is a trade-off and creates synchronization responsibility.
+Normalization reduces unnecessary duplication and update anomalies. Controlled denormalization can help reporting and performance, but adds synchronization responsibility.
+
+## Advanced design
+- functional dependencies
+- temporal data
+- soft delete
+- audit columns
+- multi-tenancy
+- hierarchical data
+- retention
+- polymorphic relationships
+
+See BCNF-and-advanced-normalization.md.
+
+## Design review
+1. What is the table grain?
+2. What identifies a row?
+3. Which relationships exist?
+4. Which values are mandatory?
+5. Which rules must the database enforce?
+6. What happens when referenced data is deleted?
+7. Which queries are common?
+8. Which indexes support them?
+
+## Next
+Continue to 05 — Transactions.
