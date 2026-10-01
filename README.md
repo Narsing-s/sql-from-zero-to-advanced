@@ -62,6 +62,15 @@ This repository combines the beginner-friendly learning style of a SQL 101 cours
 | 23 | Database testing and CI/CD |
 | 24 | PostgreSQL 18 features and upgrade readiness |
 | 25 | Production capstone projects |
+| 26 | Advanced PostgreSQL: event triggers, logical decoding, advanced indexes and server programming |
+| 27 | Data governance, PII, retention, auditability and data quality |
+| 28 | Capacity planning, scaling and cost engineering |
+| 29 | Application/database integration patterns |
+| 30 | Scenario-based production mastery |
+| 31 | SQL standard and cross-database compatibility |
+| 32 | Security hardening |
+| 33 | Major-version migration and upgrade labs |
+| 34 | Final SQL/PostgreSQL mastery checklist |
 
 ## 🛠️ Installation — Start Here
 
@@ -192,6 +201,15 @@ For every topic:
 23-testing-and-cicd/
 24-postgresql-18/
 25-capstone-projects/
+26-advanced-postgresql/
+27-data-governance/
+28-capacity-and-cost/
+29-client-integration/
+30-interview-and-scenario-labs/
+31-sql-standard-and-compatibility/
+32-security-hardening/
+33-migration-and-upgrade-labs/
+34-final-master-checklist/
 datasets/
 docker/
 web/
