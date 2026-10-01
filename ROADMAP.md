@@ -126,3 +126,11 @@ Do not stop at reading. For each major topic, run the corresponding lab, record 
 - pg_stat_statements and wait events
 - performance baselines
 - reproducible workload measurements
+
+
+## Phase 16 — Completeness and Reproducibility
+- deterministic test environments
+- extension/version audits
+- logical replication restrictions
+- reproducibility metadata
+- curriculum acceptance criteria
