@@ -111,3 +111,18 @@ Do not stop at reading. For each major topic, run the corresponding lab, record 
 - bad-row quarantine
 - export consistency
 - encoding and delimiter handling
+
+
+## Phase 14 — Recovery and Replication
+- backup/restore drills
+- migration rehearsal
+- PITR concepts
+- two-node logical replication
+- conflict and lag analysis
+
+## Phase 15 — Quality and Performance Engineering
+- SQL linting/style
+- EXPLAIN-based review
+- pg_stat_statements and wait events
+- performance baselines
+- reproducible workload measurements
