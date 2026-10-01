@@ -50,4 +50,10 @@ jobs:
           test -d 46-database-client-integration
           test -d 47-advanced-concurrency
           test -d 48-data-loading-and-export
+          test -d 49-recovery-and-migration-drills
+          test -d 50-logical-replication-lab
+          test -d 51-sql-quality-and-linting
+          test -d 52-observability-and-performance-lab
+          test -d 53-completeness-audit
+          test -d 54-multi-session-and-cluster-labs
           echo "Curriculum structure audit passed."
