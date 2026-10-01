@@ -1,7 +1,7 @@
 "use client";
 
 import {useMemo,useState} from "react";
-import {BookOpen,CheckCircle2,ChevronDown,ChevronRight,Database,ExternalLink,Mail,Search,ShieldCheck,Terminal} from "lucide-react";
+import {BookOpen,CheckCircle2,ChevronDown,ChevronRight,Database,ExternalLink,Mail,Search,ShieldCheck,Terminal,Play,RotateCcw,FlaskConical} from "lucide-react";
 
 type Topic={path:string;title:string;type:"Theory"|"SQL"|"Practice"|"Project"|"Reference";desc:string};
 type Stage={id:string;title:string;desc:string;topics:Topic[]};
@@ -126,6 +126,41 @@ const rootTopics:Topic[]=[
  {path:"docker/docker-compose.yml",title:"Docker environment",type:"Reference",desc:"Optional containerized environment."}
 ];
 
+
+
+type LabChallenge={id:string;level:"Beginner"|"Intermediate"|"Advanced";title:string;question:string;hint:string;setup:string;expected:string[];explanation:string};
+
+const labChallenges:LabChallenge[]=[
+ {id:"select-1",level:"Beginner",title:"Find customers over 30",question:"Return the name and age of every customer older than 30.",hint:"Use SELECT and WHERE.",setup:"CREATE TABLE customers (id INT, name TEXT, age INT, city TEXT); INSERT INTO customers VALUES (1,'Ravi',31,'Hyderabad'),(2,'Priya',28,'Visakhapatnam'),(3,'Arun',35,'Hyderabad'),(4,'Meena',24,'Chennai');",expected:["Ravi","Arun"],explanation:"WHERE filters rows before the result is returned."},
+ {id:"order-1",level:"Beginner",title:"Sort customers by age",question:"Return all customers ordered from oldest to youngest.",hint:"Use ORDER BY age DESC.",setup:"CREATE TABLE customers (id INT, name TEXT, age INT, city TEXT); INSERT INTO customers VALUES (1,'Ravi',31,'Hyderabad'),(2,'Priya',28,'Visakhapatnam'),(3,'Arun',35,'Hyderabad'),(4,'Meena',24,'Chennai');",expected:["Arun","Ravi","Priya","Meena"],explanation:"ORDER BY controls result ordering; DESC means highest to lowest."},
+ {id:"group-1",level:"Intermediate",title:"Count customers by city",question:"Return each city and the number of customers in that city.",hint:"GROUP BY city and COUNT rows.",setup:"CREATE TABLE customers (id INT, name TEXT, age INT, city TEXT); INSERT INTO customers VALUES (1,'Ravi',31,'Hyderabad'),(2,'Priya',28,'Visakhapatnam'),(3,'Arun',35,'Hyderabad'),(4,'Meena',24,'Chennai');",expected:["Hyderabad","2","Visakhapatnam","1","Chennai","1"],explanation:"GROUP BY forms one group per city and COUNT aggregates each group."},
+ {id:"join-1",level:"Intermediate",title:"Join customers and accounts",question:"Return customer names with their account balances.",hint:"Join customers to accounts using customer_id.",setup:"CREATE TABLE customers (id INT, name TEXT); CREATE TABLE accounts (id INT, customer_id INT, balance INT); INSERT INTO customers VALUES (1,'Ravi'),(2,'Priya'),(3,'Arun'); INSERT INTO accounts VALUES (101,1,5000),(102,2,8000),(103,3,2500);",expected:["Ravi","5000","Priya","8000","Arun","2500"],explanation:"A JOIN combines rows using a relationship between keys."},
+ {id:"case-1",level:"Advanced",title:"Classify account balances",question:"Return account id and a label: High for balance >= 5000, otherwise Standard.",hint:"Use CASE WHEN.",setup:"CREATE TABLE accounts (id INT, balance INT); INSERT INTO accounts VALUES (101,5000),(102,8000),(103,2500);",expected:["101","High","102","High","103","Standard"],explanation:"CASE expresses conditional business logic inside a SQL expression."}
+];
+
+function PracticeLab({onClose}:{onClose:()=>void}){
+ const [challengeId,setChallengeId]=useState(labChallenges[0].id);
+ const [sql,setSql]=useState("SELECT name, age\nFROM customers\nWHERE age > 30;");
+ const [result,setResult]=useState<string[][]>([]);
+ const [error,setError]=useState("");
+ const [feedback,setFeedback]=useState("");
+ const [completed,setCompleted]=useState<string[]>([]);
+ const challenge=labChallenges.find(x=>x.id===challengeId)!;
+ const loadChallenge=(id:string)=>{const x=labChallenges.find(v=>v.id===id)!;setChallengeId(id);setSql(id==="select-1"?"SELECT name, age\nFROM customers\nWHERE age > 30;":id==="order-1"?"SELECT name, age\nFROM customers\nORDER BY age DESC;":id==="group-1"?"SELECT city, COUNT(*) AS customer_count\nFROM customers\nGROUP BY city;":id==="join-1"?"SELECT c.name, a.balance\nFROM customers c\nJOIN accounts a ON a.customer_id = c.id;":"SELECT id, CASE WHEN balance >= 5000 THEN 'High' ELSE 'Standard' END AS label\nFROM accounts;");setResult([]);setError("");setFeedback("")};
+ const run=async(check=false)=>{setError("");setFeedback("");setResult([]);try{
+   const alasql=(await import("alasql")).default;
+   const db=new alasql.Database(); db.exec(challenge.setup);
+   const rows=db.exec(sql);
+   const data=Array.isArray(rows)?rows.map((row:any)=>Object.values(row).map(v=>String(v??"NULL"))):[];
+   setResult(data);
+   if(check){const flat=data.flat();const ok=challenge.expected.every(v=>flat.includes(v))&&data.length>0;if(ok){setFeedback("Correct! Challenge completed.");if(!completed.includes(challenge.id)){const n=[...completed,challenge.id];setCompleted(n);localStorage.setItem("sql_lab_done",JSON.stringify(n));}}else setFeedback("Query ran, but the result does not match the expected outcome. Try the hint.");}
+ }catch(e:any){setError(e?.message||"SQL error");}};
+ return <section className="card lab-view"><div className="between"><div><div className="eyebrow">Hands-on practice</div><h2><FlaskConical size={22}/> SQL Practice Lab</h2><p className="muted">Run safe practice SQL in your browser. No API key or database connection is required.</p></div><button className="btn" onClick={onClose}>Close</button></div>
+ <div className="lab-grid"><aside className="lab-challenges"><div className="muted small">CHALLENGES</div>{labChallenges.map(x=><button key={x.id} className={x.id===challenge.id?"lab-challenge active":"lab-challenge"} onClick={()=>loadChallenge(x.id)}><span><b>{x.title}</b><small>{x.level}</small></span>{completed.includes(x.id)&&<CheckCircle2 size={16}/>}</button>)}</aside>
+ <div className="lab-work"><div className="lab-question"><span className="pill">{challenge.level}</span><h3>{challenge.title}</h3><p>{challenge.question}</p><p className="muted">Hint: {challenge.hint}</p></div><textarea className="sql-editor" value={sql} onChange={e=>setSql(e.target.value)} spellCheck={false}/><div className="row"><button className="btn primary" onClick={()=>run(false)}><Play size={15}/>Run SQL</button><button className="btn" onClick={()=>run(true)}>Run & Check</button><button className="btn" onClick={()=>{setSql("");setResult([]);setError("");setFeedback("")}}><RotateCcw size={15}/>Clear</button></div>{error&&<div className="lab-error">{error}</div>}{feedback&&<div className="lab-feedback">{feedback}<div className="small muted">{challenge.explanation}</div></div>}<div className="lab-result"><div className="muted small">RESULT</div>{result.length?<table><tbody>{result.map((row,i)=><tr key={i}>{row.map((v,j)=><td key={j}>{v}</td>)}</tr>)}</tbody></table>:<p className="muted">Run your query to see results.</p>}</div></div></div>
+ <p className="muted small lab-note">This lab uses a temporary in-browser practice database. It is designed for learning, not production data.</p></section>;
+}
+
 function TopicRow({topic,done,onToggle,onOpen}:{topic:Topic;done:boolean;onToggle:()=>void;onOpen:()=>void}){
  const url=repoBase+topic.path;
  return <div className={`topic-row ${done?"completed":""}`}>
@@ -152,6 +187,7 @@ export default function Home(){
  const [material,setMaterial]=useState("");
  const [loadingMaterial,setLoadingMaterial]=useState(false);
  const [view,setView]=useState<"all"|"completed"|"theory">("all");
+ const [labOpen,setLabOpen]=useState(false);
  const [done,setDone]=useState<string[]>(typeof window!=="undefined"?JSON.parse(localStorage.getItem("sql_done")||"[]"):[]);
  const allTopics=[...stages.flatMap(s=>s.topics),...rootTopics];
  const filteredStages=useMemo(()=>stages.map(s=>({...s,topics:s.topics.filter(t=>{
@@ -176,10 +212,11 @@ export default function Home(){
 
  if(!user)return <main className="shell"><div className="container"><nav className="nav"><div className="brand">SQL<span>Lab</span></div><div className="pill">Open source learning</div></nav><section className="hero"><div className="eyebrow">From zero → production</div><h1>Learn SQL by <span className="green">building</span>.</h1><p className="sub">Every stage, every topic, theory, SQL, exercises, projects and interview material in one visible learning workspace.</p></section><div className="card login-card"><h2>Start your learning journey</h2><p className="muted">Enter an email for a browser-local demo login. No API key is required.</p><input className="input" placeholder="you@example.com" value={email} onChange={e=>setEmail(e.target.value)} onKeyDown={e=>{if(e.key==="Enter")login()}}/><button className="btn primary full" onClick={login}>Enter SQL Lab <ChevronRight size={16}/></button>{greeting&&<p className="green">{greeting}</p>}<p className="muted small">Your progress stays in this browser. Real email delivery is optional.</p></div></div></main>;
 
- return <main className="shell"><div className="container"><nav className="nav"><div className="brand">SQL<span>Lab</span></div><div className="row"><span className="pill">{user}</span><button className="btn" onClick={()=>{localStorage.removeItem("sql_user");setUser(null)}}>Sign out</button></div></nav>
+ return <main className="shell"><div className="container"><nav className="nav"><div className="brand">SQL<span>Lab</span></div><div className="row"><button className="btn primary" onClick={()=>setLabOpen(true)}><FlaskConical size={15}/> Practice Lab</button><span className="pill">{user}</span><button className="btn" onClick={()=>{localStorage.removeItem("sql_user");setUser(null)}}>Sign out</button></div></nav>
  <section className="hero"><div className="eyebrow">Your complete SQL workspace</div><h1>Every topic. <span className="green">One path.</span></h1><p className="sub">Click a topic to open its real repository material. Mark each topic completed as you learn.</p>
  <div className="grid two"><div className="card"><div className="between"><div><div className="muted">Course progress</div><strong>{completed} / {allTopics.length} topics completed</strong></div><Database className="green"/></div><div className="progress" style={{marginTop:14}}><i style={{width:(completed/allTopics.length*100)+"%"}}/></div></div>
  <div className="card"><div className="muted">Learning order</div><h3>Read → Open → Practice → Complete</h3><p className="muted">Theory comes before runnable SQL, then exercises and real-world work.</p><div className="row"><Mail size={16}/><span className="pill">local login</span></div></div></div></section>
+ {labOpen&&<PracticeLab onClose={()=>setLabOpen(false)}/>} 
  <section className="card curriculum"><div className="between"><div><h2>Complete Curriculum</h2><p className="muted">{allTopics.length} visible topics across installation → production.</p></div><div className="row"><Search size={17}/><input className="input search" placeholder="Search every topic" value={search} onChange={e=>setSearch(e.target.value)}/></div></div>
  {filteredStages.map(s=><div className="stage" key={s.id}><button className="stage-head" onClick={()=>setOpen(open===s.id?null:s.id)}><div><span className="stage-number">{s.id}</span><strong>{s.title}</strong><span className="muted stage-count">{s.topics.length} topics</span><div className="muted stage-desc">{s.desc}</div></div>{open===s.id?<ChevronDown/>:<ChevronRight/>}</button>{open===s.id&&<div className="stage-topics">{s.topics.map(t=><TopicRow key={t.path} topic={t} done={done.includes(t.path)} onToggle={()=>toggle(t.path)} onOpen={()=>openMaterial(t)}/>)}</div>}</div>)}
  {filteredRoot.length>0&&<div className="stage"><button className="stage-head" onClick={()=>setOpen(open==="reference"?null:"reference")}><div><span className="stage-number">★</span><strong>Repository Reference & Tools</strong><span className="muted stage-count">{filteredRoot.length} topics</span><div className="muted stage-desc">Core theory, roadmap, contribution and environment references.</div></div>{open==="reference"?<ChevronDown/>:<ChevronRight/>}</button>{open==="reference"&&<div className="stage-topics">{filteredRoot.map(t=><TopicRow key={t.path} topic={t} done={done.includes(t.path)} onToggle={()=>toggle(t.path)} onOpen={()=>openMaterial(t)}/>)}</div>}</div>}
