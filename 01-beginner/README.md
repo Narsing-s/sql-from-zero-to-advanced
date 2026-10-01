@@ -63,6 +63,12 @@ DELETE removes matching rows.
 - **[Practice challenge](10-practice-challenge.sql)**
 - **[SQL best practices](11-sql-best-practices.sql)**
 - **[DDL schema changes](12-ddl-schema-changes.sql)**
+- **[Data types and constraints](13-data-types-and-constraints.sql)**
+- **[Keys and table relationships](14-keys-and-relationships.sql)**
+
+## SQL 101 coverage
+
+This beginner module explicitly covers the core beginner curriculum: database basics, SQL statements, querying, filtering, sorting, modification, data types, constraints, keys, relationships, NULL handling, DDL and best practices. The deeper JOIN, aggregation, subquery, view, indexing, transaction and advanced topics continue in stages 02–03 and beyond.
 
 ## Safety rule
 Always inspect the WHERE condition before UPDATE or DELETE.
