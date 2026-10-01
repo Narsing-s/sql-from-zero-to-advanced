@@ -52,6 +52,10 @@ DELETE removes matching rows.
 ## Safety rule
 Always inspect the WHERE condition before UPDATE or DELETE.
 
+For a practical checklist covering naming, formatting, safe modifications, transactions, NULL, parameterization, verification and production thinking, see:
+
+**[SQL Best Practices](11-sql-best-practices.sql)**
+
 ## Learning method
 Definition → Purpose → English sentence → SQL → Predict result → Run → Explain
 
