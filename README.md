@@ -97,7 +97,7 @@ A broad reference covering relational foundations, PostgreSQL behavior, data typ
 
 ## 📖 SQL 101 compatibility layer
 
-If you are coming from a beginner SQL guide, use **[SQL-101-COMPATIBILITY-GUIDE.md](SQL-101-COMPATIBILITY-GUIDE.md)**.
+If you are coming from a beginner SQL guide, use **[SQL-101-COMPATIBILITY-GUIDE.md](SQL-101-COMPATIBILITY-GUIDE.md)** and the **[SQL-101-CURRICULUM-MATRIX.md](SQL-101-CURRICULUM-MATRIX.md)**.
 
 It maps the familiar SQL 101 topics — installation, querying, modification, data types, constraints, joins, aggregation, subqueries, views, indexing, transactions, advanced SQL, best practices and exercises — to the deeper lessons in this repository.
 
