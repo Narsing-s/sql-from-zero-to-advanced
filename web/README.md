@@ -1,23 +1,88 @@
 # SQL Learning Hub UI
 
-A local-first learner portal for this repository.
+A local-first learner portal for the SQL From Zero to Advanced repository.
 
-## Features
-- modern dark learner dashboard
-- local demo login (no real password storage)
-- curriculum explorer
-- progress stored in browser localStorage
-- lesson search
-- daily challenge
-- welcome-email demo flow
-- optional Resend integration documented separately
+## What works
 
-## Run
+- local demo login
+- local welcome greeting
+- curriculum search
+- **Open** lesson controls
+- direct **Read theory** links
+- direct **Open SQL material** links
+- progress tracking in browser localStorage
+- responsive dark UI
+- no API keys
+- no paid services
+- no external authentication
+- no external email provider
+
+## How lesson navigation works
+
+```text
+Choose lesson
+   ↓
+Open
+   ↓
+Read theory
+   ↓
+Open SQL material
+   ↓
+Run it in PostgreSQL
+   ↓
+Practice
+   ↓
+Mark done
+```
+
+The material buttons open the corresponding files in the GitHub repository, so learners can immediately see the actual theory or SQL instead of an empty screen.
+
+## Run locally
+
+Requirements:
+- Node.js
+- npm
+
 ```bash
+cd web
 npm install
 npm run dev
 ```
 
-Open http://localhost:3000.
+Open:
 
-> The included local login is intentionally a learning/demo login. Do not use it for production authentication.
+```text
+http://localhost:3000
+```
+
+## Important
+
+The login is intentionally a browser-local learning/demo login. It is not production authentication.
+
+Progress is stored only in the current browser using localStorage.
+
+The welcome endpoint is also local/demo-only. It returns a greeting and does **not** send an actual email.
+
+## Troubleshooting
+
+If an old UI is still displayed after pulling the latest repository changes:
+
+```bash
+rm -rf .next
+npm install
+npm run dev
+```
+
+On Windows PowerShell, remove the build cache with:
+
+```powershell
+Remove-Item -Recurse -Force .next
+npm install
+npm run dev
+```
+
+Then refresh the browser.
+
+## Repository
+
+https://github.com/Narsing-s/sql-from-zero-to-advanced
