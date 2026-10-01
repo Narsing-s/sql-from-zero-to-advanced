@@ -1,0 +1,17 @@
+# PostgreSQL / local data
+*.dump
+*.backup
+postgres-data/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Editors
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
