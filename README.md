@@ -2,124 +2,208 @@
 
 Welcome to a **theory-first, practical SQL learning journey**.
 
-This repository is designed for someone who may be completely new to SQL. **Do not read the queries as magic syntax.** Learn the database concepts first, then use the SQL examples to prove the concept by running it.
+This repository is designed for someone who may be completely new to SQL. **Do not read the queries as magic syntax.** Learn the concepts, definitions and mental models first, then use SQL examples to prove the concepts by running them.
 
-## Start here
+## 📚 Complete Theory Library
 
-👉 **[Read the complete SQL Theory Guide](SQL-THEORY.md)**
+### 1. SQL Theory — concept explanations
+**[SQL-THEORY.md](SQL-THEORY.md)**
 
-The theory guide explains SQL from first principles through production engineering:
-
-- What databases, tables, rows, columns and relationships mean
-- SQL command families: DDL, DML, DQL, DCL and transactions
-- How SELECT logically works
-- Filtering and three-valued logic
-- NULL
-- JOINs
-- GROUP BY and aggregation
-- Keys and constraints
-- Normalization
-- Subqueries and CTEs
-- Recursive queries
-- Window functions
-- CASE expressions
-- Views and materialized views
-- Functions, procedures and triggers
-- Transactions, ACID, locks and isolation
-- Indexes, composite indexes and query plans
-- EXPLAIN / EXPLAIN ANALYZE
-- Partitioning
+Covers the complete journey from SQL foundations to production engineering:
+- database and relational theory
+- SQL command families
+- SELECT logical processing
+- filtering, NULL and three-valued logic
+- joins and aggregation
+- keys, constraints and normalization
+- subqueries, CTEs and recursion
+- window functions
+- views, functions, procedures and triggers
+- transactions, ACID, locks and isolation
+- indexes and query plans
+- partitioning
 - JSON/JSONB
-- UPSERT and MERGE
-- Data quality and idempotency
-- Security and Row-Level Security
-- Full-text search and LATERAL
-- OLTP vs OLAP
-- Connection pooling
-- WAL, backups, recovery and replication
-- Production troubleshooting and SQL anti-patterns
+- UPSERT/MERGE
+- security and RLS
+- full-text search and LATERAL
+- OLTP/OLAP
+- pooling, WAL, backups and replication
+- production troubleshooting
 
-## How every lesson works
+### 2. Core Concepts — definitions from A to Z
+**[CORE-CONCEPTS.md](CORE-CONCEPTS.md)**
 
-For each concept, follow this order:
+This is the **SQL dictionary + theory reference**. It defines 180 core terms including:
 
-1. **Theory** — understand the concept in plain English.
-2. **What problem does it solve?**
-3. **Mental model** — understand how to think about it.
-4. **Syntax** — learn the general pattern.
-5. **Example query** — see a small runnable example.
-6. **Line-by-line explanation** — understand every important part.
-7. **Expected result** — know what should happen.
-8. **Practice** — solve a similar problem.
-9. **Challenge** — solve a realistic problem.
-10. **Real-world use** — connect the concept to production.
+- Database / DBMS / RDBMS
+- schema, table, row, column and data type
+- entities and relationships
+- cardinality
+- primary/candidate/natural/surrogate keys
+- foreign keys and referential integrity
+- constraints and indexes
+- sequences and identity columns
+- views and materialized views
+- functions, procedures and triggers
+- transactions and ACID
+- NULL and three-valued logic
+- SELECT, WHERE, GROUP BY, HAVING, ORDER BY
+- predicates, expressions and operators
+- joins and set operations
+- aggregate and window functions
+- subqueries and CTEs
+- normalization and functional dependency
+- concurrency, MVCC, locks and deadlocks
+- isolation levels and anomalies
+- query planner, plans, scans, statistics and selectivity
+- partitions and replication
+- backups, RPO and RTO
+- authentication, authorization and privileges
+- RLS and SQL injection
+- OLTP, OLAP, ETL and ELT
+- data pipelines and slowly changing dimensions
+- connection pools and production readiness
+
+### 3. Advanced & Expert Theory
+**[ADVANCED-EXPERT-THEORY.md](ADVANCED-EXPERT-THEORY.md)**
+
+Covers advanced PostgreSQL and production engineering concepts including:
+
+- relational algebra
+- declarative SQL and query equivalence
+- predicate/projection pushdown
+- join algorithms
+- hash aggregation and sorting
+- work memory and shared buffers
+- extended statistics
+- index-only, partial, expression and covering indexes
+- B-tree, Hash, GIN, GiST and BRIN
+- MVCC visibility and lock modes
+- advisory locks
+- deadlock detection
+- serialization retry
+- optimistic/pessimistic concurrency
+- lost-update prevention
+- distributed transactions
+- eventual consistency
+- outbox/inbox patterns
+- CDC
+- logical/physical replication
+- read replicas and replication lag
+- high availability and failover
+- PITR and WAL archiving
+- vacuum, autovacuum and bloat
+- prepared statements and plan behavior
+- sargability and N+1 queries
+- offset/keyset pagination
+- bulk loading and staging
+- star/snowflake schemas
+- facts, dimensions and grain
+- data lineage and data quality
+- schema evolution and zero-downtime migrations
+- backfills and batching
+- retry safety and exactly-once business effects
+- sagas and compensation
+- JSONB, ranges and exclusion constraints
+- RLS policies and SECURITY DEFINER
+- production query review
+
+## How to learn every concept
+
+Every concept should be understood in this order:
+
+1. **Definition** — what does the term mean?
+2. **Purpose** — why does it exist?
+3. **Problem** — what problem does it solve?
+4. **Mental model** — how should you think about it?
+5. **Syntax** — what does it look like?
+6. **Example** — see it in action.
+7. **Line-by-line explanation** — understand each part.
+8. **Expected result** — predict what happens.
+9. **Practice** — solve a similar problem.
+10. **Edge cases** — understand unusual behavior.
 11. **Common mistakes** — learn what can go wrong.
-12. **Interview questions** — verify understanding.
+12. **Performance** — understand scale implications.
+13. **Security** — understand access and safety implications.
+14. **Concurrency** — understand simultaneous execution.
+15. **Production use** — connect theory to real systems.
+16. **Interview questions** — prove your understanding.
 
 ## Learning path
 
-| Stage | What you learn |
+| Stage | Focus |
 |---|---|
-| 00 | Install PostgreSQL and understand the environment |
-| 01 | SQL foundations and CRUD |
-| 02 | Joins, aggregation, subqueries and business logic |
+| 00 | Installation and database environment |
+| 01 | Core SQL foundations and CRUD |
+| 02 | JOINs, aggregation, subqueries and business logic |
 | 03 | CTEs, recursion, windows, views, functions and triggers |
 | 04 | Database design, keys, constraints and normalization |
 | 05 | Transactions, ACID, locks and isolation |
 | 06 | Indexes, execution plans and performance |
-| 07 | Roles, permissions and database security |
+| 07 | Roles, permissions and security |
 | 08 | Complete banking database |
-| 09 | Production troubleshooting scenarios |
+| 09 | Production troubleshooting |
 | 10 | Interview preparation |
 | 11 | Expert PostgreSQL |
 | 12 | Data engineering and analytics |
 | 13 | Real-world projects |
 
-## SQL is not just queries
+## The repository philosophy
 
-The goal is to understand **why** a query works.
+SQL is **not only queries**.
 
-Before writing SQL, ask:
+A professional SQL engineer understands:
 
-- What data do I need?
-- Where does that data live?
-- How are the tables related?
-- Which rows should be included?
-- Can NULL affect the answer?
-- Can a JOIN multiply rows?
-- Should the result be grouped?
-- Is a window calculation required?
-- What business rule am I implementing?
-- What constraints protect the data?
-- Will the query perform well with millions of rows?
-- What happens if two users execute it at the same time?
-- What permissions should the operation have?
-- How will the system recover if something fails?
+```text
+Business Requirement
+       ↓
+Data Model
+       ↓
+Relational Theory
+       ↓
+Constraints
+       ↓
+SQL
+       ↓
+Execution Plan
+       ↓
+Performance
+       ↓
+Concurrency
+       ↓
+Security
+       ↓
+Observability
+       ↓
+Recovery
+```
+
+The SQL statement is only one part of the solution.
 
 ## Hands-on learning
 
-The SQL files are the **practice layer**.
-
-The README files and **[SQL-THEORY.md](SQL-THEORY.md)** are the **understanding layer**.
-
-Use both together:
+Use the theory documents together with the numbered SQL exercises:
 
 ```text
-THEORY
-  ↓
-MENTAL MODEL
-  ↓
-EXAMPLE
-  ↓
+READ DEFINITION
+      ↓
+UNDERSTAND THEORY
+      ↓
+BUILD MENTAL MODEL
+      ↓
+READ EXAMPLE
+      ↓
 RUN SQL
-  ↓
-OBSERVE RESULT
-  ↓
-PRACTICE
-  ↓
-REAL-WORLD SCENARIO
-  ↓
-PRODUCTION THINKING
+      ↓
+PREDICT RESULT
+      ↓
+PRACTICE WITHOUT COPYING
+      ↓
+SOLVE REAL-WORLD SCENARIO
+      ↓
+CHECK PERFORMANCE
+      ↓
+EXPLAIN YOUR SOLUTION
 ```
 
 ## UI
@@ -129,9 +213,13 @@ The `web/` folder contains a local-first learning interface. It requires **no AP
 ## Start
 
 1. Read **[SQL-THEORY.md](SQL-THEORY.md)**.
-2. Begin with **[00-installation](00-installation/README.md)**.
-3. Progress through the numbered folders.
-4. Run the SQL examples.
-5. Complete the exercises.
-6. Build the real-world projects.
-7. Use the interview and production-scenario sections to test yourself.
+2. Use **[CORE-CONCEPTS.md](CORE-CONCEPTS.md)** as the definition/reference guide.
+3. Use **[ADVANCED-EXPERT-THEORY.md](ADVANCED-EXPERT-THEORY.md)** for advanced concepts.
+4. Begin with **[00-installation](00-installation/README.md)**.
+5. Progress through the numbered folders.
+6. Run the SQL examples.
+7. Complete the exercises.
+8. Build the real-world projects.
+9. Use the interview and production-scenario sections to test yourself.
+
+**Goal: understand SQL deeply enough to explain it, write it, troubleshoot it, optimize it and use it safely in production.**
