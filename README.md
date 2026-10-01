@@ -85,6 +85,10 @@ This repository combines the beginner-friendly learning style of a SQL 101 cours
 | 46 | Database client integration |
 | 47 | Advanced concurrency and isolation |
 | 48 | Data loading and export |
+| 49 | Recovery and migration drills |
+| 50 | Logical replication lab |
+| 51 | SQL quality, linting and style |
+| 52 | Observability and performance lab |
 
 ## 🛠️ Installation — Start Here
 
