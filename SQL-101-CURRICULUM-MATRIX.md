@@ -1,0 +1,70 @@
+# SQL 101 Curriculum Matrix
+
+This page keeps the repository aligned with the core learning sequence represented by the reference **SQL-101** curriculum while preserving original material and the repository's broader PostgreSQL/production focus.
+
+> The reference curriculum is organized around installation, SQL introduction, querying, modification, data types/constraints, relationships/joins, aggregation, subqueries/views, indexing/performance, transactions/concurrency, advanced topics, best practices, resources, and exercises. This repository implements those areas and then continues into expert and production topics.
+
+| SQL 101 area | This repository | Coverage |
+|---|---|---|
+| 1. Installation Guide | `00-installation/`, `INSTALLATION.md`, `DOWNLOAD-AND-SETUP.md` | PostgreSQL-first setup plus MySQL/SQLite guidance |
+| 2. Introduction to SQL | `01-beginner/`, `CORE-CONCEPTS.md`, `SQL-THEORY.md` | relational model, SQL statements, mental model |
+| 3. Querying Data | `01-beginner/04-select.sql`, `05-where.sql`, `06-order-by.sql` | SELECT, filtering, sorting, DISTINCT, LIMIT |
+| 4. Modifying Data | `01-beginner/03-insert.sql`, `07-update.sql`, `08-delete.sql` | INSERT, UPDATE, DELETE and safe writes |
+| 5. Data Types & Constraints | `01-beginner/02-create-tables.sql`, `13-data-types-and-constraints.sql` | types, PK, FK, UNIQUE, CHECK, NOT NULL, DEFAULT |
+| 6. Joins & Relationships | `01-beginner/14-keys-and-relationships.sql`, `02-intermediate/01-joins.sql` | 1:1, 1:N, N:M, JOIN variants |
+| 7. Aggregation & Grouping | `02-intermediate/02-group-by.sql`, `03-having.sql` | COUNT, SUM, AVG, MIN, MAX, GROUP BY, HAVING |
+| 8. Subqueries & Views | `02-intermediate/04-subqueries.sql`, `03-advanced/04-views.sql` | subqueries, correlated patterns, views, materialized views |
+| 9. Indexing & Performance | `06-performance/`, `11-expert-sql/` | indexes, EXPLAIN, planner behavior, optimization |
+| 10. Transactions & Concurrency | `05-transactions/`, `09-real-world-scenarios/deadlock.md` | ACID, isolation, locks, deadlocks, retries |
+| 11. Advanced Topics | `03-advanced/`, `11-expert-sql/` | CTEs, recursion, windows, functions, procedures, triggers, JSONB |
+| 12. Best Practices | `01-beginner/11-sql-best-practices.sql`, security/performance modules | safe SQL, maintainability, correctness and production practices |
+| 13. Learning Resources | `LEARNING-RESOURCES.md` | official docs and practice platforms |
+| 14. Exercises & Solutions | `EXERCISES-AND-SOLUTIONS.md`, stage challenges | beginner → production/interview practice |
+
+## Recommended learner route
+
+```text
+Install
+  ↓
+SQL mental model
+  ↓
+SELECT → WHERE → ORDER BY
+  ↓
+INSERT → UPDATE → DELETE
+  ↓
+Data types → constraints → keys
+  ↓
+JOINs → aggregation → subqueries
+  ↓
+Views → indexes → transactions
+  ↓
+CTEs → windows → procedures/triggers
+  ↓
+Performance → security → production
+  ↓
+Banking project → interview scenarios → expert SQL
+```
+
+## Cross-database note
+
+The learning sequence uses PostgreSQL as the primary executable dialect so examples can be run consistently. SQL concepts are transferable to MySQL, SQLite and other relational systems, but syntax and engine behavior can differ. PostgreSQL-specific lessons are clearly positioned as such.
+
+## Quality standard
+
+Each important topic should provide, where practical:
+
+1. Definition
+2. Purpose
+3. Mental model
+4. Runnable example
+5. Expected result
+6. Common mistakes
+7. Edge cases
+8. Performance implications
+9. Security/concurrency implications
+10. Practice challenge
+11. Production usage
+
+## Original-content policy
+
+This matrix is an original navigation and coverage map. It does not reproduce the reference repository's PDFs or copy its lesson text.
