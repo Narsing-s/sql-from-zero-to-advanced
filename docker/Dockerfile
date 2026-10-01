@@ -1,0 +1,5 @@
+FROM postgres:17
+ENV POSTGRES_DB=sql_learning
+ENV POSTGRES_USER=sqllearner
+ENV POSTGRES_PASSWORD=sqllearner_local_only
+EXPOSE 5432
