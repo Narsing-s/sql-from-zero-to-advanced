@@ -103,6 +103,10 @@ It maps the familiar SQL 101 topics — installation, querying, modification, da
 
 For quick revision, use **[SQL-CHEAT-SHEET.md](SQL-CHEAT-SHEET.md)**.
 
+For beginner-friendly rules and safe SQL habits, use **[SQL-101-BEST-PRACTICES.md](SQL-101-BEST-PRACTICES.md)**.
+
+For a standalone 45-exercise progression, use **[SQL-101-PRACTICE-TRACK.md](SQL-101-PRACTICE-TRACK.md)**.
+
 ## 🧪 Exercises and practice
 
 Practice is part of the curriculum, not an afterthought.
