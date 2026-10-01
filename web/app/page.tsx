@@ -295,3 +295,11 @@ export default function Home(){
  {selected&&<section className="card material-view"><div className="between"><div><div className="eyebrow">{selected.type}</div><h2>{selected.title}</h2><p className="muted">{selected.desc}</p></div><button className="btn" onClick={()=>setSelected(null)}>Close</button></div><div className="row material-toolbar"><button className="btn primary" onClick={()=>toggle(selected.path)}>{done.includes(selected.path)?"Completed ✓":"Mark completed"}</button><a className="btn" href={repoBase+selected.path} target="_blank" rel="noreferrer">Open on GitHub <ExternalLink size={14}/></a></div><div className="material-content">{loadingMaterial?<p className="muted">Loading real material…</p>:<pre>{material}</pre>}</div></section>}
  </div></main>;
 }
+
+ {id:"53",title:"Completeness Audit",desc:"Reproducibility, replication restrictions, version checks and acceptance criteria.",topics:[
+  {path:"53-completeness-audit/README.md",title:"Completeness audit",type:"Reference",desc:"Final PostgreSQL engineering coverage and test classification."},
+  {path:"53-completeness-audit/01-replication-restrictions.md",title:"Replication restrictions",type:"Reference",desc:"Schema, sequence, migration and monitoring considerations."},
+  {path:"53-completeness-audit/02-deterministic-tests.sql",title:"Deterministic tests",type:"SQL",desc:"Stable timezone, ordering and fixture assertions."},
+  {path:"53-completeness-audit/03-extension-and-version-check.sql",title:"Version and extension audit",type:"SQL",desc:"Inspect PostgreSQL version and installed extensions."},
+  {path:"53-completeness-audit/04-acceptance-criteria.md",title:"Acceptance criteria",type:"Reference",desc:"Definition of done for the curriculum."}
+ ]},
