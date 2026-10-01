@@ -72,3 +72,16 @@ Each important topic should provide, where practical:
 ## Original-content policy
 
 This matrix is an original navigation and coverage map. It does not reproduce the reference repository's PDFs or copy its lesson text.
+
+| 41. Runnable labs | `41-runnable-labs/` | PostgreSQL operational SQL labs |
+| 42. Production patterns | `42-production-patterns/` | pooling, schema drift, backup verification |
+| 43. Validation and automation | `43-validation-and-automation/` | manifests, safety, versioning, test runner |
+| 44. Advanced production SQL | `44-advanced-production-sql/` | production-grade PostgreSQL query patterns |
+| 45. PostgreSQL CI | `45-ci-postgresql/` | Docker, fixtures, assertions, CI |
+| 46. Client integration | `46-database-client-integration/` | application/database boundaries |
+| 47. Advanced concurrency | `47-advanced-concurrency/` | isolation, locks, retries, MVCC |
+| 48. Data loading/export | `48-data-loading-and-export/` | bulk data movement and validation |
+| 49. Recovery/migration drills | `49-recovery-and-migration-drills/` | backup, restore, PITR, migration rehearsal |
+| 50. Logical replication | `50-logical-replication-lab/` | publisher/subscriber and monitoring |
+| 51. SQL quality | `51-sql-quality-and-linting/` | linting, style, safety gates |
+| 52. Observability/performance | `52-observability-and-performance-lab/` | plans, waits, statistics and baselines |
