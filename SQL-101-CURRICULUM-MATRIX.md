@@ -20,6 +20,7 @@ This page keeps the repository aligned with the core learning sequence represent
 | 12. Best Practices | `01-beginner/11-sql-best-practices.sql`, security/performance modules | safe SQL, maintainability, correctness and production practices |
 | 13. Learning Resources | `LEARNING-RESOURCES.md` | official docs and practice platforms |
 | 14. Exercises & Solutions | `EXERCISES-AND-SOLUTIONS.md`, stage challenges | beginner → production/interview practice |
+| Production operations extension | `14-production-operations/` | backups/recovery, monitoring, incident runbooks and RCA |
 
 ## Recommended learner route
 
