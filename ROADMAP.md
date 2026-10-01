@@ -49,9 +49,21 @@
 - Query optimization
 - Roles and privileges
 - Backup/restore concepts
+- Production monitoring and alerting
+- Incident response and RCA
+- Capacity and connection troubleshooting
 
 ## Phase 6 — Project
 Build the banking database, write reports, implement transfers, auditing and production scenarios.
 
-## Phase 7 — Interview
+## Phase 7 — Production Operations
+- Backup/recovery drills
+- RPO/RTO
+- Monitoring and alerting
+- Connection exhaustion
+- Blocking/deadlocks
+- Replication lag
+- Incident response and RCA
+
+## Phase 8 — Interview
 Solve beginner, intermediate, advanced and incident-based SQL questions.
