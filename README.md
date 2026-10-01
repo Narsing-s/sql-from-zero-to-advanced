@@ -2,132 +2,102 @@
 
 Welcome to a **theory-first, practical SQL learning journey**.
 
-This repository is designed for someone who may be completely new to SQL. **Do not read the queries as magic syntax.** Learn the concepts, definitions and mental models first, then use SQL examples to prove the concepts by running them.
+This repository is designed for someone who may be completely new to SQL. **SQL is not only queries.** Learn the definitions, theory and mental models first, then prove the concepts by running SQL.
 
 ## 📚 Complete Theory Library
 
-### 1. SQL Theory — concept explanations
-**[SQL-THEORY.md](SQL-THEORY.md)**
+### 1. Complete SQL Theory
+**[COMPLETE-SQL-THEORY.md](COMPLETE-SQL-THEORY.md)**
 
-Covers the complete journey from SQL foundations to production engineering:
-- database and relational theory
-- SQL command families
-- SELECT logical processing
-- filtering, NULL and three-valued logic
-- joins and aggregation
-- keys, constraints and normalization
-- subqueries, CTEs and recursion
-- window functions
-- views, functions, procedures and triggers
-- transactions, ACID, locks and isolation
-- indexes and query plans
-- partitioning
-- JSON/JSONB
-- UPSERT/MERGE
-- security and RLS
-- full-text search and LATERAL
-- OLTP/OLAP
-- pooling, WAL, backups and replication
-- production troubleshooting
+The single broad theory reference covering:
 
-### 2. Core Concepts — definitions from A to Z
-**[CORE-CONCEPTS.md](CORE-CONCEPTS.md)**
-
-This is the **SQL dictionary + theory reference**. It defines 180 core terms including:
-
-- Database / DBMS / RDBMS
-- schema, table, row, column and data type
-- entities and relationships
-- cardinality
-- primary/candidate/natural/surrogate keys
-- foreign keys and referential integrity
-- constraints and indexes
-- sequences and identity columns
+- SQL and relational foundations
+- SQL standard vs PostgreSQL
+- bag/multiset semantics
+- database, DBMS, RDBMS, schema and session
+- data modeling, ERD, cardinality, optionality and grain
+- PostgreSQL data types, casting, collation and time zones
+- keys, constraints, business invariants and referential integrity
+- normalization, functional dependencies and BCNF
+- logical query processing
+- NULL and three-valued logic
+- operators, predicates and set operations
+- joins, LATERAL and join multiplication
+- subqueries, EXISTS, IN, ANY and ALL
+- aggregation, FILTER, GROUPING SETS, ROLLUP and CUBE
+- window functions and frames
+- CTEs and recursive CTEs
+- DDL, DML, DQL, DCL and TCL
+- INSERT, UPDATE, DELETE, RETURNING, UPSERT and MERGE
+- tables, temporary tables, unlogged tables and generated columns
 - views and materialized views
 - functions, procedures and triggers
-- transactions and ACID
-- NULL and three-valued logic
-- SELECT, WHERE, GROUP BY, HAVING, ORDER BY
-- predicates, expressions and operators
-- joins and set operations
-- aggregate and window functions
-- subqueries and CTEs
-- normalization and functional dependency
-- concurrency, MVCC, locks and deadlocks
-- isolation levels and anomalies
-- query planner, plans, scans, statistics and selectivity
-- partitions and replication
-- backups, RPO and RTO
-- authentication, authorization and privileges
-- RLS and SQL injection
-- OLTP, OLAP, ETL and ELT
-- data pipelines and slowly changing dimensions
-- connection pools and production readiness
+- transactions, ACID, isolation and anomalies
+- MVCC, locks, blocking and deadlocks
+- query planner, cardinality, statistics and execution plans
+- scan and join algorithms
+- sargability and query performance
+- all major PostgreSQL index families
+- pagination and N+1 queries
+- PostgreSQL storage internals, WAL, checkpoints and TOAST
+- VACUUM, ANALYZE, autovacuum and bloat
+- connection pooling and prepared statements
+- authentication, authorization, RLS and SQL injection
+- auditing and sensitive-data handling
+- JSONB and full-text search
+- partitioning
+- OLTP/OLAP and warehouse modeling
+- ETL/ELT, incremental loads, watermarks and data quality
+- CDC and logical decoding
+- replication, slots, lag and read-after-write consistency
+- backups, PITR, RPO, RTO and recovery drills
+- distributed transactions, sagas, outbox/inbox and idempotency
+- schema evolution and zero-downtime migrations
+- production observability and troubleshooting
+- temporal data, multi-tenancy, soft delete and hierarchical data
+- advanced PostgreSQL and planner-regression topics
+- expert SQL review and production engineering
+
+### 2. Core Concepts — definitions
+**[CORE-CONCEPTS.md](CORE-CONCEPTS.md)**
+
+Use this as the SQL dictionary/reference for core terminology.
 
 ### 3. Advanced & Expert Theory
 **[ADVANCED-EXPERT-THEORY.md](ADVANCED-EXPERT-THEORY.md)**
 
-Covers advanced PostgreSQL and production engineering concepts including:
+Use this for deeper PostgreSQL internals, optimization, concurrency, distributed systems and production engineering.
 
-- relational algebra
-- declarative SQL and query equivalence
-- predicate/projection pushdown
-- join algorithms
-- hash aggregation and sorting
-- work memory and shared buffers
-- extended statistics
-- index-only, partial, expression and covering indexes
-- B-tree, Hash, GIN, GiST and BRIN
-- MVCC visibility and lock modes
-- advisory locks
-- deadlock detection
-- serialization retry
-- optimistic/pessimistic concurrency
-- lost-update prevention
-- distributed transactions
-- eventual consistency
-- outbox/inbox patterns
-- CDC
-- logical/physical replication
-- read replicas and replication lag
-- high availability and failover
-- PITR and WAL archiving
-- vacuum, autovacuum and bloat
-- prepared statements and plan behavior
-- sargability and N+1 queries
-- offset/keyset pagination
-- bulk loading and staging
-- star/snowflake schemas
-- facts, dimensions and grain
-- data lineage and data quality
-- schema evolution and zero-downtime migrations
-- backfills and batching
-- retry safety and exactly-once business effects
-- sagas and compensation
-- JSONB, ranges and exclusion constraints
-- RLS policies and SECURITY DEFINER
-- production query review
+### 4. Missing Concepts Checklist
+**[MISSING-CONCEPTS-CHECKLIST.md](MISSING-CONCEPTS-CHECKLIST.md)**
+
+A curriculum audit containing additional concepts that should not be forgotten as the repository grows.
+
+### 5. Database Design Extensions
+**[04-database-design/BCNF-and-advanced-normalization.md](04-database-design/BCNF-and-advanced-normalization.md)**
+
+Covers BCNF, temporal data, soft delete, multi-tenancy, hierarchical data and retention.
 
 ## How to learn every concept
 
 Every concept should be understood in this order:
 
-1. **Definition** — what does the term mean?
-2. **Purpose** — why does it exist?
-3. **Problem** — what problem does it solve?
-4. **Mental model** — how should you think about it?
-5. **Syntax** — what does it look like?
-6. **Example** — see it in action.
-7. **Line-by-line explanation** — understand each part.
-8. **Expected result** — predict what happens.
-9. **Practice** — solve a similar problem.
-10. **Edge cases** — understand unusual behavior.
-11. **Common mistakes** — learn what can go wrong.
-12. **Performance** — understand scale implications.
-13. **Security** — understand access and safety implications.
-14. **Concurrency** — understand simultaneous execution.
-15. **Production use** — connect theory to real systems.
-16. **Interview questions** — prove your understanding.
+1. Definition — what does it mean?
+2. Purpose — why does it exist?
+3. Problem — what problem does it solve?
+4. Mental model — how should you think about it?
+5. Syntax — what does it look like?
+6. Example — see it in action.
+7. Line-by-line explanation — understand each part.
+8. Expected result — predict what happens.
+9. Practice — solve a similar problem.
+10. Edge cases — understand unusual behavior.
+11. Common mistakes — learn what can go wrong.
+12. Performance — understand scale implications.
+13. Security — understand access and safety implications.
+14. Concurrency — understand simultaneous execution.
+15. Production use — connect theory to real systems.
+16. Interview questions — prove your understanding.
 
 ## Learning path
 
@@ -154,72 +124,48 @@ SQL is **not only queries**.
 
 A professional SQL engineer understands:
 
-```text
 Business Requirement
-       ↓
-Data Model
-       ↓
-Relational Theory
-       ↓
-Constraints
-       ↓
-SQL
-       ↓
-Execution Plan
-       ↓
-Performance
-       ↓
-Concurrency
-       ↓
-Security
-       ↓
-Observability
-       ↓
-Recovery
-```
+→ Data Model
+→ Relational Theory
+→ Constraints
+→ SQL
+→ Execution Plan
+→ Performance
+→ Concurrency
+→ Security
+→ Observability
+→ Recovery
 
 The SQL statement is only one part of the solution.
 
 ## Hands-on learning
 
-Use the theory documents together with the numbered SQL exercises:
-
-```text
 READ DEFINITION
-      ↓
-UNDERSTAND THEORY
-      ↓
-BUILD MENTAL MODEL
-      ↓
-READ EXAMPLE
-      ↓
-RUN SQL
-      ↓
-PREDICT RESULT
-      ↓
-PRACTICE WITHOUT COPYING
-      ↓
-SOLVE REAL-WORLD SCENARIO
-      ↓
-CHECK PERFORMANCE
-      ↓
-EXPLAIN YOUR SOLUTION
-```
+→ UNDERSTAND THEORY
+→ BUILD MENTAL MODEL
+→ READ EXAMPLE
+→ RUN SQL
+→ PREDICT RESULT
+→ PRACTICE WITHOUT COPYING
+→ SOLVE REAL-WORLD SCENARIO
+→ CHECK PERFORMANCE
+→ EXPLAIN YOUR SOLUTION
 
 ## UI
 
-The `web/` folder contains a local-first learning interface. It requires **no API keys, no paid services, and no external authentication provider** for the learner demo.
+The web/ folder contains a local-first learning interface. It requires **no API keys, no paid services and no external authentication provider** for the learner demo.
 
 ## Start
 
-1. Read **[SQL-THEORY.md](SQL-THEORY.md)**.
-2. Use **[CORE-CONCEPTS.md](CORE-CONCEPTS.md)** as the definition/reference guide.
-3. Use **[ADVANCED-EXPERT-THEORY.md](ADVANCED-EXPERT-THEORY.md)** for advanced concepts.
-4. Begin with **[00-installation](00-installation/README.md)**.
-5. Progress through the numbered folders.
-6. Run the SQL examples.
-7. Complete the exercises.
-8. Build the real-world projects.
-9. Use the interview and production-scenario sections to test yourself.
+1. Read COMPLETE-SQL-THEORY.md.
+2. Use CORE-CONCEPTS.md as the definition/reference guide.
+3. Use ADVANCED-EXPERT-THEORY.md for deeper concepts.
+4. Use MISSING-CONCEPTS-CHECKLIST.md as the curriculum audit.
+5. Begin with 00-installation.
+6. Progress through the numbered folders.
+7. Run the SQL examples.
+8. Complete the exercises.
+9. Build the real-world projects.
+10. Use the interview and production-scenario sections to test yourself.
 
 **Goal: understand SQL deeply enough to explain it, write it, troubleshoot it, optimize it and use it safely in production.**
