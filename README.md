@@ -1,204 +1,241 @@
 # SQL From Zero to Advanced 🚀
 
-Welcome to a **theory-first, practical SQL learning journey**.
+A **theory-first, hands-on SQL learning repository** that takes you from absolute beginner to advanced PostgreSQL, production troubleshooting, data engineering, and interview preparation.
 
-This repository is designed for someone who may be completely new to SQL. **SQL is not only queries.** Learn the definitions, theory and mental models first, then prove the concepts by running SQL.
+> **SQL is not only queries.** Learn the definition, purpose, mental model, syntax, execution behavior, performance, concurrency, security, and production implications — then prove the concept by running SQL.
+
+## ✨ What this repository covers
+
+This repository combines the beginner-friendly learning style of a SQL 101 course with a much deeper, production-oriented PostgreSQL curriculum.
+
+- 🟢 SQL fundamentals and CRUD
+- 🔗 JOINs and relationships
+- 📊 Aggregation, GROUP BY and HAVING
+- 🧩 Subqueries, EXISTS, IN, ANY and ALL
+- 🧠 CASE expressions, NULL and three-valued logic
+- 🧱 DDL, DML, DQL, DCL and TCL
+- 🔄 Transactions, ACID, isolation, locks and deadlocks
+- 🪟 Window functions and window frames
+- 🔁 CTEs and recursive CTEs
+- 👁️ Views and materialized views
+- ⚙️ Functions, procedures and triggers
+- 🗃️ Database design, normalization and BCNF
+- 🚀 Indexes, EXPLAIN, planner behavior and performance
+- 🔐 Roles, permissions, RLS and SQL injection prevention
+- 🧾 JSON/JSONB and full-text search
+- 🧩 Partitioning and PostgreSQL-specific features
+- 🏦 Complete banking project
+- 🛠️ Real-world production scenarios
+- 💼 SQL interview preparation
+- 📈 Data engineering, ETL/ELT, incremental loads and data quality
+- 🧪 Practical exercises and challenge-driven learning
+- 🖥️ Optional local SQL Learning Hub UI
+- 🐳 Optional Docker environment
+
+## 🧭 Learning path
+
+| Stage | Topic |
+|---|---|
+| 00 | Installation, PostgreSQL, psql, pgAdmin and verification |
+| 01 | Beginner SQL: databases, tables, INSERT, SELECT, WHERE, ORDER BY, UPDATE, DELETE, NULL and best practices |
+| 02 | Intermediate SQL: JOINs, aggregation, subqueries, CASE, set operations and predicates |
+| 03 | Advanced SQL: CTEs, recursion, windows, views, functions, procedures and triggers |
+| 04 | Database design, relationships, keys, constraints, normalization and BCNF |
+| 05 | Transactions, ACID, isolation, locking and concurrency |
+| 06 | Indexes, EXPLAIN and query-performance engineering |
+| 07 | Database security |
+| 08 | End-to-end banking project |
+| 09 | Production troubleshooting scenarios |
+| 10 | Interview preparation |
+| 11 | Expert PostgreSQL and advanced SQL |
+| 12 | Data engineering and analytics |
+| 13 | Real-world projects |
 
 ## 🛠️ Installation — Start Here
 
-**New to SQL? Start with the installation guide before opening the numbered lessons.**
+New to SQL? Follow the complete setup guide first.
 
-**[📥 Complete Installation Guide](INSTALLATION.md)**
+**[📥 Installation Guide](INSTALLATION.md)** · **[⬇️ Download & Setup](DOWNLOAD-AND-SETUP.md)**
 
-It explains:
+The setup documentation covers Windows, macOS and Linux, PostgreSQL, pgAdmin, `psql`, Git/ZIP download, database creation, verification, Docker, PATH/password/port troubleshooting and safe learning-database practices.
 
-- what PostgreSQL is and what you are installing
-- Windows, macOS and Linux setup
-- PostgreSQL official download links
-- pgAdmin and `psql`
-- Git clone and GitHub ZIP download
-- creating the `sql_learning` database
-- connecting to PostgreSQL
-- running the first repository scripts
-- verifying the server, database and user
-- optional Docker setup
-- optional SQL Learning Hub UI
-- PATH, password, port and connection troubleshooting
-- safe learning-database practices
-- what to do after installation
+### Quick start
 
-**Beginner path:** Install → Verify → Create `sql_learning` → Download repository → Run setup → Read theory → Start `01-beginner`.
+```text
+Install PostgreSQL
+      ↓
+Verify psql
+      ↓
+Create sql_learning
+      ↓
+Clone/download this repository
+      ↓
+Run 00-installation
+      ↓
+Read the theory
+      ↓
+Start 01-beginner
+      ↓
+Practice → Projects → Production → Interviews
+```
 
-## ⬇️ Download & Setup
+## 📚 Theory library
 
-New to the repository? Start here for **official PostgreSQL download links, Git/ZIP download instructions, Windows/macOS/Linux setup, psql, pgAdmin, database creation, running scripts, troubleshooting, and the optional web UI**.
-
-**[Open the complete Download & Setup Guide](DOWNLOAD-AND-SETUP.md)**
-
-Quick path: **Download PostgreSQL → Install → Verify `psql` → Create `sql_learning` → Download/clone this repo → Run `00-installation` → Start the theory-first learning path.**
-
-## 📚 Complete Theory Library
-
-### 1. Complete SQL Theory
+### Complete SQL Theory
 **[COMPLETE-SQL-THEORY.md](COMPLETE-SQL-THEORY.md)**
 
-The single broad theory reference covering:
+A broad reference covering relational foundations, PostgreSQL behavior, data types, keys, constraints, normalization, logical query processing, NULL, joins, subqueries, aggregation, windows, CTEs, DDL/DML/DCL/TCL, transactions, MVCC, locks, execution plans, indexes, storage, WAL, security, JSONB, partitioning, OLTP/OLAP, ETL/ELT, CDC, replication, backups, distributed patterns, observability and production engineering.
 
-- SQL and relational foundations
-- SQL standard vs PostgreSQL
-- bag/multiset semantics
-- database, DBMS, RDBMS, schema and session
-- data modeling, ERD, cardinality, optionality and grain
-- PostgreSQL data types, casting, collation and time zones
-- keys, constraints, business invariants and referential integrity
-- normalization, functional dependencies and BCNF
-- logical query processing
-- NULL and three-valued logic
-- operators, predicates and set operations
-- joins, LATERAL and join multiplication
-- subqueries, EXISTS, IN, ANY and ALL
-- aggregation, FILTER, GROUPING SETS, ROLLUP and CUBE
-- window functions and frames
-- CTEs and recursive CTEs
-- DDL, DML, DQL, DCL and TCL
-- INSERT, UPDATE, DELETE, RETURNING, UPSERT and MERGE
-- tables, temporary tables, unlogged tables and generated columns
-- views and materialized views
-- functions, procedures and triggers
-- transactions, ACID, isolation and anomalies
-- MVCC, locks, blocking and deadlocks
-- query planner, cardinality, statistics and execution plans
-- scan and join algorithms
-- sargability and query performance
-- all major PostgreSQL index families
-- pagination and N+1 queries
-- PostgreSQL storage internals, WAL, checkpoints and TOAST
-- VACUUM, ANALYZE, autovacuum and bloat
-- connection pooling and prepared statements
-- authentication, authorization, RLS and SQL injection
-- auditing and sensitive-data handling
-- JSONB and full-text search
-- partitioning
-- OLTP/OLAP and warehouse modeling
-- ETL/ELT, incremental loads, watermarks and data quality
-- CDC and logical decoding
-- replication, slots, lag and read-after-write consistency
-- backups, PITR, RPO, RTO and recovery drills
-- distributed transactions, sagas, outbox/inbox and idempotency
-- schema evolution and zero-downtime migrations
-- production observability and troubleshooting
-- temporal data, multi-tenancy, soft delete and hierarchical data
-- advanced PostgreSQL and planner-regression topics
-- expert SQL review and production engineering
+### Core Concepts
+**[CORE-CONCEPTS.md](CORE-CONCEPTS.md)** — a dictionary-style reference for important SQL and database terminology.
 
-### 2. Core Concepts — definitions
-**[CORE-CONCEPTS.md](CORE-CONCEPTS.md)**
+### Advanced & Expert Theory
+**[ADVANCED-EXPERT-THEORY.md](ADVANCED-EXPERT-THEORY.md)** — deeper PostgreSQL internals, optimization, concurrency, distributed systems and production engineering.
 
-Use this as the SQL dictionary/reference for core terminology.
+### Curriculum Audit
+**[MISSING-CONCEPTS-CHECKLIST.md](MISSING-CONCEPTS-CHECKLIST.md)** — a living checklist used to identify gaps as the curriculum evolves.
 
-### 3. Advanced & Expert Theory
-**[ADVANCED-EXPERT-THEORY.md](ADVANCED-EXPERT-THEORY.md)**
+## 📖 SQL 101 compatibility layer
 
-Use this for deeper PostgreSQL internals, optimization, concurrency, distributed systems and production engineering.
+If you are coming from a beginner SQL guide, use **[SQL-101-COMPATIBILITY-GUIDE.md](SQL-101-COMPATIBILITY-GUIDE.md)**.
 
-### 4. Missing Concepts Checklist
-**[MISSING-CONCEPTS-CHECKLIST.md](MISSING-CONCEPTS-CHECKLIST.md)**
+It maps the familiar SQL 101 topics — installation, querying, modification, data types, constraints, joins, aggregation, subqueries, views, indexing, transactions, advanced SQL, best practices and exercises — to the deeper lessons in this repository.
 
-A curriculum audit containing additional concepts that should not be forgotten as the repository grows.
+For quick revision, use **[SQL-CHEAT-SHEET.md](SQL-CHEAT-SHEET.md)**.
 
-### 5. Database Design Extensions
-**[04-database-design/BCNF-and-advanced-normalization.md](04-database-design/BCNF-and-advanced-normalization.md)**
+## 🧪 Exercises and practice
 
-Covers BCNF, temporal data, soft delete, multi-tenancy, hierarchical data and retention.
+Practice is part of the curriculum, not an afterthought.
 
-## How to learn every concept
+**[EXERCISES-AND-SOLUTIONS.md](EXERCISES-AND-SOLUTIONS.md)** provides original practice questions organized by difficulty, including:
 
-Every concept should be understood in this order:
+- SELECT/filtering/sorting
+- INSERT/UPDATE/DELETE
+- constraints and data integrity
+- JOINs
+- aggregation
+- subqueries and EXISTS
+- CASE and NULL
+- CTEs and recursive queries
+- window functions
+- transactions and concurrency
+- indexes and EXPLAIN
+- JSONB
+- production troubleshooting
+- interview-style scenarios
 
-1. Definition — what does it mean?
+Try each problem before reading the solution.
+
+## 🧠 How to learn every concept
+
+For every topic:
+
+1. Definition — what is it?
 2. Purpose — why does it exist?
-3. Problem — what problem does it solve?
+3. Problem — what does it solve?
 4. Mental model — how should you think about it?
 5. Syntax — what does it look like?
 6. Example — see it in action.
-7. Line-by-line explanation — understand each part.
-8. Expected result — predict what happens.
+7. Explanation — understand each part.
+8. Expected result — predict the output.
 9. Practice — solve a similar problem.
 10. Edge cases — understand unusual behavior.
 11. Common mistakes — learn what can go wrong.
 12. Performance — understand scale implications.
-13. Security — understand access and safety implications.
+13. Security — understand safe usage.
 14. Concurrency — understand simultaneous execution.
 15. Production use — connect theory to real systems.
-16. Interview questions — prove your understanding.
+16. Interview questions — explain the concept clearly.
 
-## Learning path
+## 🏗️ Repository structure
 
-| Stage | Focus |
-|---|---|
-| 00 | Installation and database environment |
-| 01 | Core SQL foundations and CRUD |
-| 02 | JOINs, aggregation, subqueries and business logic |
-| 03 | CTEs, recursion, windows, views, functions and triggers |
-| 04 | Database design, keys, constraints and normalization |
-| 05 | Transactions, ACID, locks and isolation |
-| 06 | Indexes, execution plans and performance |
-| 07 | Roles, permissions and security |
-| 08 | Complete banking database |
-| 09 | Production troubleshooting |
-| 10 | Interview preparation |
-| 11 | Expert PostgreSQL |
-| 12 | Data engineering and analytics |
-| 13 | Real-world projects |
+```text
+00-installation/
+01-beginner/
+02-intermediate/
+03-advanced/
+04-database-design/
+05-transactions/
+06-performance/
+07-security/
+08-banking-project/
+09-real-world-scenarios/
+10-interview-preparation/
+11-expert-sql/
+12-data-engineering/
+13-real-world-projects/
+datasets/
+docker/
+web/
 
-## The repository philosophy
+CORE-CONCEPTS.md
+SQL-THEORY.md
+COMPLETE-SQL-THEORY.md
+ADVANCED-EXPERT-THEORY.md
+SQL-CHEAT-SHEET.md
+SQL-101-COMPATIBILITY-GUIDE.md
+EXERCISES-AND-SOLUTIONS.md
+MISSING-CONCEPTS-CHECKLIST.md
+ROADMAP.md
+CONTRIBUTING.md
+```
 
-SQL is **not only queries**.
+## 🏦 Real-world project
 
-A professional SQL engineer understands:
+The banking project demonstrates how SQL concepts come together in a realistic domain:
 
+- customers and accounts
+- balances and transactions
+- transfers
+- reporting
+- constraints and integrity
+- seed data
+- production-style query patterns
+
+## 🖥️ SQL Learning Hub
+
+The `web/` folder contains an optional local-first learning interface. It is designed to make the curriculum easier to navigate without requiring paid services or an external authentication provider for the learner demo.
+
+## 🎯 Repository philosophy
+
+```text
 Business Requirement
-→ Data Model
-→ Relational Theory
-→ Constraints
-→ SQL
-→ Execution Plan
-→ Performance
-→ Concurrency
-→ Security
-→ Observability
-→ Recovery
+        ↓
+Data Model
+        ↓
+Relational Theory
+        ↓
+Constraints
+        ↓
+SQL
+        ↓
+Execution Plan
+        ↓
+Performance
+        ↓
+Concurrency
+        ↓
+Security
+        ↓
+Observability
+        ↓
+Recovery
+```
 
-The SQL statement is only one part of the solution.
+The goal is not just to memorize SQL syntax. The goal is to understand **why a query works, what the database does with it, how it behaves under load, and how to use it safely in production**.
 
-## Hands-on learning
+## 📚 Additional resources
 
-READ DEFINITION
-→ UNDERSTAND THEORY
-→ BUILD MENTAL MODEL
-→ READ EXAMPLE
-→ RUN SQL
-→ PREDICT RESULT
-→ PRACTICE WITHOUT COPYING
-→ SOLVE REAL-WORLD SCENARIO
-→ CHECK PERFORMANCE
-→ EXPLAIN YOUR SOLUTION
+See **[LEARNING-RESOURCES.md](LEARNING-RESOURCES.md)** for official PostgreSQL documentation, practice platforms, books, and a suggested study sequence.
 
-## UI
+## 🤝 Contributing
 
-The web/ folder contains a local-first learning interface. It requires **no API keys, no paid services and no external authentication provider** for the learner demo.
+See **[CONTRIBUTING.md](CONTRIBUTING.md)** for contribution guidelines.
 
-## Start
+## 📄 License
 
-1. Read COMPLETE-SQL-THEORY.md.
-2. Use CORE-CONCEPTS.md as the definition/reference guide.
-3. Use ADVANCED-EXPERT-THEORY.md for deeper concepts.
-4. Use MISSING-CONCEPTS-CHECKLIST.md as the curriculum audit.
-5. Begin with 00-installation.
-6. Progress through the numbered folders.
-7. Run the SQL examples.
-8. Complete the exercises.
-9. Build the real-world projects.
-10. Use the interview and production-scenario sections to test yourself.
+This project is released under the license included in the repository.
 
-**Goal: understand SQL deeply enough to explain it, write it, troubleshoot it, optimize it and use it safely in production.**
+---
+
+**Goal:** understand SQL deeply enough to **explain it, write it, troubleshoot it, optimize it and use it safely in production.**
