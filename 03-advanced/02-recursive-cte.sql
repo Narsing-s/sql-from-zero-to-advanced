@@ -1,0 +1,1 @@
+WITH RECURSIVE numbers AS (SELECT 1 n UNION ALL SELECT n+1 FROM numbers WHERE n<10) SELECT * FROM numbers;
