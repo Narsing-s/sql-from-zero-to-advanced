@@ -323,3 +323,9 @@ export default function Home(){
   {path:"57-client-integration-runnable-labs/node/client_example.mjs",title:"Node.js pg",type:"Code",desc:"Parameterized queries and rollback handling."},
   {path:"57-client-integration-runnable-labs/01-security-checklist.md",title:"Client security checklist",type:"Reference",desc:"Secrets, timeouts, retries and parameter binding."}
  ]},
+ {id:"58",title:"PostgreSQL 18 Operational Tools",desc:"Backup verification, integrity checks, benchmarking, client tooling and logical-upgrade prerequisites.",topics:[
+  {path:"58-postgresql-18-operational-tools/README.md",title:"Operational tools",type:"Reference",desc:"PostgreSQL 18 tools and specialized operational coverage."},
+  {path:"58-postgresql-18-operational-tools/01-client-and-tooling-checklist.md",title:"Client and tooling checklist",type:"Reference",desc:"pgbench, libpq pipeline, backup verification and integrity tooling."},
+  {path:"58-postgresql-18-operational-tools/02-logical-upgrade-checklist.md",title:"Logical upgrade checklist",type:"Reference",desc:"Publisher/subscriber upgrade prerequisites."},
+  {path:"58-postgresql-18-operational-tools/03-performance-evidence.sql",title:"Performance evidence",type:"SQL",desc:"Capture PostgreSQL settings and benchmark evidence metadata."}
+ ]},
