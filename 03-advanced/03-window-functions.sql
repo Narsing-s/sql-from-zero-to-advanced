@@ -1,0 +1,2 @@
+SET search_path TO beginner;
+SELECT account_number,customer_id,balance,ROW_NUMBER() OVER(PARTITION BY customer_id ORDER BY balance DESC) row_num,RANK() OVER(ORDER BY balance DESC) overall_rank,SUM(balance) OVER(PARTITION BY customer_id) customer_total FROM accounts;
