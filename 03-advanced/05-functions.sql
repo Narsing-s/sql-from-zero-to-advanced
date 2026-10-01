@@ -1,0 +1,2 @@
+CREATE OR REPLACE FUNCTION public.get_account_balance(p_account_id BIGINT) RETURNS NUMERIC LANGUAGE SQL AS $$ SELECT balance FROM beginner.accounts WHERE account_id=p_account_id; $$;
+SELECT public.get_account_balance(1);
