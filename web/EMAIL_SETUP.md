@@ -1,21 +1,19 @@
-# Welcome Email Setup
+# Welcome Greeting
 
-The UI calls /api/welcome-email immediately after a learner logs in.
+The learner UI uses a key-free local greeting flow.
 
-## Local mode
-Without environment variables, the route returns a local-demo response and no email is sent.
+## What happens
+1. The browser stores the demo learner locally.
+2. The UI calls /api/welcome-email.
+3. The local route returns a greeting.
+4. No external email provider is contacted.
+5. No API key is required.
 
-## Real email
-Configure these server-side environment variables:
+Example:
 
-RESEND_API_KEY=re_...
-EMAIL_FROM=SQL Lab <hello@yourdomain.com>
+Thanks for choosing SQL From Zero to Advanced, Anita! Welcome to your SQL learning journey.
 
-Then run the web app. The API sends a simple welcome message after login.
+## Important
+This is intentionally a learning/demo experience, not production authentication or real email delivery.
 
-### Production safety
-- Keep the API key server-side.
-- Verify the sending domain with your email provider.
-- Add rate limiting before public production use.
-- Add explicit marketing consent before sending newsletters or promotional email.
-- Do not use the demo login as production authentication.
+There are no email-provider credentials to configure.
