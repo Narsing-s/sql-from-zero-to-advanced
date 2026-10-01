@@ -91,3 +91,35 @@ Then refresh the browser.
 ## Repository
 
 https://github.com/Narsing-s/sql-from-zero-to-advanced
+
+
+## Latest curriculum UI
+
+The learner portal now exposes the full curriculum through **Stage 52**, including:
+
+- runnable PostgreSQL labs
+- production patterns
+- validation and automation
+- advanced production SQL
+- PostgreSQL 18.6 CI
+- database client integration
+- advanced concurrency
+- data loading/export
+- recovery and migration drills
+- logical replication
+- SQL quality/linting
+- observability/performance
+
+The UI reads the actual repository files and provides direct GitHub links. Progress remains browser-local.
+
+## UI verification checklist
+
+1. Run `npm install`.
+2. Run `npm run dev`.
+3. Confirm stages 41–52 appear in the curriculum.
+4. Search for `logical replication`, `pg_stat_statements`, `MERGE`, or `recovery`.
+5. Open a material item and confirm the repository content loads.
+6. Test the Practice Lab separately.
+7. Test mobile width before deployment.
+
+For production deployment, keep database credentials and email-provider credentials server-side; the learning UI itself should not expose secrets.
