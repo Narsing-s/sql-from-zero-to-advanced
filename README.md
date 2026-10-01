@@ -4,6 +4,14 @@ Welcome to a **theory-first, practical SQL learning journey**.
 
 This repository is designed for someone who may be completely new to SQL. **SQL is not only queries.** Learn the definitions, theory and mental models first, then prove the concepts by running SQL.
 
+## ⬇️ Download & Setup
+
+New to the repository? Start here for **official PostgreSQL download links, Git/ZIP download instructions, Windows/macOS/Linux setup, psql, pgAdmin, database creation, running scripts, troubleshooting, and the optional web UI**.
+
+**[Open the complete Download & Setup Guide](DOWNLOAD-AND-SETUP.md)**
+
+Quick path: **Download PostgreSQL → Install → Verify `psql` → Create `sql_learning` → Download/clone this repo → Run `00-installation` → Start the theory-first learning path.**
+
 ## 📚 Complete Theory Library
 
 ### 1. Complete SQL Theory
