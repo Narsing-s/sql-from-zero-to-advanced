@@ -310,3 +310,9 @@ export default function Home(){
   {path:"54-multi-session-and-cluster-labs/03-backup-restore-checklist.md",title:"Backup/restore harness",type:"Reference",desc:"Disposable restore verification workflow."},
   {path:"54-multi-session-and-cluster-labs/docker-compose.yml",title:"PostgreSQL 18.6 lab container",type:"Config",desc:"Disposable PostgreSQL lab environment."}
  ]},
+ {id:"56",title:"Physical Replication & Major Upgrade",desc:"Primary/standby, failover, lag and PostgreSQL major-upgrade rehearsal.",topics:[
+  {path:"56-physical-replication-and-upgrade-lab/README.md",title:"Lab architecture",type:"Reference",desc:"Physical replication and upgrade lab."},
+  {path:"56-physical-replication-and-upgrade-lab/01-primary-standby-checklist.md",title:"Primary/standby checklist",type:"Reference",desc:"Replication, replay, failover and RPO/RTO drill."},
+  {path:"56-physical-replication-and-upgrade-lab/02-major-upgrade-checklist.md",title:"Major upgrade checklist",type:"Reference",desc:"pg_upgrade, dump/restore and logical replication migration rehearsal."},
+  {path:"56-physical-replication-and-upgrade-lab/03-upgrade-evidence.sql",title:"Upgrade evidence",type:"SQL",desc:"Capture version, extensions and database-size evidence."}
+ ]},
