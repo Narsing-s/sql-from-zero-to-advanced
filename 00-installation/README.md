@@ -1,27 +1,43 @@
-# 00 — Installation
+# 00 — Installation & Environment
 
-## Windows
-Install PostgreSQL from the official PostgreSQL website, then install pgAdmin and optionally VS Code.
+## Goal
+Set up PostgreSQL and understand the database environment before writing SQL.
 
-Verify from PowerShell:
+## Learn
+- PostgreSQL server, database, schema and session
+- psql and pgAdmin
+- connections and execution
+- running SQL scripts safely
+- environment verification
 
-```powershell
-psql --version
-```
+## Mental model
+PostgreSQL server → database → schema → table → rows
+
+A connection creates a session. SQL commands run inside that session against database objects.
+
+## Windows setup
+
+Install PostgreSQL and optionally pgAdmin.
+
+Verify:
+    psql --version
 
 Connect:
+    psql -U postgres
 
-```powershell
-psql -U postgres
-```
+Create the training database:
+    CREATE DATABASE sql_learning;
 
-Then create the training database:
+Connect to it and run postgresql-setup.sql, then verification.sql.
 
-```sql
-CREATE DATABASE sql_learning;
-```
+## Common mistakes
+- Wrong database or port
+- Setup scripts run out of order
+- Confusing database and schema
+- Running destructive SQL against the wrong database
 
-Connect to it and run `postgresql-setup.sql`.
+## Practice
+Create a second database and explain the difference between server, database, schema and table.
 
-## Verify
-Run `verification.sql`. You should see PostgreSQL version information and the sample table.
+## Next
+Continue to 01 — Beginner SQL.
