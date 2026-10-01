@@ -1,62 +1,62 @@
 # 01 — Beginner SQL
 
 ## Goal
-Understand what a database stores and write simple SQL without copying blindly.
+Build a correct mental model for tables, rows, columns and basic SQL.
 
 ## What is SQL?
-SQL (Structured Query Language) is used to communicate with relational databases. A database stores related information in tables. A table contains columns (types of information) and rows (individual records).
+SQL (Structured Query Language) is a declarative language for working with relational data. You describe what result you need; the database chooses how to execute it.
 
-Think of a customer table like a spreadsheet: column = customer_id/name/email; row = one customer; primary key = unique identity.
+## Mental model
+Database → Schema → Table → Row → Column → Value
 
-## SELECT — asking for data
-SELECT means: “Database, give me this information.”
+- Table = related rows
+- Row = one record
+- Column = one attribute
+- Primary key = row identity
 
-```sql
-SELECT customer_id, name
-FROM beginner.customers;
-```
-Read it as: “Give me customer IDs and names from the customers table.”
+## Core commands
 
-## WHERE — choosing rows
-WHERE answers: “Which records do I want?”
+SELECT reads data.
 
-```sql
-SELECT customer_id, name
-FROM beginner.customers
-WHERE city = 'Hyderabad';
-```
-The database checks rows and keeps those whose city matches.
+    SELECT customer_id, name
+    FROM beginner.customers;
 
-## ORDER BY — controlling order
-```sql
-SELECT name, created_at
-FROM beginner.customers
-ORDER BY created_at DESC;
-```
-DESC means newest/highest first; ASC means lowest/oldest first.
+WHERE filters rows.
 
-## INSERT — adding data
+    SELECT customer_id, name
+    FROM beginner.customers
+    WHERE city = 'Hyderabad';
+
+ORDER BY controls result order.
+
+    SELECT name, created_at
+    FROM beginner.customers
+    ORDER BY created_at DESC;
+
 INSERT creates a row.
-```sql
-INSERT INTO beginner.customers(name, email)
-VALUES ('Anita', 'anita@example.com');
-```
 
-## UPDATE — changing data
-UPDATE changes rows matching its condition.
-```sql
-UPDATE beginner.customers
-SET email = 'new@example.com'
-WHERE customer_id = 1;
-```
-Always inspect the WHERE condition before UPDATE.
+    INSERT INTO beginner.customers(name, email)
+    VALUES ('Anita', 'anita@example.com');
 
-## DELETE — removing data
-```sql
-DELETE FROM beginner.customers
-WHERE customer_id = 1;
-```
-The WHERE clause protects other rows.
+UPDATE changes matching rows.
 
-## Practice method
-Say each query in English first. Write SQL second. Predict the result third. Execute last.
+    UPDATE beginner.customers
+    SET email = 'new@example.com'
+    WHERE customer_id = 1;
+
+DELETE removes matching rows.
+
+    DELETE FROM beginner.customers
+    WHERE customer_id = 1;
+
+## Safety rule
+Always inspect the WHERE condition before UPDATE or DELETE.
+
+## Learning method
+Definition → Purpose → English sentence → SQL → Predict result → Run → Explain
+
+## Practice
+Complete the exercises without copying the answer first.
+
+## Next
+Continue to 02 — Intermediate SQL.
