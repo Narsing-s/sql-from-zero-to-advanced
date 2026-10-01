@@ -19,3 +19,5 @@ h1{font-size:clamp(38px,6vw,72px);line-height:.98;letter-spacing:-.055em;margin:
 .progress{height:8px;background:#202733;border-radius:999px;overflow:hidden}.progress>i{display:block;height:100%;background:#62e6a6}
 .lesson{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-top:1px solid #222a35}.lesson:first-child{border-top:0}.pill{font-size:12px;padding:5px 8px;border:1px solid #303a48;border-radius:999px;color:#aeb8c8}
 @media(max-width:800px){.grid,.two{grid-template-columns:1fr}.hero{padding-top:42px}.nav{height:64px}}
+
+.login-card{max-width:560px;margin:0 auto 60px}.full{width:100%;justify-content:center}.small{font-size:13px;line-height:1.5}.search{width:240px}.lesson-body{flex:1;min-width:0}.material-panel{margin-top:14px;padding:16px;border:1px solid #303a48;border-radius:14px;background:#0b1017}.material-panel h3{margin:0 0 8px}.material-panel code{overflow-wrap:anywhere}.empty{padding:28px 0;text-align:center;color:#8993a4}.btn{display:inline-flex;align-items:center;gap:7px}
