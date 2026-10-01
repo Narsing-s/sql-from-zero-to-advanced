@@ -1,15 +1,10 @@
 # 02 — Intermediate SQL
 
 ## Goal
-Combine tables, groups and conditional logic to answer business questions.
+Combine tables, groups, subqueries and set operations to answer business questions.
 
 ## JOINs
 A JOIN combines rows using a relationship.
-
-    SELECT c.name, a.account_number, a.balance
-    FROM bank.customers c
-    JOIN bank.accounts a
-      ON a.customer_id = c.customer_id;
 
 Main types:
 - INNER JOIN — matching rows
@@ -19,7 +14,9 @@ Main types:
 - CROSS JOIN — every combination
 - SELF JOIN — a table related to itself
 
-## GROUP BY
+See **[01-joins.sql](01-joins.sql)** for complete examples, join multiplication and EXISTS.
+
+## GROUP BY and aggregation
 GROUP BY creates groups before aggregate calculations.
 
     SELECT customer_id, COUNT(*) AS account_count
@@ -31,8 +28,25 @@ Think: bucket rows → calculate each bucket.
 ## WHERE vs HAVING
 WHERE filters rows before grouping. HAVING filters groups after grouping.
 
-## Subqueries
-Learn scalar subqueries, EXISTS, IN, correlated subqueries and ANY/ALL.
+## Subqueries and predicates
+Learn:
+- Scalar subqueries
+- Subqueries in WHERE/FROM
+- Correlated subqueries
+- EXISTS / NOT EXISTS
+- IN / NOT IN
+- ANY / ALL
+
+See **[04-subqueries.sql](04-subqueries.sql)** and **[07-exists-in-any-all.sql](07-exists-in-any-all.sql)**.
+
+## Set operations
+Learn:
+- UNION
+- UNION ALL
+- INTERSECT
+- EXCEPT
+
+See **[06-set-operations.sql](06-set-operations.sql)**.
 
 ## CASE
 CASE expresses conditional business rules.
@@ -43,6 +57,7 @@ CASE expresses conditional business rules.
 - Using WHERE instead of HAVING
 - Ignoring NULL behavior in NOT IN
 - Grouping at the wrong grain
+- Combining SELECTs with incompatible column counts/types
 
 ## Practice
 Write: tables → relationship → filters → grouping → calculation → result before writing SQL.
