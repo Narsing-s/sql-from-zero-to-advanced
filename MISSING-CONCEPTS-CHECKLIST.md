@@ -1,30 +1,41 @@
 # SQL Missing Concepts & Completeness Checklist
 
-This checklist closes the gaps that are often missed in SQL courses. Use it as a curriculum map.
+This is the repository's **master curriculum audit**. It covers language semantics, relational theory, PostgreSQL internals, design, security, analytics, distributed systems and production operations.
 
-## Core language and semantics
-- [ ] SQL standard vs PostgreSQL-specific behavior
-- [ ] Relational model and relation properties
-- [ ] Bag/multiset semantics and why SQL results can contain duplicates
+> A checked concept should have **definition + purpose + mental model + example + edge cases + performance + security/concurrency + production guidance** somewhere in the repository.
+
+## 1. SQL foundations and relational theory
+- [ ] SQL language and declarative programming
+- [ ] SQL standard vs PostgreSQL dialect
+- [ ] relational model
+- [ ] relation, tuple, attribute, domain
+- [ ] keys and functional dependencies
+- [ ] relational algebra
+- [ ] selection, projection, join, union, difference
+- [ ] SQL bag/multiset semantics
+- [ ] duplicate rows and row multiplication
 - [ ] NULL and three-valued logic
-- [ ] Type coercion and implicit casts
-- [ ] Explicit CAST and type conversion
-- [ ] Collation and text comparison
-- [ ] Character sets/encodings
-- [ ] Date, time, timestamp and timezone semantics
-- [ ] INTERVAL and temporal arithmetic
-- [ ] Numeric precision, scale, rounding and overflow
-- [ ] Boolean semantics
-- [ ] UUIDs
-- [ ] Arrays
-- [ ] Composite/record values
-- [ ] Domains
-- [ ] Enums
-- [ ] Range and multirange types
+- [ ] type systems and implicit coercion
+- [ ] explicit CAST
+- [ ] collation
+- [ ] encoding/character sets
+- [ ] deterministic vs nondeterministic ordering
+- [ ] data type precedence
+- [ ] numeric precision, scale, rounding and overflow
+- [ ] date/time/timestamp/timezone semantics
+- [ ] interval and temporal arithmetic
+- [ ] boolean semantics
+- [ ] UUID
+- [ ] arrays
+- [ ] composite/record values
+- [ ] domains
+- [ ] enums
+- [ ] range and multirange types
 
-## Query language
-- [ ] SELECT and logical query processing
-- [ ] FROM and table expressions
+## 2. SQL query language
+- [ ] SELECT
+- [ ] FROM
+- [ ] table expressions
 - [ ] WHERE
 - [ ] GROUP BY
 - [ ] HAVING
@@ -32,82 +43,135 @@ This checklist closes the gaps that are often missed in SQL courses. Use it as a
 - [ ] LIMIT/OFFSET
 - [ ] DISTINCT
 - [ ] DISTINCT ON
-- [ ] JOIN variants
-- [ ] CROSS JOIN
-- [ ] LATERAL
-- [ ] Subqueries
-- [ ] EXISTS / NOT EXISTS
-- [ ] ANY / ALL
-- [ ] IN / NOT IN and NULL behavior
-- [ ] UNION / UNION ALL
-- [ ] INTERSECT
-- [ ] EXCEPT
+- [ ] aliases
+- [ ] expressions
+- [ ] predicates
+- [ ] literals
+- [ ] parameters
+- [ ] operator precedence
 - [ ] CASE
 - [ ] COALESCE
 - [ ] NULLIF
+- [ ] LIKE/ILIKE
+- [ ] regex
+- [ ] IN/NOT IN
+- [ ] EXISTS/NOT EXISTS
+- [ ] ANY/SOME
+- [ ] ALL
+- [ ] BETWEEN
+- [ ] JOIN variants
+- [ ] CROSS JOIN
+- [ ] self joins
+- [ ] LATERAL
+- [ ] subqueries
+- [ ] correlated subqueries
+- [ ] UNION
+- [ ] UNION ALL
+- [ ] INTERSECT
+- [ ] EXCEPT
+- [ ] recursive queries
+- [ ] SEARCH/CYCLE concepts
+- [ ] query logical processing order
+
+## 3. Aggregation and analytics
+- [ ] COUNT
+- [ ] SUM
+- [ ] AVG
+- [ ] MIN/MAX
+- [ ] scalar vs aggregate functions
 - [ ] FILTER
-- [ ] Ordered aggregates
+- [ ] ordered aggregates
 - [ ] GROUPING SETS
 - [ ] ROLLUP
 - [ ] CUBE
-- [ ] Window functions
-- [ ] Window frames
-- [ ] Named windows
-- [ ] Recursive CTEs
-- [ ] SEARCH/CYCLE concepts for hierarchical queries
+- [ ] window functions
+- [ ] PARTITION BY
+- [ ] window ORDER BY
+- [ ] window frames
+- [ ] ROWS/RANGE/GROUPS
+- [ ] named windows
+- [ ] ROW_NUMBER
+- [ ] RANK
+- [ ] DENSE_RANK
+- [ ] LAG/LEAD
+- [ ] FIRST_VALUE/LAST_VALUE
+- [ ] running totals
+- [ ] moving averages
+- [ ] percentiles
+- [ ] ordered-set aggregates
 
-## Data modification
+## 4. Data modification
 - [ ] INSERT
+- [ ] multi-row INSERT
+- [ ] INSERT ... SELECT
 - [ ] UPDATE
 - [ ] DELETE
 - [ ] RETURNING
-- [ ] INSERT ... SELECT
 - [ ] UPSERT / ON CONFLICT
 - [ ] MERGE
-- [ ] Multi-row writes
-- [ ] Safe bulk updates/deletes
-- [ ] Write amplification
-- [ ] Trigger side effects
+- [ ] bulk writes
+- [ ] safe UPDATE/DELETE
+- [ ] affected-row verification
+- [ ] write amplification
+- [ ] trigger side effects
+- [ ] retry-safe writes
 
-## Data definition
+## 5. DDL and database objects
 - [ ] CREATE/ALTER/DROP
-- [ ] Tables
-- [ ] Schemas
-- [ ] Sequences
-- [ ] Identity columns
-- [ ] Temporary tables
-- [ ] Unlogged tables
-- [ ] Views
-- [ ] Materialized views
-- [ ] Functions
-- [ ] Procedures
-- [ ] Triggers
-- [ ] Generated columns
-- [ ] Domains
-- [ ] Extensions
-- [ ] Comments/documentation
-- [ ] Dependency management
+- [ ] database
+- [ ] schema
+- [ ] table
+- [ ] sequence
+- [ ] identity column
+- [ ] temporary table
+- [ ] unlogged table
+- [ ] view
+- [ ] materialized view
+- [ ] function
+- [ ] procedure
+- [ ] trigger
+- [ ] generated column
+- [ ] domain
+- [ ] enum
+- [ ] extension
+- [ ] comments/documentation
+- [ ] object dependencies
+- [ ] ownership
+- [ ] dependency-aware migrations
 
-## Data modeling
-- [ ] Entity-relationship modeling
-- [ ] Cardinality and optionality
-- [ ] Primary/candidate/surrogate/natural keys
-- [ ] Foreign keys
-- [ ] Referential actions
-- [ ] Functional dependencies
-- [ ] Normal forms 1NF/2NF/3NF/BCNF
-- [ ] Denormalization
-- [ ] Update/insert/delete anomalies
-- [ ] Temporal data modeling
-- [ ] Soft delete
-- [ ] Audit columns
-- [ ] Multi-tenancy models
-- [ ] Polymorphic associations
-- [ ] Hierarchical data
-- [ ] Graph-like relationships
-- [ ] Data retention
+## 6. Data modeling and normalization
+- [ ] entity
+- [ ] attribute
+- [ ] relationship
+- [ ] cardinality
+- [ ] optionality
+- [ ] ERD
+- [ ] logical model
+- [ ] physical model
+- [ ] row grain
+- [ ] candidate key
+- [ ] primary key
+- [ ] natural key
+- [ ] surrogate key
+- [ ] foreign key
+- [ ] referential actions
+- [ ] functional dependency
+- [ ] 1NF
+- [ ] 2NF
+- [ ] 3NF
+- [ ] BCNF
+- [ ] denormalization
+- [ ] insertion/update/deletion anomalies
+- [ ] polymorphic associations
+- [ ] temporal models
+- [ ] soft delete
+- [ ] audit columns
+- [ ] multi-tenancy
+- [ ] hierarchical data
+- [ ] graph-like relationships
+- [ ] retention policies
 
-## Constraints and correctness
+## 7. Constraints and correctness
 - [ ] NOT NULL
 - [ ] UNIQUE
 - [ ] PRIMARY KEY
@@ -115,249 +179,342 @@ This checklist closes the gaps that are often missed in SQL courses. Use it as a
 - [ ] CHECK
 - [ ] EXCLUDE
 - [ ] DEFERRABLE constraints
-- [ ] Partial unique indexes
-- [ ] Business invariants
-- [ ] Application vs database validation
-- [ ] Referential integrity
-- [ ] Idempotency
-- [ ] Duplicate prevention
-- [ ] Race-condition-safe constraints
+- [ ] partial unique indexes
+- [ ] business invariants
+- [ ] database vs application validation
+- [ ] referential integrity
+- [ ] idempotency
+- [ ] duplicate prevention
+- [ ] race-condition-safe constraints
+- [ ] canonical-record selection
 
-## Transactions and concurrency
-- [ ] Transaction boundaries
+## 8. Transactions and concurrency
+- [ ] transaction boundary
 - [ ] ACID
+- [ ] COMMIT
+- [ ] ROLLBACK
+- [ ] SAVEPOINT
 - [ ] MVCC
-- [ ] Snapshots
-- [ ] Isolation levels
-- [ ] Dirty/non-repeatable/phantom reads
-- [ ] Serialization anomalies
-- [ ] Row locks
-- [ ] Table locks
-- [ ] Advisory locks
-- [ ] Blocking
-- [ ] Deadlocks
-- [ ] Deadlock retries
-- [ ] Serialization retries
-- [ ] Lost updates
-- [ ] Optimistic concurrency
-- [ ] Pessimistic concurrency
-- [ ] Savepoints
-- [ ] Two-phase commit
-- [ ] Distributed transaction limitations
+- [ ] snapshots
+- [ ] transaction IDs
+- [ ] visibility
+- [ ] Read Committed
+- [ ] Repeatable Read
+- [ ] Serializable
+- [ ] dirty reads
+- [ ] non-repeatable reads
+- [ ] phantom reads
+- [ ] lost updates
+- [ ] write skew
+- [ ] serialization anomalies
+- [ ] row locks
+- [ ] table locks
+- [ ] lock modes
+- [ ] advisory locks
+- [ ] blocking
+- [ ] deadlocks
+- [ ] deadlock retries
+- [ ] serialization retries
+- [ ] optimistic concurrency
+- [ ] pessimistic concurrency
+- [ ] atomic conditional UPDATE
+- [ ] two-phase commit
+- [ ] distributed transaction limitations
 
-## Performance
-- [ ] Query planner
-- [ ] Cost model
-- [ ] Cardinality
-- [ ] Selectivity
-- [ ] Statistics
-- [ ] Extended statistics
+## 9. Query planning and optimization
+- [ ] query planner
+- [ ] optimizer
+- [ ] cost model
+- [ ] cardinality estimates
+- [ ] selectivity
+- [ ] statistics
+- [ ] histograms
+- [ ] most-common values
+- [ ] extended statistics
 - [ ] EXPLAIN
 - [ ] EXPLAIN ANALYZE
 - [ ] BUFFERS
 - [ ] I/O timing
-- [ ] Sequential scan
-- [ ] Index scan
-- [ ] Index-only scan
-- [ ] Bitmap scan
-- [ ] Nested Loop
-- [ ] Hash Join
-- [ ] Merge Join
-- [ ] Sort
-- [ ] Hash aggregation
-- [ ] Parallel query
-- [ ] Partition pruning
-- [ ] Predicate pushdown
-- [ ] Projection pushdown
+- [ ] sequential scan
+- [ ] index scan
+- [ ] index-only scan
+- [ ] bitmap scan
+- [ ] nested loop
+- [ ] hash join
+- [ ] merge join
+- [ ] sort
+- [ ] hash aggregation
+- [ ] parallel query
+- [ ] predicate pushdown
+- [ ] projection pushdown
+- [ ] join ordering
 - [ ] CTE optimization/materialization
-- [ ] JIT considerations
-- [ ] Work memory
-- [ ] Shared buffers
-- [ ] Temp-file spills
-- [ ] N+1 queries
-- [ ] Sargability
-- [ ] Pagination
-- [ ] Keyset pagination
-- [ ] Index maintenance
-- [ ] Table/index bloat
-- [ ] Vacuum/Analyze
-- [ ] Autovacuum
-- [ ] Query timeouts
+- [ ] JIT
+- [ ] work_mem
+- [ ] shared_buffers
+- [ ] temp-file spills
+- [ ] sargability
+- [ ] N+1
+- [ ] pagination
+- [ ] keyset pagination
+- [ ] query cancellation
+- [ ] statement timeout
+- [ ] lock timeout
+- [ ] plan regression testing
 
-## Indexing
+## 10. Indexing
 - [ ] B-tree
 - [ ] Hash
 - [ ] GIN
 - [ ] GiST
 - [ ] SP-GiST
 - [ ] BRIN
-- [ ] Multicolumn indexes
-- [ ] Column order
-- [ ] Partial indexes
-- [ ] Expression indexes
-- [ ] Covering/INCLUDE indexes
-- [ ] Unique indexes
-- [ ] Index selectivity
-- [ ] Index write cost
-- [ ] Over-indexing
-- [ ] Concurrent index creation
-- [ ] Index rebuild/maintenance
+- [ ] multicolumn indexes
+- [ ] column order
+- [ ] selectivity
+- [ ] partial indexes
+- [ ] expression indexes
+- [ ] covering/INCLUDE indexes
+- [ ] unique indexes
+- [ ] index-only scans
+- [ ] index write cost
+- [ ] over-indexing
+- [ ] concurrent index creation
+- [ ] index bloat
+- [ ] index rebuild/maintenance
 
-## PostgreSQL architecture
-- [ ] Server, database, schema and session hierarchy
-- [ ] Backend processes
-- [ ] Shared buffers
+## 11. PostgreSQL architecture and internals
+- [ ] server/database/schema/session hierarchy
+- [ ] backend processes
+- [ ] shared buffers
 - [ ] WAL
-- [ ] Checkpoints
-- [ ] Background writer
-- [ ] Autovacuum workers
-- [ ] Visibility map
-- [ ] Free-space map
-- [ ] Heap pages and row versions
+- [ ] checkpoints
+- [ ] background writer
+- [ ] WAL writer
+- [ ] autovacuum workers
+- [ ] heap pages
+- [ ] tuple versions
+- [ ] visibility map
+- [ ] free-space map
 - [ ] TOAST
-- [ ] Transaction IDs
-- [ ] Freeze/vacuum
-- [ ] Configuration hierarchy
-- [ ] Extensions
+- [ ] transaction IDs
+- [ ] freezing
+- [ ] configuration hierarchy
+- [ ] extensions
+- [ ] system catalogs
 
-## Reliability and recovery
-- [ ] Logical backups
-- [ ] Physical backups
-- [ ] WAL archiving
-- [ ] Point-in-time recovery
-- [ ] Restore testing
-- [ ] RPO
-- [ ] RTO
-- [ ] Replication
-- [ ] Replication lag
-- [ ] Read replicas
-- [ ] Failover
-- [ ] High availability
-- [ ] Disaster recovery
-- [ ] Split-brain risks
-- [ ] Backup retention
-- [ ] Recovery drills
+## 12. Vacuum and maintenance
+- [ ] VACUUM
+- [ ] VACUUM FULL
+- [ ] ANALYZE
+- [ ] autovacuum
+- [ ] autoanalyze
+- [ ] dead tuples
+- [ ] bloat
+- [ ] long-running transactions
+- [ ] idle-in-transaction sessions
+- [ ] transaction ID wraparound
+- [ ] maintenance_work_mem
+- [ ] visibility map and vacuum interaction
 
-## Security
-- [ ] Authentication
-- [ ] Authorization
-- [ ] Roles
-- [ ] Role inheritance
-- [ ] GRANT/REVOKE
-- [ ] Default privileges
-- [ ] Least privilege
+## 13. Security
+- [ ] authentication
+- [ ] authorization
+- [ ] roles
+- [ ] role membership/inheritance
+- [ ] GRANT
+- [ ] REVOKE
+- [ ] default privileges
+- [ ] ownership
+- [ ] least privilege
 - [ ] RLS
 - [ ] SECURITY DEFINER
 - [ ] SECURITY INVOKER
 - [ ] search_path security
-- [ ] Parameterized queries
+- [ ] parameterized queries
 - [ ] SQL injection
 - [ ] TLS
-- [ ] Encryption at rest
-- [ ] Secret management
-- [ ] Audit logging
-- [ ] Sensitive-data masking
-- [ ] Data retention/deletion requirements
+- [ ] encryption at rest
+- [ ] secret management
+- [ ] audit logging
+- [ ] sensitive-data masking
+- [ ] retention/deletion
+- [ ] threat modeling
 
-## Data engineering and analytics
+## 14. JSON, search and specialized PostgreSQL
+- [ ] JSON vs JSONB
+- [ ] JSON operators
+- [ ] JSON path
+- [ ] JSONB indexing
+- [ ] GIN operator classes
+- [ ] generated columns
+- [ ] full-text search
+- [ ] tsvector
+- [ ] tsquery
+- [ ] ranking
+- [ ] range operators
+- [ ] exclusion constraints
+- [ ] arrays and array operators
+- [ ] foreign data wrappers
+- [ ] PostGIS/geospatial concepts
+
+## 15. Partitioning
+- [ ] RANGE
+- [ ] LIST
+- [ ] HASH
+- [ ] partition key
+- [ ] partition pruning
+- [ ] partition maintenance
+- [ ] partition-wise joins
+- [ ] partition-wise aggregation
+- [ ] default partitions
+- [ ] attach/detach operations
+- [ ] partition indexes
+- [ ] partition migration
+
+## 16. Reliability and recovery
+- [ ] logical backups
+- [ ] physical backups
+- [ ] WAL archiving
+- [ ] PITR
+- [ ] restore testing
+- [ ] RPO
+- [ ] RTO
+- [ ] replication
+- [ ] physical replication
+- [ ] logical replication
+- [ ] replication lag
+- [ ] read replicas
+- [ ] failover
+- [ ] high availability
+- [ ] disaster recovery
+- [ ] split-brain risk
+- [ ] replication slots
+- [ ] slot retention
+- [ ] backup retention
+- [ ] recovery drills
+
+## 17. Data engineering and analytics
 - [ ] OLTP
 - [ ] OLAP
 - [ ] ETL
 - [ ] ELT
-- [ ] Batch processing
-- [ ] Streaming concepts
+- [ ] batch processing
+- [ ] streaming concepts
 - [ ] CDC
-- [ ] Staging tables
-- [ ] Incremental loading
-- [ ] Full loading
-- [ ] Watermarks
-- [ ] Late-arriving data
-- [ ] Deduplication
-- [ ] Data quality
-- [ ] Data profiling
-- [ ] Lineage
-- [ ] Fact tables
-- [ ] Dimension tables
-- [ ] Grain
-- [ ] Star schema
-- [ ] Snowflake schema
-- [ ] Slowly changing dimensions
-- [ ] Cohort analysis
-- [ ] Retention analysis
+- [ ] logical decoding
+- [ ] staging
+- [ ] full loads
+- [ ] incremental loads
+- [ ] watermarks
+- [ ] late-arriving data
+- [ ] deduplication
+- [ ] data profiling
+- [ ] data quality
+- [ ] lineage
+- [ ] fact tables
+- [ ] dimensions
+- [ ] grain
+- [ ] star schema
+- [ ] snowflake schema
+- [ ] SCD
+- [ ] cohort analysis
+- [ ] retention analysis
 
-## Distributed systems
-- [ ] Eventual consistency
-- [ ] Strong consistency
-- [ ] Read-after-write
-- [ ] Distributed transactions
+## 18. Distributed systems
+- [ ] strong consistency
+- [ ] eventual consistency
+- [ ] read-after-write
+- [ ] distributed transactions
+- [ ] two-phase commit
 - [ ] Saga
-- [ ] Compensation
-- [ ] Outbox
-- [ ] Inbox
-- [ ] Idempotent consumers
-- [ ] Exactly-once business effect
-- [ ] Retry safety
-- [ ] Message deduplication
+- [ ] compensation
+- [ ] outbox
+- [ ] inbox
+- [ ] idempotent consumers
+- [ ] at-least-once delivery
+- [ ] exactly-once business effect
+- [ ] retries
+- [ ] message deduplication
+- [ ] ordering
 
-## Application/database integration
-- [ ] Connection pools
-- [ ] Pool sizing
-- [ ] Prepared statements
-- [ ] Statement timeouts
-- [ ] Lock timeouts
-- [ ] Retry strategy
-- [ ] Transaction scope in application code
+## 19. Application/database integration
+- [ ] connection pools
+- [ ] pool sizing
+- [ ] pool exhaustion
+- [ ] prepared statements
+- [ ] generic/custom plans
 - [ ] ORM-generated SQL
-- [ ] Lazy/eager loading
+- [ ] lazy/eager loading
 - [ ] N+1 detection
+- [ ] statement timeouts
+- [ ] lock timeouts
+- [ ] transaction scope
+- [ ] retry strategy
 - [ ] API pagination
 - [ ] API consistency requirements
+- [ ] correlation/request IDs
 
-## Production operations
-- [ ] Slow query investigation
-- [ ] Blocking investigation
-- [ ] Deadlock investigation
+## 20. Schema evolution and migrations
+- [ ] migration versions
+- [ ] dependency ordering
+- [ ] expand-and-contract
+- [ ] backward-compatible schema changes
+- [ ] backfills
+- [ ] batched backfills
+- [ ] resumable backfills
+- [ ] zero-downtime migrations
+- [ ] lock impact
+- [ ] replication impact
+- [ ] rollback strategy
+- [ ] forward-fix strategy
+- [ ] schema compatibility
+
+## 21. Production operations
+- [ ] slow query investigation
+- [ ] blocking investigation
+- [ ] deadlock investigation
 - [ ] CPU pressure
-- [ ] Memory pressure
+- [ ] memory pressure
 - [ ] I/O pressure
-- [ ] Connection exhaustion
-- [ ] Long-running transactions
-- [ ] Idle-in-transaction sessions
-- [ ] Bloat investigation
-- [ ] Replication lag investigation
-- [ ] Capacity planning
-- [ ] Monitoring
-- [ ] Alerting
-- [ ] Query fingerprints
-- [ ] Change management
-- [ ] Schema migrations
-- [ ] Expand-and-contract migrations
-- [ ] Backfills
-- [ ] Rollback plans
-- [ ] Incident response
-- [ ] Root-cause analysis
-- [ ] Post-incident prevention
+- [ ] connection exhaustion
+- [ ] long-running transactions
+- [ ] idle-in-transaction
+- [ ] bloat investigation
+- [ ] replication lag
+- [ ] capacity planning
+- [ ] monitoring
+- [ ] alerting
+- [ ] query fingerprints
+- [ ] change management
+- [ ] incident response
+- [ ] RCA
+- [ ] post-incident prevention
+- [ ] performance regression testing
 
-## Expert PostgreSQL topics to add when needed
-- [ ] Partitioning strategies and partition-wise joins/aggregates
-- [ ] Foreign data wrappers
-- [ ] Logical decoding
-- [ ] Replication slots and slot retention
-- [ ] Publication/subscription design
-- [ ] Generated columns
-- [ ] Exclusion constraints
-- [ ] Temporal/range modeling
-- [ ] Full-text search internals
-- [ ] JSONB operator classes
-- [ ] PostGIS/geospatial concepts
-- [ ] Advanced extensions
-- [ ] Parallelism and worker limits
-- [ ] Planner configuration
-- [ ] Custom statistics targets
-- [ ] Query plan regression testing
+## 22. Advanced PostgreSQL topics
+- [ ] logical decoding
+- [ ] publication/subscription design
+- [ ] replication slots
+- [ ] partition-wise joins
+- [ ] partition-wise aggregates
+- [ ] planner configuration
+- [ ] custom statistics targets
+- [ ] advanced extensions
+- [ ] FDW
+- [ ] PostGIS
+- [ ] parallelism and worker limits
+- [ ] plan cache behavior
+- [ ] parameter-sensitive planning
+- [ ] query plan stability
+- [ ] advanced lock monitoring
 
-## Learning rule
+## Mastery rule
 
-A concept is not complete in this repository until the learner can answer:
+A concept is complete only when the learner can answer:
 
-**What is it? → Why does it exist? → When should I use it? → When should I avoid it? → What happens internally? → What are the edge cases? → How does it affect performance? → How does concurrency affect it? → What are the security implications? → How do I troubleshoot it in production?**
+**What is it? → Why does it exist? → What problem does it solve? → When should I use it? → When should I avoid it? → What happens internally? → What are the edge cases? → How does it affect performance? → How does concurrency affect it? → What are the security implications? → How do I troubleshoot it in production?**
+
+## Implementation rule
+
+This checklist is intentionally broader than one SQL file. Concepts should be distributed across theory documents, runnable SQL, exercises, projects, scenarios and interview material. Do not add a query without explaining the concept behind it.
