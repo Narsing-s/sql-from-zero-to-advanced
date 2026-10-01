@@ -1,0 +1,21 @@
+@import "tailwindcss";
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:#07090d;color:#f4f7fb;font-family:Inter,ui-sans-serif,system-ui,sans-serif}
+button,input{font:inherit}
+.shell{min-height:100vh;background:radial-gradient(circle at 20% 0%,#14243b 0,transparent 35%),radial-gradient(circle at 90% 10%,#102a22 0,transparent 30%),#07090d}
+.container{width:min(1180px,calc(100% - 32px));margin:auto}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #202733}
+.brand{font-weight:800;letter-spacing:-.03em}.brand span{color:#62e6a6}
+.hero{padding:64px 0 30px}.eyebrow{color:#62e6a6;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.12em}
+h1{font-size:clamp(38px,6vw,72px);line-height:.98;letter-spacing:-.055em;margin:14px 0}
+.sub{color:#9da7b7;max-width:680px;font-size:18px;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.two{grid-template-columns:1.35fr .65fr}
+.card{background:rgba(16,20,28,.78);border:1px solid #252d39;border-radius:18px;padding:20px;box-shadow:0 18px 60px #0005}
+.card:hover{border-color:#3b4758}.muted{color:#8993a4}.green{color:#62e6a6}
+.btn{border:1px solid #334052;background:#141a23;color:#fff;border-radius:12px;padding:11px 16px;cursor:pointer}.btn.primary{background:#62e6a6;color:#07110c;border-color:#62e6a6;font-weight:800}
+.btn:disabled{opacity:.45;cursor:not-allowed}.input{width:100%;padding:13px;border-radius:12px;border:1px solid #303a48;background:#0c1118;color:#fff;outline:none}.input:focus{border-color:#62e6a6}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.between{display:flex;justify-content:space-between;gap:14px;align-items:center}
+.progress{height:8px;background:#202733;border-radius:999px;overflow:hidden}.progress>i{display:block;height:100%;background:#62e6a6}
+.lesson{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-top:1px solid #222a35}.lesson:first-child{border-top:0}.pill{font-size:12px;padding:5px 8px;border:1px solid #303a48;border-radius:999px;color:#aeb8c8}
+@media(max-width:800px){.grid,.two{grid-template-columns:1fr}.hero{padding-top:42px}.nav{height:64px}}
