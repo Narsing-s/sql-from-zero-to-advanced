@@ -88,3 +88,26 @@ Solve beginner, intermediate, advanced and incident-based SQL questions.
 
 ## Completion rule
 Do not stop at reading. For each major topic, run the corresponding lab, record the observation, verify the result, clean up, and explain the production trade-offs.
+
+
+## Phase 11 — Automated Verification
+- Docker PostgreSQL 18.6 test environment
+- deterministic fixtures
+- SQL assertions with ON_ERROR_STOP
+- GitHub Actions integration template
+- lab safety and version contracts
+
+## Phase 12 — Application and Concurrency
+- JDBC/Python/Node client boundaries
+- prepared statements and pooling
+- transaction retry semantics
+- MVCC and isolation
+- serialization/deadlock handling
+- advanced locking patterns
+
+## Phase 13 — Data Movement
+- staging and validation
+- COPY and bulk loading
+- bad-row quarantine
+- export consistency
+- encoding and delimiter handling
