@@ -1,0 +1,85 @@
+-- ============================================================
+-- 12 — DDL schema changes: ALTER, TRUNCATE, DROP
+-- ============================================================
+--
+-- Definition:
+-- DDL (Data Definition Language) changes database objects and their
+-- structure. Common commands include CREATE, ALTER, TRUNCATE and DROP.
+--
+-- Mental model:
+-- CREATE -> build object
+-- ALTER  -> change structure
+-- TRUNCATE -> remove all rows quickly while keeping the table
+-- DROP -> remove the object itself
+--
+-- IMPORTANT:
+-- These commands can have destructive effects. Practice on the learning
+-- database and verify the target object before executing them.
+--
+-- 1. ALTER TABLE: add a column.
+-- Example only: do not repeatedly run this against the same database.
+--
+-- ALTER TABLE beginner.customers
+-- ADD COLUMN IF NOT EXISTS preferred_language VARCHAR(20);
+--
+-- 2. ALTER TABLE: rename a column.
+-- ALTER TABLE beginner.customers
+-- RENAME COLUMN preferred_language TO language_preference;
+--
+-- 3. ALTER TABLE: change a data type.
+-- Always verify existing values before changing a type.
+-- ALTER TABLE beginner.customers
+-- ALTER COLUMN language_preference TYPE VARCHAR(50);
+--
+-- 4. ALTER TABLE: add a constraint.
+-- ALTER TABLE beginner.customers
+-- ADD CONSTRAINT customers_name_not_blank
+-- CHECK (length(trim(first_name)) > 0);
+--
+-- 5. ALTER TABLE: rename a table.
+-- ALTER TABLE beginner.customers
+-- RENAME TO customers_archive;
+--
+-- 6. TRUNCATE
+-- Removes all rows while keeping the table structure.
+-- TRUNCATE TABLE beginner.customers;
+--
+-- PostgreSQL can truncate related tables together when foreign-key
+-- dependencies require it:
+-- TRUNCATE TABLE parent_table, child_table;
+-- Use CASCADE only when you fully understand which dependent tables
+-- will also be affected.
+--
+-- 7. DROP
+-- Removes the database object itself.
+-- DROP TABLE beginner.customers;
+--
+-- DROP is fundamentally different from DELETE:
+-- DELETE = remove selected rows
+-- TRUNCATE = remove all rows, keep table
+-- DROP = remove table definition and its data
+--
+-- Transaction/safety note:
+-- PostgreSQL supports transactional DDL for many operations, but not
+-- every database operation behaves identically. Test destructive DDL
+-- in a safe environment before using it in production.
+--
+-- Production migration pattern:
+-- Inspect current schema
+-- -> design backward-compatible change
+-- -> test migration
+-- -> deploy
+-- -> validate
+-- -> monitor
+--
+-- PRACTICE
+-- 1. Add a nullable column to a test table.
+-- 2. Add a CHECK constraint.
+-- 3. Explain DELETE vs TRUNCATE vs DROP.
+-- 4. Design a migration that adds a column without breaking existing
+--    application versions.
+--
+-- INTERVIEW
+-- Q: DELETE vs TRUNCATE vs DROP?
+-- A: DELETE removes rows and can use WHERE; TRUNCATE removes all rows
+--    while retaining the table; DROP removes the table object itself.
