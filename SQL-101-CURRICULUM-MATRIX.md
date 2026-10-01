@@ -85,3 +85,5 @@ This matrix is an original navigation and coverage map. It does not reproduce th
 | 50. Logical replication | `50-logical-replication-lab/` | publisher/subscriber and monitoring |
 | 51. SQL quality | `51-sql-quality-and-linting/` | linting, style, safety gates |
 | 52. Observability/performance | `52-observability-and-performance-lab/` | plans, waits, statistics and baselines |
+
+| 53. Completeness Audit | `53-completeness-audit/` | reproducibility, replication restrictions, version checks and acceptance criteria |
