@@ -1,62 +1,175 @@
 "use client";
 
 import {useMemo,useState} from "react";
-import {BookOpen,Database,Mail,Search,ShieldCheck,Terminal,CheckCircle2,ArrowRight,ExternalLink,PlayCircle} from "lucide-react";
+import {BookOpen,CheckCircle2,ChevronDown,ChevronRight,Database,ExternalLink,Mail,Search,ShieldCheck,Terminal} from "lucide-react";
 
-const lessons=[
- {id:"01",level:"Beginner",title:"Database foundations",desc:"Tables, rows, keys, schemas, NULL and relational thinking.",material:"01-beginner/01-database-basics.sql",theory:"COMPLETE-SQL-THEORY.md"},
- {id:"02",level:"Beginner",title:"SELECT mastery",desc:"Filtering, sorting, aliases, expressions and pagination.",material:"01-beginner/04-select.sql",theory:"COMPLETE-SQL-THEORY.md"},
- {id:"03",level:"Intermediate",title:"Joins & aggregation",desc:"INNER/LEFT joins, GROUP BY, HAVING and conditional aggregates.",material:"02-intermediate/01-joins.sql",theory:"COMPLETE-SQL-THEORY.md"},
- {id:"04",level:"Intermediate",title:"Subqueries & CASE",desc:"Correlated subqueries, EXISTS, CASE and business rules.",material:"02-intermediate/04-subqueries.sql",theory:"COMPLETE-SQL-THEORY.md"},
- {id:"05",level:"Advanced",title:"CTEs & windows",desc:"Readable pipelines, recursive CTEs and ranking analytics.",material:"03-advanced/01-cte.sql",theory:"COMPLETE-SQL-THEORY.md"},
- {id:"06",level:"Advanced",title:"Transactions",desc:"ACID, isolation, locks, rollback and concurrency.",material:"05-transactions/transactions.sql",theory:"05-transactions/acid.md"},
- {id:"07",level:"Expert",title:"JSONB & PostgreSQL",desc:"Semi-structured data, operators, indexing and query design.",material:"11-expert-sql/04-json-jsonb.sql",theory:"11-expert-sql/THEORY.md"},
- {id:"08",level:"Expert",title:"Partitioning & RLS",desc:"Large tables, pruning, row-level security and operational design.",material:"11-expert-sql/07-row-level-security.sql",theory:"COMPLETE-SQL-THEORY.md"},
- {id:"09",level:"Data Engineering",title:"Cohorts & incremental loads",desc:"Data quality, retention, watermarks and analytics.",material:"12-data-engineering/03-incremental-load.sql",theory:"12-data-engineering/README.md"},
- {id:"10",level:"Real World",title:"Banking project",desc:"Schema, seed data, transfers, reports, security and troubleshooting.",material:"08-banking-project/schema.sql",theory:"08-banking-project/README.md"}
-];
+type Topic={path:string;title:string;type:"Theory"|"SQL"|"Practice"|"Project"|"Reference";desc:string};
+type Stage={id:string;title:string;desc:string;topics:Topic[]};
 
 const repoBase="https://github.com/Narsing-s/sql-from-zero-to-advanced/blob/main/";
+
+const stages:Stage[]=[
+ {id:"00",title:"Installation & Environment",desc:"Set up PostgreSQL, verify the environment and safely start learning.",topics:[
+  {path:"00-installation/README.md",title:"Installation theory & process",type:"Theory",desc:"PostgreSQL, psql, pgAdmin, connections and safe setup."},
+  {path:"00-installation/postgresql-setup.sql",title:"PostgreSQL setup",type:"SQL",desc:"Create the learning environment."},
+  {path:"00-installation/verification.sql",title:"Environment verification",type:"SQL",desc:"Verify database, schema and installation."},
+  {path:"INSTALLATION.md",title:"Complete installation guide",type:"Theory",desc:"Windows, macOS, Linux, Docker, Git, troubleshooting and first run."},
+  {path:"DOWNLOAD-AND-SETUP.md",title:"Download & setup guide",type:"Theory",desc:"Download links, clone/ZIP process and setup guidance."}
+ ]},
+ {id:"01",title:"Beginner SQL",desc:"Build the relational mental model before memorizing commands.",topics:[
+  {path:"01-beginner/README.md",title:"Beginner learning guide",type:"Theory",desc:"Definitions, mental models, syntax, practice and mistakes."},
+  {path:"01-beginner/01-database-basics.sql",title:"Database basics",type:"SQL",desc:"Databases, schemas, tables, rows, columns and keys."},
+  {path:"01-beginner/02-create-tables.sql",title:"Create tables",type:"SQL",desc:"DDL, data types and table structure."},
+  {path:"01-beginner/03-insert.sql",title:"INSERT",type:"SQL",desc:"Add rows and understand DML."},
+  {path:"01-beginner/04-select.sql",title:"SELECT",type:"SQL",desc:"Read data with expressions and aliases."},
+  {path:"01-beginner/05-where.sql",title:"WHERE",type:"SQL",desc:"Filter rows with predicates."},
+  {path:"01-beginner/06-order-by.sql",title:"ORDER BY",type:"SQL",desc:"Sort result sets predictably."},
+  {path:"01-beginner/07-update.sql",title:"UPDATE",type:"SQL",desc:"Modify existing rows safely."},
+  {path:"01-beginner/08-delete.sql",title:"DELETE",type:"SQL",desc:"Remove rows with controlled predicates."},
+  {path:"01-beginner/09-null.sql",title:"NULL",type:"SQL",desc:"Missing/unknown values and NULL semantics."},
+  {path:"01-beginner/10-practice-challenge.sql",title:"Beginner practice challenge",type:"Practice",desc:"Apply beginner concepts together."},
+  {path:"01-beginner/exercises/README.md",title:"Beginner exercises",type:"Practice",desc:"Guided exercises for independent practice."}
+ ]},
+ {id:"02",title:"Intermediate SQL",desc:"Move from single-table queries to business questions.",topics:[
+  {path:"02-intermediate/README.md",title:"Intermediate learning guide",type:"Theory",desc:"Joins, aggregation, subqueries and conditional logic."},
+  {path:"02-intermediate/01-joins.sql",title:"JOINs",type:"SQL",desc:"Combine related data across tables."},
+  {path:"02-intermediate/02-group-by.sql",title:"GROUP BY",type:"SQL",desc:"Aggregate data by business dimensions."},
+  {path:"02-intermediate/03-having.sql",title:"HAVING",type:"SQL",desc:"Filter aggregated groups."},
+  {path:"02-intermediate/04-subqueries.sql",title:"Subqueries",type:"SQL",desc:"Nest queries and compare related results."},
+  {path:"02-intermediate/05-case.sql",title:"CASE",type:"SQL",desc:"Express conditional business rules."},
+  {path:"02-intermediate/08-practice-challenge.sql",title:"Intermediate practice challenge",type:"Practice",desc:"Combine joins, aggregation and CASE."}
+ ]},
+ {id:"03",title:"Advanced SQL",desc:"Build reusable, analytical and database-side logic.",topics:[
+  {path:"03-advanced/README.md",title:"Advanced learning guide",type:"Theory",desc:"CTEs, windows, views, functions, procedures and triggers."},
+  {path:"03-advanced/01-cte.sql",title:"CTEs",type:"SQL",desc:"Structure complex queries as readable stages."},
+  {path:"03-advanced/02-recursive-cte.sql",title:"Recursive CTEs",type:"SQL",desc:"Query hierarchical and recursive data."},
+  {path:"03-advanced/03-window-functions.sql",title:"Window functions",type:"SQL",desc:"Ranking, running totals and row-wise analytics."},
+  {path:"03-advanced/04-views.sql",title:"Views",type:"SQL",desc:"Create reusable logical query interfaces."},
+  {path:"03-advanced/05-functions.sql",title:"Functions",type:"SQL",desc:"Encapsulate reusable database logic."},
+  {path:"03-advanced/06-procedures.sql",title:"Procedures",type:"SQL",desc:"Execute procedural database operations."},
+  {path:"03-advanced/07-triggers.sql",title:"Triggers",type:"SQL",desc:"React to table events and enforce automation."},
+  {path:"03-advanced/08-practice-challenge.sql",title:"Advanced practice challenge",type:"Practice",desc:"Combine advanced query techniques."}
+ ]},
+ {id:"04",title:"Database Design",desc:"Design schemas that represent business rules and preserve integrity.",topics:[
+  {path:"04-database-design/README.md",title:"Database design theory",type:"Theory",desc:"Entities, relationships, keys, constraints and normalization."},
+  {path:"04-database-design/BCNF-and-advanced-normalization.md",title:"BCNF & advanced normalization",type:"Theory",desc:"Higher normal forms and dependency reasoning."}
+ ]},
+ {id:"05",title:"Transactions & Concurrency",desc:"Understand correctness when multiple operations happen together.",topics:[
+  {path:"05-transactions/acid.md",title:"ACID theory",type:"Theory",desc:"Atomicity, consistency, isolation and durability."},
+  {path:"05-transactions/transactions.sql",title:"Transactions",type:"SQL",desc:"BEGIN, COMMIT, ROLLBACK and safe units of work."},
+  {path:"05-transactions/isolation-levels.sql",title:"Isolation levels",type:"SQL",desc:"Concurrency anomalies and PostgreSQL isolation."}
+ ]},
+ {id:"06",title:"Performance",desc:"Understand how PostgreSQL plans and executes SQL.",topics:[
+  {path:"06-performance/README.md",title:"Performance theory",type:"Theory",desc:"Planner, indexes, statistics and performance workflow."},
+  {path:"06-performance/indexes.sql",title:"Indexes",type:"SQL",desc:"Index structures, access paths and trade-offs."},
+  {path:"06-performance/explain.sql",title:"EXPLAIN",type:"SQL",desc:"Read execution plans and diagnose slow queries."}
+ ]},
+ {id:"07",title:"Security",desc:"Protect data and design safe database access.",topics:[
+  {path:"07-security/README.md",title:"Database security",type:"Theory",desc:"Least privilege, injection prevention, secrets and access control."}
+ ]},
+ {id:"08",title:"Banking Project",desc:"Apply schema design, transactions and reporting to a realistic domain.",topics:[
+  {path:"08-banking-project/README.md",title:"Banking project guide",type:"Project",desc:"Project architecture, workflow and learning goals."},
+  {path:"08-banking-project/schema.sql",title:"Banking schema",type:"Project",desc:"Customers, accounts, transactions and constraints."},
+  {path:"08-banking-project/seed.sql",title:"Banking seed data",type:"Project",desc:"Load realistic sample data."},
+  {path:"08-banking-project/transfers.sql",title:"Bank transfers",type:"Project",desc:"Transactional transfer logic and safety."},
+  {path:"08-banking-project/reports.sql",title:"Banking reports",type:"Project",desc:"Operational and analytical reporting queries."}
+ ]},
+ {id:"09",title:"Real-World Scenarios",desc:"Practice production-style diagnosis and recovery thinking.",topics:[
+  {path:"09-real-world-scenarios/README.md",title:"Scenario guide",type:"Theory",desc:"A repeatable production troubleshooting workflow."},
+  {path:"09-real-world-scenarios/slow-query.md",title:"Slow query incident",type:"Practice",desc:"Investigate performance symptoms and evidence."},
+  {path:"09-real-world-scenarios/duplicate-data.md",title:"Duplicate data incident",type:"Practice",desc:"Find causes and prevent duplicate records."},
+  {path:"09-real-world-scenarios/deadlock.md",title:"Deadlock incident",type:"Practice",desc:"Understand locks, cycles and prevention."},
+  {path:"09-real-world-scenarios/outage.md",title:"Database outage incident",type:"Practice",desc:"Work through outage diagnosis and recovery."}
+ ]},
+ {id:"10",title:"Interview Preparation",desc:"Turn concepts into clear technical interview answers.",topics:[
+  {path:"10-interview-preparation/README.md",title:"Interview roadmap",type:"Reference",desc:"Structured interview preparation."},
+  {path:"10-interview-preparation/beginner.md",title:"Beginner interview questions",type:"Reference",desc:"Foundational SQL questions and answers."},
+  {path:"10-interview-preparation/intermediate.md",title:"Intermediate interview questions",type:"Reference",desc:"Joins, aggregation and query reasoning."},
+  {path:"10-interview-preparation/advanced.md",title:"Advanced interview questions",type:"Reference",desc:"Advanced SQL and PostgreSQL topics."},
+  {path:"10-interview-preparation/scenario-based.md",title:"Scenario-based questions",type:"Reference",desc:"Production troubleshooting and design scenarios."}
+ ]},
+ {id:"11",title:"Expert PostgreSQL",desc:"Study PostgreSQL-specific features and production-grade SQL.",topics:[
+  {path:"11-expert-sql/README.md",title:"Expert SQL roadmap",type:"Theory",desc:"PostgreSQL expert learning sequence."},
+  {path:"11-expert-sql/THEORY.md",title:"Expert SQL theory",type:"Theory",desc:"Advanced PostgreSQL concepts and mental models."},
+  {path:"11-expert-sql/01-null-three-valued-logic.sql",title:"NULL & three-valued logic",type:"SQL",desc:"TRUE, FALSE and UNKNOWN in expert SQL."},
+  {path:"11-expert-sql/02-lateral-and-distinct-on.sql",title:"LATERAL & DISTINCT ON",type:"SQL",desc:"PostgreSQL query patterns for per-group results."},
+  {path:"11-expert-sql/03-advanced-aggregates.sql",title:"Advanced aggregates",type:"SQL",desc:"FILTER and advanced aggregation patterns."},
+  {path:"11-expert-sql/04-json-jsonb.sql",title:"JSON & JSONB",type:"SQL",desc:"Semi-structured data and indexing."},
+  {path:"11-expert-sql/05-upsert-merge.sql",title:"UPSERT & MERGE",type:"SQL",desc:"Idempotent writes and synchronization."},
+  {path:"11-expert-sql/06-partitioning.md",title:"Partitioning",type:"Theory",desc:"Partition strategy, pruning and operational trade-offs."},
+  {path:"11-expert-sql/07-row-level-security.sql",title:"Row-level security",type:"SQL",desc:"Restrict visible rows by policy."},
+  {path:"11-expert-sql/08-materialized-views.md",title:"Materialized views",type:"Theory",desc:"Persist expensive query results and refresh them."},
+  {path:"11-expert-sql/09-full-text-search.sql",title:"Full-text search",type:"SQL",desc:"tsvector, tsquery and indexed search."},
+  {path:"11-expert-sql/10-advisory-locks.sql",title:"Advisory locks",type:"SQL",desc:"Application-coordinated concurrency control."}
+ ]},
+ {id:"12",title:"Data Engineering",desc:"Build reliable data quality, analytics and loading workflows.",topics:[
+  {path:"12-data-engineering/README.md",title:"Data engineering guide",type:"Theory",desc:"Data quality, analytics and incremental processing."},
+  {path:"12-data-engineering/01-data-quality.sql",title:"Data quality checks",type:"SQL",desc:"Find missing, duplicate and inconsistent data."},
+  {path:"12-data-engineering/02-cohort-retention.sql",title:"Cohort retention",type:"SQL",desc:"Build cohort and retention analysis."},
+  {path:"12-data-engineering/03-incremental-load.sql",title:"Incremental loads",type:"SQL",desc:"Use watermarks for repeatable data loading."}
+ ]},
+ {id:"13",title:"Real-World Projects",desc:"Move from isolated lessons to complete project delivery.",topics:[
+  {path:"13-real-world-projects/README.md",title:"Project roadmap",type:"Project",desc:"How to turn SQL skills into portfolio projects."},
+  {path:"13-real-world-projects/project-checklist.md",title:"Project checklist",type:"Project",desc:"Requirements for designing, testing and documenting projects."}
+ ]},
+];
+
+const rootTopics:Topic[]=[
+ {path:"COMPLETE-SQL-THEORY.md",title:"Complete SQL Theory",type:"Reference",desc:"Modern theory-first reference from zero to production PostgreSQL."},
+ {path:"CORE-CONCEPTS.md",title:"Core Concepts",type:"Reference",desc:"SQL and database definitions glossary."},
+ {path:"ADVANCED-EXPERT-THEORY.md",title:"Advanced & Expert Theory",type:"Reference",desc:"Deep concepts for advanced and expert learners."},
+ {path:"MISSING-CONCEPTS-CHECKLIST.md",title:"Missing Concepts Checklist",type:"Reference",desc:"Coverage checklist for the learning curriculum."},
+ {path:"ROADMAP.md",title:"Learning Roadmap",type:"Reference",desc:"High-level course progression."},
+ {path:"CONTRIBUTING.md",title:"Contributing",type:"Reference",desc:"How learners and contributors can improve the project."},
+ {path:"datasets/README.md",title:"Datasets",type:"Reference",desc:"Dataset guidance for hands-on practice."},
+ {path:"docker/docker-compose.yml",title:"Docker environment",type:"Reference",desc:"Optional containerized environment."}
+];
+
+function TopicRow({topic,done,onToggle}:{topic:Topic;done:boolean;onToggle:()=>void}){
+ const url=repoBase+topic.path;
+ return <div className={`topic-row ${done?"completed":""}`}>
+   <div className="topic-icon"><BookOpen size={17}/></div>
+   <div className="topic-main">
+     <div className="between"><div><strong>{topic.title}</strong><span className="topic-type">{topic.type}</span></div>
+       <div className="row">
+         <a className="btn" href={url} target="_blank" rel="noreferrer">Open <ExternalLink size={14}/></a>
+         <button className={`btn ${done?"primary":""}`} onClick={onToggle}>{done?<CheckCircle2 size={16}/>:<CheckCircle2 size={16}/>} {done?"Completed":"Mark completed"}</button>
+       </div>
+     </div>
+     <div className="muted topic-desc">{topic.desc}</div>
+   </div>
+ </div>;
+}
 
 export default function Home(){
  const [user,setUser]=useState<string|null>(typeof window!=="undefined"?localStorage.getItem("sql_user"):null);
  const [email,setEmail]=useState("");
  const [greeting,setGreeting]=useState("");
  const [search,setSearch]=useState("");
- const [selected,setSelected]=useState<string|null>(null);
+ const [open,setOpen]=useState<string|null>("00");
  const [done,setDone]=useState<string[]>(typeof window!=="undefined"?JSON.parse(localStorage.getItem("sql_done")||"[]"):[]);
- const filtered=useMemo(()=>lessons.filter(x=>(x.title+" "+x.desc+" "+x.level).toLowerCase().includes(search.toLowerCase())),[search]);
+ const allTopics=[...stages.flatMap(s=>s.topics),...rootTopics];
+ const filteredStages=useMemo(()=>stages.map(s=>({...s,topics:s.topics.filter(t=>(s.title+" "+t.title+" "+t.desc+" "+t.type).toLowerCase().includes(search.toLowerCase()))})).filter(s=>s.topics.length),[search]);
+ const filteredRoot=rootTopics.filter(t=>(t.title+" "+t.desc+" "+t.type).toLowerCase().includes(search.toLowerCase()));
+ const completed=done.filter(id=>allTopics.some(t=>t.path===id)).length;
  const login=async()=>{
    if(!email.includes("@"))return;
    localStorage.setItem("sql_user",email);setUser(email);
-   try{
-     const r=await fetch("/api/welcome-email",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email,name:email.split("@")[0]})});
-     const d=await r.json();
-     setGreeting(d.sent ? "Welcome email sent successfully to " + email + "." : (d.message || "Welcome!"));
-     if (!d.sent && d.mode === "email-error") setGreeting("Welcome email could not be sent: " + (d.error || "check email configuration."));
-   }catch{
-     setGreeting("Thanks for choosing SQL From Zero to Advanced! Welcome to your SQL learning journey.");
-   }
+   try{const r=await fetch("/api/welcome-email",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email,name:email.split("@")[0]})});const d=await r.json();setGreeting(d.sent?"Welcome email sent successfully to "+email+".":d.message||"Welcome to SQL From Zero to Advanced!");}
+   catch{setGreeting("Thanks for choosing SQL From Zero to Advanced! Welcome to your SQL learning journey.");}
  };
- const toggle=(id:string)=>{
-   const next=done.includes(id)?done.filter(x=>x!==id):[...done,id];
-   setDone(next);localStorage.setItem("sql_done",JSON.stringify(next));
- };
- const openMaterial=(path:string)=>window.open(repoBase+path,"_blank","noopener,noreferrer");
- const openTheory=(path:string)=>window.open(repoBase+path,"_blank","noopener,noreferrer");
+ const toggle=(path:string)=>{const next=done.includes(path)?done.filter(x=>x!==path):[...done,path];setDone(next);localStorage.setItem("sql_done",JSON.stringify(next));};
 
- if(!user)return <main className="shell"><div className="container"><nav className="nav"><div className="brand">SQL<span>Lab</span></div><div className="pill">Open source learning</div></nav><section className="hero"><div className="eyebrow">From zero → production</div><h1>Learn SQL by <span className="green">building</span>.</h1><p className="sub">A structured PostgreSQL journey with theory, runnable queries, practice challenges, real-world projects and production engineering.</p></section><div className="card login-card"><h2>Start your learning journey</h2><p className="muted">Local demo login. Your progress stays in this browser.</p><input className="input" placeholder="you@example.com" value={email} onChange={e=>setEmail(e.target.value)}/><button className="btn primary full" onClick={login}>Enter SQL Lab <ArrowRight size={16}/></button>{greeting&&<p className="green">{greeting}</p>}<p className="muted small">No password, API key, external email provider, or external authentication is required.</p></div></div></main>;
+ if(!user)return <main className="shell"><div className="container"><nav className="nav"><div className="brand">SQL<span>Lab</span></div><div className="pill">Open source learning</div></nav><section className="hero"><div className="eyebrow">From zero → production</div><h1>Learn SQL by <span className="green">building</span>.</h1><p className="sub">Every stage, every topic, theory, SQL, exercises, projects and interview material in one visible learning workspace.</p></section><div className="card login-card"><h2>Start your learning journey</h2><p className="muted">Enter an email for a browser-local demo login. No API key is required.</p><input className="input" placeholder="you@example.com" value={email} onChange={e=>setEmail(e.target.value)} onKeyDown={e=>{if(e.key==="Enter")login()}}/><button className="btn primary full" onClick={login}>Enter SQL Lab <ChevronRight size={16}/></button>{greeting&&<p className="green">{greeting}</p>}<p className="muted small">Your progress stays in this browser. Real email delivery is optional.</p></div></div></main>;
 
  return <main className="shell"><div className="container"><nav className="nav"><div className="brand">SQL<span>Lab</span></div><div className="row"><span className="pill">{user}</span><button className="btn" onClick={()=>{localStorage.removeItem("sql_user");setUser(null)}}>Sign out</button></div></nav>
- <section className="hero"><div className="eyebrow">Your SQL workspace</div><h1>Build database <span className="green">confidence</span>.</h1><p className="sub">Theory first. Material next. Practice until it becomes production skill.</p>
- <div className="grid two"><div className="card"><div className="between"><div><div className="muted">Progress</div><strong>{done.length} / {lessons.length} lessons</strong></div><Database className="green"/></div><div className="progress" style={{marginTop:14}}><i style={{width:(done.length/lessons.length*100)+"%"}}/></div></div>
- <div className="card"><div className="muted">Welcome</div><h3>You're in. 🎓</h3><p className="muted">Open any curriculum item to see its theory and SQL material on GitHub.</p><div className="row"><Mail size={16}/><span className="pill">local greeting</span></div></div></div></section>
-
- <section className="card"><div className="between"><div><h2>Curriculum</h2><p className="muted">Choose a lesson → read theory → open SQL → practice → mark complete.</p></div><div className="row"><Search size={17}/><input className="input search" placeholder="Search lessons" value={search} onChange={e=>setSearch(e.target.value)}/></div></div>
- {filtered.map(l=><div className="lesson" key={l.id}><div className="pill">{l.level}</div><div className="lesson-body"><div className="between"><div><strong>{l.title}</strong><div className="muted">{l.desc}</div></div><div className="row"><button className="btn" onClick={()=>setSelected(selected===l.id?null:l.id)}><BookOpen size={16}/> Open</button><button className="btn" onClick={()=>toggle(l.id)}>{done.includes(l.id)?<CheckCircle2 size={16}/>:<CheckCircle2 size={16}/>} {done.includes(l.id)?"Done":"Mark done"}</button></div></div>
- {selected===l.id&&<div className="material-panel"><h3>{l.title}</h3><p className="muted">Start with the explanation, then open the runnable repository material.</p><div className="row"><button className="btn primary" onClick={()=>openTheory(l.theory)}><BookOpen size={16}/> Read theory <ExternalLink size={14}/></button><button className="btn" onClick={()=>openMaterial(l.material)}><PlayCircle size={16}/> Open SQL material <ExternalLink size={14}/></button></div><p className="small muted">Material: <code>{l.material}</code></p></div>}</div></div>)}
- {filtered.length===0&&<div className="empty">No lessons match your search.</div>}</section>
-
- <section className="grid" style={{margin:"20px 0 60px"}}><div className="card"><Terminal className="green"/><h3>Runnable SQL</h3><p className="muted">Every lesson now has a direct path to repository material instead of a dead button.</p></div><div className="card"><ShieldCheck className="green"/><h3>Production thinking</h3><p className="muted">Indexes, locks, security, RCA and performance tuning are part of the learning path.</p></div><div className="card"><BookOpen className="green"/><h3>Theory first</h3><p className="muted">Definitions and mental models come before commands so beginners understand what they run.</p></div></section>
+ <section className="hero"><div className="eyebrow">Your complete SQL workspace</div><h1>Every topic. <span className="green">One path.</span></h1><p className="sub">Click a topic to open its real repository material. Mark each topic completed as you learn.</p>
+ <div className="grid two"><div className="card"><div className="between"><div><div className="muted">Course progress</div><strong>{completed} / {allTopics.length} topics completed</strong></div><Database className="green"/></div><div className="progress" style={{marginTop:14}}><i style={{width:(completed/allTopics.length*100)+"%"}}/></div></div>
+ <div className="card"><div className="muted">Learning order</div><h3>Read → Open → Practice → Complete</h3><p className="muted">Theory comes before runnable SQL, then exercises and real-world work.</p><div className="row"><Mail size={16}/><span className="pill">local login</span></div></div></div></section>
+ <section className="card curriculum"><div className="between"><div><h2>Complete Curriculum</h2><p className="muted">{allTopics.length} visible topics across installation → production.</p></div><div className="row"><Search size={17}/><input className="input search" placeholder="Search every topic" value={search} onChange={e=>setSearch(e.target.value)}/></div></div>
+ {filteredStages.map(s=><div className="stage" key={s.id}><button className="stage-head" onClick={()=>setOpen(open===s.id?null:s.id)}><div><span className="stage-number">{s.id}</span><strong>{s.title}</strong><span className="muted stage-count">{s.topics.length} topics</span><div className="muted stage-desc">{s.desc}</div></div>{open===s.id?<ChevronDown/>:<ChevronRight/>}</button>{open===s.id&&<div className="stage-topics">{s.topics.map(t=><TopicRow key={t.path} topic={t} done={done.includes(t.path)} onToggle={()=>toggle(t.path)}/>)}</div>}</div>)}
+ {filteredRoot.length>0&&<div className="stage"><button className="stage-head" onClick={()=>setOpen(open==="reference"?null:"reference")}><div><span className="stage-number">★</span><strong>Repository Reference & Tools</strong><span className="muted stage-count">{filteredRoot.length} topics</span><div className="muted stage-desc">Core theory, roadmap, contribution and environment references.</div></div>{open==="reference"?<ChevronDown/>:<ChevronRight/>}</button>{open==="reference"&&<div className="stage-topics">{filteredRoot.map(t=><TopicRow key={t.path} topic={t} done={done.includes(t.path)} onToggle={()=>toggle(t.path)}/>)}</div>}</div>}
+ {filteredStages.length===0&&filteredRoot.length===0&&<div className="empty">No topics match your search.</div>}</section>
+ <section className="grid" style={{margin:"20px 0 60px"}}><div className="card"><Terminal className="green"/><h3>Real material</h3><p className="muted">Every visible topic opens the actual repository file.</p></div><div className="card"><ShieldCheck className="green"/><h3>Track completion</h3><p className="muted">Completion is saved locally in your browser, topic by topic.</p></div><div className="card"><BookOpen className="green"/><h3>Theory first</h3><p className="muted">Understand definitions and mental models before running commands.</p></div></section>
  </div></main>;
 }
