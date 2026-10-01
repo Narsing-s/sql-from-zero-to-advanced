@@ -77,6 +77,8 @@ This repository combines the beginner-friendly learning style of a SQL 101 cours
 | 38 | Search, text, fuzzy matching and multilingual considerations |
 | 39 | Advanced data modeling and temporal/multi-tenant patterns |
 | 40 | Final production simulation and recovery exercise |
+| 41 | Runnable PostgreSQL labs: locks, queues, notifications, materialized views, COPY, time zones, partitions, RLS and query statistics |
+| 42 | Production patterns: pooling, schema drift, performance regression and backup verification |
 
 ## 🛠️ Installation — Start Here
 
