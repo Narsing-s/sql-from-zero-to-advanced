@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:18.6
+    environment:
+      POSTGRES_USER: lab
+      POSTGRES_PASSWORD: lab
+      POSTGRES_DB: curriculum
+    ports:
+      - "55432:5432"
+    volumes:
+      - pg_lab_data:/var/lib/postgresql
+volumes:
+  pg_lab_data:
