@@ -50,6 +50,7 @@ This repository combines the beginner-friendly learning style of a SQL 101 cours
 | 11 | Expert PostgreSQL and advanced SQL |
 | 12 | Data engineering and analytics |
 | 13 | Real-world projects |
+| 14 | Production database operations: recovery, monitoring, incidents, capacity and RCA |
 
 ## 🛠️ Installation — Start Here
 
@@ -168,6 +169,7 @@ For every topic:
 11-expert-sql/
 12-data-engineering/
 13-real-world-projects/
+14-production-operations/
 datasets/
 docker/
 web/
