@@ -113,6 +113,62 @@ const stages:Stage[]=[
   {path:"13-real-world-projects/README.md",title:"Project roadmap",type:"Project",desc:"How to turn SQL skills into portfolio projects."},
   {path:"13-real-world-projects/project-checklist.md",title:"Project checklist",type:"Project",desc:"Requirements for designing, testing and documenting projects."}
  ]},
+  {id:"41",title:"Runnable PostgreSQL Labs",desc:"Hands-on operational labs for real PostgreSQL behavior.",topics:[
+  {path:"41-runnable-labs/README.md",title:"Runnable lab guide",type:"Practice",desc:"Run operational PostgreSQL labs safely."},
+  {path:"41-runnable-labs/01-advisory-locks-and-job-queue.sql",title:"Advisory locks & job queue",type:"SQL",desc:"Coordinate workers with locks and SKIP LOCKED."},
+  {path:"41-runnable-labs/02-listen-notify.sql",title:"LISTEN / NOTIFY",type:"SQL",desc:"Explore database notifications and trigger-driven events."},
+  {path:"41-runnable-labs/03-materialized-view-refresh.sql",title:"Materialized view refresh",type:"SQL",desc:"Build and refresh a materialized view safely."},
+  {path:"41-runnable-labs/04-copy-and-bulk-load.sql",title:"COPY & bulk load",type:"SQL",desc:"Load data efficiently with PostgreSQL COPY."},
+  {path:"41-runnable-labs/05-timezone-and-collation.sql",title:"Timezone & collation",type:"SQL",desc:"Test temporal and text ordering semantics."},
+  {path:"41-runnable-labs/06-partition-maintenance.sql",title:"Partition maintenance",type:"SQL",desc:"Create partitions and observe pruning."},
+  {path:"41-runnable-labs/07-row-level-security.sql",title:"Row-level security",type:"SQL",desc:"Implement tenant-aware RLS policies."},
+  {path:"41-runnable-labs/08-query-statistics.sql",title:"Query statistics",type:"SQL",desc:"Inspect pg_stat_statements and query metrics."}
+ ]},
+ {id:"42",title:"Production Patterns",desc:"Patterns for operating PostgreSQL reliably in production.",topics:[
+  {path:"42-production-patterns/README.md",title:"Production patterns",type:"Theory",desc:"Pooling, schema drift, performance baselines and backup verification."},
+  {path:"42-production-patterns/01-connection-pooling.md",title:"Connection pooling",type:"Theory",desc:"Connection budgets, pooling and PgBouncer concepts."},
+  {path:"42-production-patterns/02-schema-drift-and-regression.md",title:"Schema drift",type:"Practice",desc:"Detect schema changes and regression risks."},
+  {path:"42-production-patterns/03-backup-verification.md",title:"Backup verification",type:"Practice",desc:"Verify backups through restore drills."}
+ ]},
+ {id:"43",title:"Validation & Automation",desc:"Turn lessons into repeatable, testable engineering workflows.",topics:[
+  {path:"43-validation-and-automation/README.md",title:"Validation guide",type:"Theory",desc:"Lab contracts, safety rules and version-aware execution."},
+  {path:"43-validation-and-automation/01-test-runner.sql",title:"SQL test runner",type:"SQL",desc:"Inspect database and curriculum test objects."},
+  {path:"43-validation-and-automation/02-sql-safety-checklist.md",title:"SQL safety checklist",type:"Reference",desc:"Review scripts before execution."},
+  {path:"43-validation-and-automation/03-version-matrix.md",title:"Version matrix",type:"Reference",desc:"Track PostgreSQL-version-specific labs."},
+  {path:"43-validation-and-automation/04-lab-manifest.md",title:"Lab manifest",type:"Reference",desc:"Classify automated and opt-in labs."}
+ ]},
+ {id:"44",title:"Advanced Production SQL",desc:"Advanced PostgreSQL query patterns used in production systems.",topics:[
+  {path:"44-advanced-production-sql/README.md",title:"Production SQL patterns",type:"Theory",desc:"Advanced query and write patterns."},
+  {path:"44-advanced-production-sql/01-production-query-patterns.sql",title:"Production query patterns",type:"SQL",desc:"MERGE, RETURNING, cursors, grouping, locking and sampling."}
+ ]},
+ {id:"45",title:"PostgreSQL CI",desc:"Run deterministic SQL tests against PostgreSQL 18.6.",topics:[
+  {path:"45-ci-postgresql/README.md",title:"CI architecture",type:"Theory",desc:"Docker, fixtures, assertions and safe CI boundaries."},
+  {path:"45-ci-postgresql/fixtures/001-base.sql",title:"CI fixtures",type:"SQL",desc:"Deterministic test database and sample data."},
+  {path:"45-ci-postgresql/tests/001-core.sql",title:"Core assertions",type:"SQL",desc:"Automated fixture and query assertions."},
+  {path:"45-ci-postgresql/tests/002-types-and-constraints.sql",title:"Constraint tests",type:"SQL",desc:"Verify primary, unique and check constraints."},
+  {path:"45-ci-postgresql/tests/003-explain.sql",title:"EXPLAIN CI test",type:"SQL",desc:"Capture and inspect query plans."}
+ ]},
+ {id:"46",title:"Database Client Integration",desc:"Connect real applications safely to PostgreSQL.",topics:[
+  {path:"46-database-client-integration/README.md",title:"Client integration",type:"Theory",desc:"JDBC, psycopg, node-postgres, pooling and retries."}
+ ]},
+ {id:"47",title:"Advanced Concurrency",desc:"Master MVCC, isolation, locks and retry semantics.",topics:[
+  {path:"47-advanced-concurrency/README.md",title:"Concurrency guide",type:"Theory",desc:"Isolation levels, deadlocks, serialization and lock patterns."}
+ ]},
+ {id:"48",title:"Data Loading & Export",desc:"Build reliable high-volume data movement workflows.",topics:[
+  {path:"48-data-loading-and-export/README.md",title:"Data loading guide",type:"Theory",desc:"COPY, staging, validation, batching and exports."}
+ ]},
+ {id:"49",title:"Recovery & Migration Drills",desc:"Practice backup, restore and safe schema evolution.",topics:[
+  {path:"49-recovery-and-migration-drills/README.md",title:"Recovery & migration drills",type:"Practice",desc:"Backup, restore, PITR concepts and migration rehearsal."}
+ ]},
+ {id:"50",title:"Logical Replication",desc:"Build and operate publisher/subscriber PostgreSQL systems.",topics:[
+  {path:"50-logical-replication-lab/README.md",title:"Logical replication lab",type:"Practice",desc:"Publication, subscription, slots, lag and conflicts."}
+ ]},
+ {id:"51",title:"SQL Quality & Linting",desc:"Create consistent, reviewable and safe SQL.",topics:[
+  {path:"51-sql-quality-and-linting/README.md",title:"SQL quality gates",type:"Reference",desc:"Formatting, naming, safety, migration and query review."}
+ ]},
+ {id:"52",title:"Observability & Performance Lab",desc:"Measure PostgreSQL behavior with evidence.",topics:[
+  {path:"52-observability-and-performance-lab/README.md",title:"Performance lab",type:"Practice",desc:"Plans, waits, statistics, WAL and reproducible benchmarks."}
+ ]},
 ];
 
 const rootTopics:Topic[]=[
