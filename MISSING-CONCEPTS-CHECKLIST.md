@@ -561,3 +561,12 @@ Coverage alone is not enough. A module should be promoted to complete only after
 - [ ] idempotency
 - [ ] cursor/streaming patterns
 - [ ] application timeout hierarchy
+
+
+## 20. Final audit
+- [ ] deterministic locale/timezone assertions
+- [ ] extension/version audit
+- [ ] logical replication restrictions documented
+- [ ] replication-origin concepts covered
+- [ ] reproducibility metadata captured
+- [ ] curriculum acceptance criteria documented
