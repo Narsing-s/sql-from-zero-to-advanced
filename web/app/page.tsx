@@ -7,6 +7,7 @@ type Topic={path:string;title:string;type:"Theory"|"SQL"|"Practice"|"Project"|"R
 type Stage={id:string;title:string;desc:string;topics:Topic[]};
 
 const repoBase="https://github.com/Narsing-s/sql-from-zero-to-advanced/blob/main/";
+const rawBase="https://raw.githubusercontent.com/Narsing-s/sql-from-zero-to-advanced/main/";
 
 const stages:Stage[]=[
  {id:"00",title:"Installation & Environment",desc:"Set up PostgreSQL, verify the environment and safely start learning.",topics:[
@@ -125,14 +126,14 @@ const rootTopics:Topic[]=[
  {path:"docker/docker-compose.yml",title:"Docker environment",type:"Reference",desc:"Optional containerized environment."}
 ];
 
-function TopicRow({topic,done,onToggle}:{topic:Topic;done:boolean;onToggle:()=>void}){
+function TopicRow({topic,done,onToggle,onOpen}:{topic:Topic;done:boolean;onToggle:()=>void;onOpen:()=>void}){
  const url=repoBase+topic.path;
  return <div className={`topic-row ${done?"completed":""}`}>
    <div className="topic-icon"><BookOpen size={17}/></div>
    <div className="topic-main">
-     <div className="between"><div><strong>{topic.title}</strong><span className="topic-type">{topic.type}</span></div>
+     <div className="between"><div><button className="topic-title" onClick={onOpen}>{topic.title}</button><span className="topic-type">{topic.type}</span></div>
        <div className="row">
-         <a className="btn" href={url} target="_blank" rel="noreferrer">Open <ExternalLink size={14}/></a>
+         <button className="btn" onClick={onOpen}>Read material</button><a className="btn" href={url} target="_blank" rel="noreferrer">GitHub <ExternalLink size={14}/></a>
          <button className={`btn ${done?"primary":""}`} onClick={onToggle}>{done?<CheckCircle2 size={16}/>:<CheckCircle2 size={16}/>} {done?"Completed":"Mark completed"}</button>
        </div>
      </div>
@@ -147,16 +148,29 @@ export default function Home(){
  const [greeting,setGreeting]=useState("");
  const [search,setSearch]=useState("");
  const [open,setOpen]=useState<string|null>("00");
+ const [selected,setSelected]=useState<Topic|null>(null);
+ const [material,setMaterial]=useState("");
+ const [loadingMaterial,setLoadingMaterial]=useState(false);
+ const [view,setView]=useState<"all"|"completed"|"theory">("all");
  const [done,setDone]=useState<string[]>(typeof window!=="undefined"?JSON.parse(localStorage.getItem("sql_done")||"[]"):[]);
  const allTopics=[...stages.flatMap(s=>s.topics),...rootTopics];
- const filteredStages=useMemo(()=>stages.map(s=>({...s,topics:s.topics.filter(t=>(s.title+" "+t.title+" "+t.desc+" "+t.type).toLowerCase().includes(search.toLowerCase()))})).filter(s=>s.topics.length),[search]);
- const filteredRoot=rootTopics.filter(t=>(t.title+" "+t.desc+" "+t.type).toLowerCase().includes(search.toLowerCase()));
+ const filteredStages=useMemo(()=>stages.map(s=>({...s,topics:s.topics.filter(t=>{
+   const matchesSearch=(s.title+" "+t.title+" "+t.desc+" "+t.type).toLowerCase().includes(search.toLowerCase());
+   return matchesSearch&&(view==="all"||view==="completed"&&done.includes(t.path)||view==="theory"&&t.type==="Theory");
+ })})).filter(s=>s.topics.length),[search,view,done]);
+ const filteredRoot=rootTopics.filter(t=>(t.title+" "+t.desc+" "+t.type).toLowerCase().includes(search.toLowerCase())&&(view==="all"||view==="completed"&&done.includes(t.path)||view==="theory"&&t.type==="Theory"));
  const completed=done.filter(id=>allTopics.some(t=>t.path===id)).length;
  const login=async()=>{
    if(!email.includes("@"))return;
    localStorage.setItem("sql_user",email);setUser(email);
    try{const r=await fetch("/api/welcome-email",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email,name:email.split("@")[0]})});const d=await r.json();setGreeting(d.sent?"Welcome email sent successfully to "+email+".":d.message||"Welcome to SQL From Zero to Advanced!");}
    catch{setGreeting("Thanks for choosing SQL From Zero to Advanced! Welcome to your SQL learning journey.");}
+ };
+ const openMaterial=async(topic:Topic)=>{
+   setSelected(topic);setLoadingMaterial(true);setMaterial("");
+   try{const r=await fetch(rawBase+topic.path);if(!r.ok)throw new Error("load failed");setMaterial(await r.text());}
+   catch{setMaterial("Unable to load the real repository material in this browser. Use the GitHub button below.");}
+   finally{setLoadingMaterial(false);}
  };
  const toggle=(path:string)=>{const next=done.includes(path)?done.filter(x=>x!==path):[...done,path];setDone(next);localStorage.setItem("sql_done",JSON.stringify(next));};
 
@@ -167,9 +181,14 @@ export default function Home(){
  <div className="grid two"><div className="card"><div className="between"><div><div className="muted">Course progress</div><strong>{completed} / {allTopics.length} topics completed</strong></div><Database className="green"/></div><div className="progress" style={{marginTop:14}}><i style={{width:(completed/allTopics.length*100)+"%"}}/></div></div>
  <div className="card"><div className="muted">Learning order</div><h3>Read → Open → Practice → Complete</h3><p className="muted">Theory comes before runnable SQL, then exercises and real-world work.</p><div className="row"><Mail size={16}/><span className="pill">local login</span></div></div></div></section>
  <section className="card curriculum"><div className="between"><div><h2>Complete Curriculum</h2><p className="muted">{allTopics.length} visible topics across installation → production.</p></div><div className="row"><Search size={17}/><input className="input search" placeholder="Search every topic" value={search} onChange={e=>setSearch(e.target.value)}/></div></div>
- {filteredStages.map(s=><div className="stage" key={s.id}><button className="stage-head" onClick={()=>setOpen(open===s.id?null:s.id)}><div><span className="stage-number">{s.id}</span><strong>{s.title}</strong><span className="muted stage-count">{s.topics.length} topics</span><div className="muted stage-desc">{s.desc}</div></div>{open===s.id?<ChevronDown/>:<ChevronRight/>}</button>{open===s.id&&<div className="stage-topics">{s.topics.map(t=><TopicRow key={t.path} topic={t} done={done.includes(t.path)} onToggle={()=>toggle(t.path)}/>)}</div>}</div>)}
- {filteredRoot.length>0&&<div className="stage"><button className="stage-head" onClick={()=>setOpen(open==="reference"?null:"reference")}><div><span className="stage-number">★</span><strong>Repository Reference & Tools</strong><span className="muted stage-count">{filteredRoot.length} topics</span><div className="muted stage-desc">Core theory, roadmap, contribution and environment references.</div></div>{open==="reference"?<ChevronDown/>:<ChevronRight/>}</button>{open==="reference"&&<div className="stage-topics">{filteredRoot.map(t=><TopicRow key={t.path} topic={t} done={done.includes(t.path)} onToggle={()=>toggle(t.path)}/>)}</div>}</div>}
+ {filteredStages.map(s=><div className="stage" key={s.id}><button className="stage-head" onClick={()=>setOpen(open===s.id?null:s.id)}><div><span className="stage-number">{s.id}</span><strong>{s.title}</strong><span className="muted stage-count">{s.topics.length} topics</span><div className="muted stage-desc">{s.desc}</div></div>{open===s.id?<ChevronDown/>:<ChevronRight/>}</button>{open===s.id&&<div className="stage-topics">{s.topics.map(t=><TopicRow key={t.path} topic={t} done={done.includes(t.path)} onToggle={()=>toggle(t.path)} onOpen={()=>openMaterial(t)}/>)}</div>}</div>)}
+ {filteredRoot.length>0&&<div className="stage"><button className="stage-head" onClick={()=>setOpen(open==="reference"?null:"reference")}><div><span className="stage-number">★</span><strong>Repository Reference & Tools</strong><span className="muted stage-count">{filteredRoot.length} topics</span><div className="muted stage-desc">Core theory, roadmap, contribution and environment references.</div></div>{open==="reference"?<ChevronDown/>:<ChevronRight/>}</button>{open==="reference"&&<div className="stage-topics">{filteredRoot.map(t=><TopicRow key={t.path} topic={t} done={done.includes(t.path)} onToggle={()=>toggle(t.path)} onOpen={()=>openMaterial(t)}/>)}</div>}</div>}
  {filteredStages.length===0&&filteredRoot.length===0&&<div className="empty">No topics match your search.</div>}</section>
- <section className="grid" style={{margin:"20px 0 60px"}}><div className="card"><Terminal className="green"/><h3>Real material</h3><p className="muted">Every visible topic opens the actual repository file.</p></div><div className="card"><ShieldCheck className="green"/><h3>Track completion</h3><p className="muted">Completion is saved locally in your browser, topic by topic.</p></div><div className="card"><BookOpen className="green"/><h3>Theory first</h3><p className="muted">Understand definitions and mental models before running commands.</p></div></section>
+ <section className="grid" style={{margin:"20px 0 60px"}}>
+ <button className="card action-card" onClick={()=>setView("all")}><Terminal className="green"/><h3>Real material</h3><p className="muted">Read the actual repository material inside this UI.</p></button>
+ <button className="card action-card" onClick={()=>setView("completed")}><ShieldCheck className="green"/><h3>Track completion</h3><p className="muted">Show only topics you marked completed.</p></button>
+ <button className="card action-card" onClick={()=>setView("theory")}><BookOpen className="green"/><h3>Theory first</h3><p className="muted">Show theory lessons before runnable SQL.</p></button>
+ </section>
+ {selected&&<section className="card material-view"><div className="between"><div><div className="eyebrow">{selected.type}</div><h2>{selected.title}</h2><p className="muted">{selected.desc}</p></div><button className="btn" onClick={()=>setSelected(null)}>Close</button></div><div className="row material-toolbar"><button className="btn primary" onClick={()=>toggle(selected.path)}>{done.includes(selected.path)?"Completed ✓":"Mark completed"}</button><a className="btn" href={repoBase+selected.path} target="_blank" rel="noreferrer">Open on GitHub <ExternalLink size={14}/></a></div><div className="material-content">{loadingMaterial?<p className="muted">Loading real material…</p>:<pre>{material}</pre>}</div></section>
  </div></main>;
 }
