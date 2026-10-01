@@ -536,3 +536,28 @@ The broad topic coverage is now supplemented by dedicated runnable/operational m
 
 ### Remaining validation rule
 Coverage alone is not enough. A module should be promoted to complete only after its SQL is executable on the documented PostgreSQL version, has setup/cleanup instructions, expected observations, and a verification step. Theory-only material should remain explicitly labeled as theory.
+
+
+## 18. Automated verification and engineering practice
+- [ ] deterministic PostgreSQL fixtures
+- [ ] executable SQL assertions
+- [ ] GitHub Actions database tests
+- [ ] repository structure audit
+- [ ] safe vs destructive lab classification
+- [ ] multi-session isolation harness
+- [ ] backup/restore rehearsal
+- [ ] logical replication lab
+- [ ] SQL linting/style
+- [ ] reproducible performance baselines
+- [ ] workload/version/schema metadata captured with benchmarks
+
+## 19. Application integration
+- [ ] JDBC transaction boundaries
+- [ ] psycopg transaction handling
+- [ ] node-postgres pooling
+- [ ] prepared statements
+- [ ] parameter binding
+- [ ] retryable serialization/deadlock failures
+- [ ] idempotency
+- [ ] cursor/streaming patterns
+- [ ] application timeout hierarchy
