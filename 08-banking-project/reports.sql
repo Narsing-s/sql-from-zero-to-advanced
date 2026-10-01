@@ -1,0 +1,2 @@
+SELECT c.first_name,c.last_name,a.account_number,a.balance,RANK() OVER(ORDER BY a.balance DESC) balance_rank FROM bank.accounts a JOIN bank.customers c ON c.customer_id=a.customer_id;
+SELECT c.customer_id,c.first_name,c.last_name,COALESCE(SUM(a.balance),0) total_balance FROM bank.customers c LEFT JOIN bank.accounts a USING(customer_id) GROUP BY c.customer_id,c.first_name,c.last_name ORDER BY total_balance DESC;
