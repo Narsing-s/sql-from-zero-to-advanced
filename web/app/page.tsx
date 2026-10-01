@@ -316,3 +316,10 @@ export default function Home(){
   {path:"56-physical-replication-and-upgrade-lab/02-major-upgrade-checklist.md",title:"Major upgrade checklist",type:"Reference",desc:"pg_upgrade, dump/restore and logical replication migration rehearsal."},
   {path:"56-physical-replication-and-upgrade-lab/03-upgrade-evidence.sql",title:"Upgrade evidence",type:"SQL",desc:"Capture version, extensions and database-size evidence."}
  ]},
+ {id:"57",title:"Runnable Client Integration Labs",desc:"Python, Java JDBC and Node.js PostgreSQL client examples with safe transaction patterns.",topics:[
+  {path:"57-client-integration-runnable-labs/README.md",title:"Client lab",type:"Reference",desc:"Runnable client integration architecture."},
+  {path:"57-client-integration-runnable-labs/python/client_example.py",title:"Python / psycopg",type:"Code",desc:"Parameterized queries and transaction handling."},
+  {path:"57-client-integration-runnable-labs/java/ClientExample.java",title:"Java JDBC",type:"Code",desc:"Prepared statements and explicit commit."},
+  {path:"57-client-integration-runnable-labs/node/client_example.mjs",title:"Node.js pg",type:"Code",desc:"Parameterized queries and rollback handling."},
+  {path:"57-client-integration-runnable-labs/01-security-checklist.md",title:"Client security checklist",type:"Reference",desc:"Secrets, timeouts, retries and parameter binding."}
+ ]},
