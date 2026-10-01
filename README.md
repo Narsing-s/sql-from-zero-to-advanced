@@ -45,3 +45,31 @@ PostgreSQL • pgAdmin • VS Code • Docker • Git/GitHub
 Try every challenge yourself first. Then compare your solution with the answer and understand *why* it works.
 
 If this helps you, star the repository and share it with another learner.
+
+## 🧠 New Expert Curriculum
+The repository now goes beyond CRUD into PostgreSQL engineering and analytics:
+- NULL and three-valued logic
+- LATERAL joins and DISTINCT ON
+- FILTER and ordered aggregates
+- JSON/JSONB and semi-structured data
+- UPSERT and MERGE
+- partitioning and pruning
+- row-level security
+- materialized views
+- full-text search
+- advisory locks
+- data quality checks
+- cohort/retention analysis
+- incremental loading and watermarks
+- real-world project architecture
+
+See 11-expert-sql/README.md, 12-data-engineering/README.md, and 13-real-world-projects/README.md.
+
+## 🖥️ SQL Learning Hub
+A modern local-first learner UI is included under web/. It provides a demo login, progress tracking, lesson search, and a welcome-email hook. The demo does not store passwords.
+
+### Optional real email
+Set RESEND_API_KEY and EMAIL_FROM in the web app environment to enable a real welcome email through Resend. Never commit API keys or secrets to GitHub.
+
+## 🌱 Help More Learners
+Use the UI as the front door, then send learners back to the repository for runnable SQL. Contributions are welcome for new lessons, datasets, challenges, translations, tests, and real-world projects.
