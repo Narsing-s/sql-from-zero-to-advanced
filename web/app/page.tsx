@@ -32,7 +32,8 @@ export default function Home(){
    try{
      const r=await fetch("/api/welcome-email",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email,name:email.split("@")[0]})});
      const d=await r.json();
-     setGreeting(d.message||"Thanks for choosing SQL From Zero to Advanced! Welcome to your SQL learning journey.");
+     setGreeting(d.sent ? "Welcome email sent successfully to " + email + "." : (d.message || "Welcome!"));
+     if (!d.sent && d.mode === "email-error") setGreeting("Welcome email could not be sent: " + (d.error || "check email configuration."));
    }catch{
      setGreeting("Thanks for choosing SQL From Zero to Advanced! Welcome to your SQL learning journey.");
    }
