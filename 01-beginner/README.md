@@ -49,12 +49,23 @@ DELETE removes matching rows.
     DELETE FROM beginner.customers
     WHERE customer_id = 1;
 
+## Beginner lessons
+
+- **[Database basics](01-database-basics.sql)**
+- **[Create tables, data types and constraints](02-create-tables.sql)**
+- **[INSERT](03-insert.sql)**
+- **[SELECT, DISTINCT, sorting and LIMIT](04-select.sql)**
+- **[WHERE](05-where.sql)**
+- **[ORDER BY](06-order-by.sql)**
+- **[UPDATE](07-update.sql)**
+- **[DELETE](08-delete.sql)**
+- **[NULL](09-null.sql)**
+- **[Practice challenge](10-practice-challenge.sql)**
+- **[SQL best practices](11-sql-best-practices.sql)**
+- **[DDL schema changes](12-ddl-schema-changes.sql)**
+
 ## Safety rule
 Always inspect the WHERE condition before UPDATE or DELETE.
-
-For a practical checklist covering naming, formatting, safe modifications, transactions, NULL, parameterization, verification and production thinking, see:
-
-**[SQL Best Practices](11-sql-best-practices.sql)**
 
 ## Learning method
 Definition → Purpose → English sentence → SQL → Predict result → Run → Explain
