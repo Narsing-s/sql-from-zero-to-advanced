@@ -11,7 +11,8 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "lucide-react": "^0.468.0",
-    "tailwindcss": "^4.1.0"
+    "tailwindcss": "^4.1.0",
+    "alasql": "^4.6.6"
   },
   "devDependencies": {
     "typescript": "^5.0.0",
