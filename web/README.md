@@ -123,3 +123,8 @@ The UI reads the actual repository files and provides direct GitHub links. Progr
 7. Test mobile width before deployment.
 
 For production deployment, keep database credentials and email-provider credentials server-side; the learning UI itself should not expose secrets.
+
+
+## Production UI safeguards
+
+The UI now includes Next.js loading, error and not-found states. A GitHub Actions workflow installs dependencies, runs TypeScript checking and performs a production Next.js build whenever the web app changes. This repository currently has no package-lock.json, so the workflow intentionally uses `npm install` rather than `npm ci`.
