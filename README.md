@@ -71,6 +71,12 @@ This repository combines the beginner-friendly learning style of a SQL 101 cours
 | 32 | Security hardening |
 | 33 | Major-version migration and upgrade labs |
 | 34 | Final SQL/PostgreSQL mastery checklist |
+| 35 | PostgreSQL complete reference: information schema, JIT, parallelism, sampling, errors, limits and extensions |
+| 36 | Database reliability engineering and SLOs |
+| 37 | Streaming, CDC and event-driven data patterns |
+| 38 | Search, text, fuzzy matching and multilingual considerations |
+| 39 | Advanced data modeling and temporal/multi-tenant patterns |
+| 40 | Final production simulation and recovery exercise |
 
 ## 🛠️ Installation — Start Here
 
@@ -210,6 +216,12 @@ For every topic:
 32-security-hardening/
 33-migration-and-upgrade-labs/
 34-final-master-checklist/
+35-postgresql-complete-reference/
+36-reliability-engineering/
+37-streaming-and-event-data/
+38-search-and-text/
+39-advanced-data-modeling/
+40-final-production-lab/
 datasets/
 docker/
 web/
