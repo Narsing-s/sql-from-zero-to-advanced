@@ -303,3 +303,10 @@ export default function Home(){
   {path:"53-completeness-audit/03-extension-and-version-check.sql",title:"Version and extension audit",type:"SQL",desc:"Inspect PostgreSQL version and installed extensions."},
   {path:"53-completeness-audit/04-acceptance-criteria.md",title:"Acceptance criteria",type:"Reference",desc:"Definition of done for the curriculum."}
  ]},
+ {id:"54",title:"Multi-Session & Cluster Labs",desc:"Concurrency, logical replication and backup/restore harnesses.",topics:[
+  {path:"54-multi-session-and-cluster-labs/README.md",title:"Lab architecture",type:"Reference",desc:"Environment and safety model."},
+  {path:"54-multi-session-and-cluster-labs/01-concurrency.sql",title:"Concurrency harness",type:"SQL",desc:"Two-session locking and queue patterns."},
+  {path:"54-multi-session-and-cluster-labs/02-logical-replication-checklist.md",title:"Logical replication harness",type:"Reference",desc:"Publisher/subscriber execution checklist."},
+  {path:"54-multi-session-and-cluster-labs/03-backup-restore-checklist.md",title:"Backup/restore harness",type:"Reference",desc:"Disposable restore verification workflow."},
+  {path:"54-multi-session-and-cluster-labs/docker-compose.yml",title:"PostgreSQL 18.6 lab container",type:"Config",desc:"Disposable PostgreSQL lab environment."}
+ ]},
