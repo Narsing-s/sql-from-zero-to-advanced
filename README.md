@@ -79,6 +79,12 @@ This repository combines the beginner-friendly learning style of a SQL 101 cours
 | 40 | Final production simulation and recovery exercise |
 | 41 | Runnable PostgreSQL labs: locks, queues, notifications, materialized views, COPY, time zones, partitions, RLS and query statistics |
 | 42 | Production patterns: pooling, schema drift, performance regression and backup verification |
+| 43 | Validation and automation: lab contracts, safety checks, version matrix and manifests |
+| 44 | Advanced production SQL patterns |
+| 45 | PostgreSQL CI integration with Docker, fixtures and assertions |
+| 46 | Database client integration |
+| 47 | Advanced concurrency and isolation |
+| 48 | Data loading and export |
 
 ## 🛠️ Installation — Start Here
 
