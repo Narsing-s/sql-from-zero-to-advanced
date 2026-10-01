@@ -10,5 +10,7 @@ export PGHOST PGPORT PGUSER PGDATABASE
 
 psql -v ON_ERROR_STOP=1 -f fixtures/001-base.sql
 psql -v ON_ERROR_STOP=1 -f tests/001-core.sql
+psql -v ON_ERROR_STOP=1 -f tests/002-types-and-constraints.sql
+psql -v ON_ERROR_STOP=1 -f tests/003-explain.sql
 
 echo "PostgreSQL curriculum tests passed."
