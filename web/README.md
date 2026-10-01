@@ -6,6 +6,7 @@ A local-first learner portal for the SQL From Zero to Advanced repository.
 
 - local demo login
 - local welcome greeting
+- optional real welcome email delivery through Resend
 - curriculum search
 - **Open** lesson controls
 - direct **Read theory** links
@@ -15,7 +16,7 @@ A local-first learner portal for the SQL From Zero to Advanced repository.
 - no API keys
 - no paid services
 - no external authentication
-- no external email provider
+- no external email provider is required; real email is optional
 
 ## How lesson navigation works
 
@@ -61,7 +62,11 @@ The login is intentionally a browser-local learning/demo login. It is not produc
 
 Progress is stored only in the current browser using localStorage.
 
-The welcome endpoint is also local/demo-only. It returns a greeting and does **not** send an actual email.
+The welcome endpoint supports local greeting mode by default. To deliver a real email, configure `RESEND_API_KEY` and `WELCOME_EMAIL_FROM` as documented in `EMAIL_SETUP.md`.
+
+## Email setup
+
+See [`EMAIL_SETUP.md`](EMAIL_SETUP.md) for the optional real-email configuration. A real inbox delivery requires server-side email-provider credentials; the learning UI itself does not.
 
 ## Troubleshooting
 
