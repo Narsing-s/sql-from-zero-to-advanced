@@ -67,3 +67,24 @@ Build the banking database, write reports, implement transfers, auditing and pro
 
 ## Phase 8 — Interview
 Solve beginner, intermediate, advanced and incident-based SQL questions.
+
+
+## Phase 9 — Runnable Lab Engineering
+- Advisory locks and SKIP LOCKED worker queues
+- LISTEN/NOTIFY and durable-messaging boundaries
+- Materialized-view refresh
+- COPY and bulk loading
+- Time zones, DST and collation
+- Partition lifecycle and pruning
+- RLS tenant-isolation testing
+- Query statistics with pg_stat_statements
+
+## Phase 10 — Production Readiness
+- Connection pool budgets and PgBouncer architecture
+- Schema drift detection
+- Performance regression baselines
+- Backup verification and restore drills
+- Recovery evidence and operational acceptance criteria
+
+## Completion rule
+Do not stop at reading. For each major topic, run the corresponding lab, record the observation, verify the result, clean up, and explain the production trade-offs.
