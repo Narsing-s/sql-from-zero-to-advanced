@@ -87,7 +87,9 @@ const stages:Stage[]=[
   {path:"10-interview-preparation/beginner.md",title:"Beginner interview questions",type:"Reference",desc:"Foundational SQL questions and answers."},
   {path:"10-interview-preparation/intermediate.md",title:"Intermediate interview questions",type:"Reference",desc:"Joins, aggregation and query reasoning."},
   {path:"10-interview-preparation/advanced.md",title:"Advanced interview questions",type:"Reference",desc:"Advanced SQL and PostgreSQL topics."},
-  {path:"10-interview-preparation/scenario-based.md",title:"Scenario-based questions",type:"Reference",desc:"Production troubleshooting and design scenarios."}
+  {path:"10-interview-preparation/scenario-based.md",title:"Scenario-based questions",type:"Reference",desc:"Production troubleshooting and design scenarios."},
+  {path:"10-interview-preparation/complete-theory-qa.md",title:"Complete theory Q&A",type:"Reference",desc:"85 interview-ready SQL and PostgreSQL theory questions with answers."},
+  {path:"10-interview-preparation/production-scenarios-qa.md",title:"Production scenario Q&A",type:"Reference",desc:"60 production troubleshooting and design scenarios with model answers."}
  ]},
  {id:"11",title:"Expert PostgreSQL",desc:"Study PostgreSQL-specific features and production-grade SQL.",topics:[
   {path:"11-expert-sql/README.md",title:"Expert SQL roadmap",type:"Theory",desc:"PostgreSQL expert learning sequence."},
