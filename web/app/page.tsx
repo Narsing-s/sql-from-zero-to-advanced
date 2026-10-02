@@ -237,6 +237,11 @@ const stages:Stage[]=[
   {path:"67-postgresql-server-tools-and-deep-observability/01-server-tools-theory-qa.md",title:"Server tools theory Q&A",type:"Reference",desc:"40 server-tools and observability theory questions with answers."},
   {path:"67-postgresql-server-tools-and-deep-observability/02-server-tools-scenarios-qa.md",title:"Server tools scenario Q&A",type:"Reference",desc:"30 production troubleshooting scenarios with model answers."}
  ]},
+ {id:"68",title:"PostgreSQL Client Interfaces & SQL Conformance",desc:"libpq, pipeline clients, large objects, ECPG, information_schema and SQL portability.",topics:[
+  {path:"68-postgresql-client-interfaces-and-conformance/README.md",title:"Client interfaces & conformance guide",type:"Reference",desc:"PostgreSQL client-interface and SQL-standard coverage."},
+  {path:"68-postgresql-client-interfaces-and-conformance/01-client-interfaces-theory-qa.md",title:"Client interfaces theory Q&A",type:"Reference",desc:"40 client-interface and conformance theory questions."},
+  {path:"68-postgresql-client-interfaces-and-conformance/02-client-interfaces-scenarios-qa.md",title:"Client interfaces scenario Q&A",type:"Reference",desc:"30 production client troubleshooting scenarios."}
+ ]},
 ];
 
 const rootTopics:Topic[]=[
