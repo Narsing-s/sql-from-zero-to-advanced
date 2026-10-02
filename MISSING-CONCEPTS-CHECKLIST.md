@@ -533,6 +533,10 @@ The broad topic coverage is now supplemented by dedicated runnable/operational m
 - [x] connection-pool production checklist
 - [x] schema-drift and performance-regression checklist
 - [x] backup verification and restore-drill procedure
+- [x] recursive SEARCH/CYCLE execution lab
+- [x] concurrent index maintenance guidance including REINDEX CONCURRENTLY
+- [x] production failure/chaos drill matrix
+- [x] incident response and RCA evidence template
 
 ### Remaining validation rule
 Coverage alone is not enough. A module should be promoted to complete only after its SQL is executable on the documented PostgreSQL version, has setup/cleanup instructions, expected observations, and a verification step. Theory-only material should remain explicitly labeled as theory.
