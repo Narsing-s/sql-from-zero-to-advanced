@@ -5,8 +5,8 @@ This is the repository's **master curriculum audit**. It covers language semanti
 > A checked concept should have **definition + purpose + mental model + example + edge cases + performance + security/concurrency + production guidance** somewhere in the repository.
 
 ## 1. SQL foundations and relational theory
-- [ ] SQL language and declarative programming
-- [ ] SQL standard vs PostgreSQL dialect
+- [x] SQL language and declarative programming
+- [x] SQL standard vs PostgreSQL dialect
 - [ ] relational model
 - [ ] relation, tuple, attribute, domain
 - [ ] keys and functional dependencies
@@ -356,7 +356,8 @@ This is the repository's **master curriculum audit**. It covers language semanti
 - [ ] exclusion constraints
 - [ ] arrays and array operators
 - [ ] foreign data wrappers
-- [ ] PostGIS/geospatial concepts
+- [x] PostGIS/geospatial concepts
+- [x] PostGIS/geospatial hands-on lab
 
 ## 15. Partitioning
 - [ ] RANGE
