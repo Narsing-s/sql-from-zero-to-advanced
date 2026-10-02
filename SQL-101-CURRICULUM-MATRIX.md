@@ -106,3 +106,5 @@ This matrix is an original navigation and coverage map. It does not reproduce th
 | 65. PostgreSQL Deep Internals & Access Methods | `65-postgresql-deep-internals/` | GEQO, index/table access methods, HOT/storage, XIDs, subtransactions, two-phase commit, backup manifests and planner statistics |
 
 | 66. Logical Replication & CDC Deep Dive | `66-logical-replication-and-cdc-deep-dive/` | Logical replication architecture, row/column filtering, conflicts, failover, security, upgrades, CDC idempotency |
+
+| 67. PostgreSQL Server Tools & Deep Observability | `67-postgresql-server-tools-and-deep-observability/` | Server utilities, dynamic tracing, low-level recovery evidence, disk/I/O diagnostics and observability scenarios |
