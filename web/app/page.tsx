@@ -201,6 +201,58 @@ const stages:Stage[]=[
  {id:"52",title:"Observability & Performance Lab",desc:"Measure PostgreSQL behavior with evidence.",topics:[
   {path:"52-observability-and-performance-lab/README.md",title:"Performance lab",type:"Practice",desc:"Plans, waits, statistics, WAL and reproducible benchmarks."}
  ]},
+ {id:"53",title:"Completeness Audit",desc:"Reproducibility, replication restrictions, version checks and acceptance criteria.",topics:[
+  {path:"53-completeness-audit/README.md",title:"Completeness audit",type:"Reference",desc:"Final PostgreSQL engineering coverage and test classification."},
+  {path:"53-completeness-audit/01-replication-restrictions.md",title:"Replication restrictions",type:"Reference",desc:"Schema, sequence, migration and monitoring considerations."},
+  {path:"53-completeness-audit/02-deterministic-tests.sql",title:"Deterministic tests",type:"SQL",desc:"Stable timezone, ordering and fixture assertions."},
+  {path:"53-completeness-audit/03-extension-and-version-check.sql",title:"Version and extension audit",type:"SQL",desc:"Inspect PostgreSQL version and installed extensions."},
+  {path:"53-completeness-audit/04-acceptance-criteria.md",title:"Acceptance criteria",type:"Reference",desc:"Definition of done for the curriculum."}
+ ]},
+ {id:"54",title:"Multi-Session & Cluster Labs",desc:"Concurrency, logical replication and backup/restore harnesses.",topics:[
+  {path:"54-multi-session-and-cluster-labs/README.md",title:"Lab architecture",type:"Reference",desc:"Environment and safety model."},
+  {path:"54-multi-session-and-cluster-labs/01-concurrency.sql",title:"Concurrency harness",type:"SQL",desc:"Two-session locking and queue patterns."},
+  {path:"54-multi-session-and-cluster-labs/02-logical-replication-checklist.md",title:"Logical replication harness",type:"Reference",desc:"Publisher/subscriber execution checklist."},
+  {path:"54-multi-session-and-cluster-labs/03-backup-restore-checklist.md",title:"Backup/restore harness",type:"Reference",desc:"Disposable restore verification workflow."},
+  {path:"54-multi-session-and-cluster-labs/docker-compose.yml",title:"PostgreSQL 18.6 lab container",type:"Config",desc:"Disposable PostgreSQL lab environment."}
+ ]},
+ {id:"55",title:"Production Failure & Chaos Labs",desc:"Safe, repeatable drills for connection, locking, WAL, replication, recovery and incident response.",topics:[
+  {path:"55-production-failure-and-chaos-labs/README.md",title:"Failure & chaos lab guide",type:"Reference",desc:"Safe production-failure drills and evidence requirements."},
+  {path:"55-production-failure-and-chaos-labs/01-failure-matrix.md",title:"Failure matrix",type:"Reference",desc:"Symptoms, evidence, safe mitigation and permanent improvements."},
+  {path:"55-production-failure-and-chaos-labs/02-connection-and-transaction-failure.sql",title:"Connection & transaction evidence",type:"SQL",desc:"Inspect sessions, transaction age and connection pressure."},
+  {path:"55-production-failure-and-chaos-labs/03-lock-and-deadlock-analysis.sql",title:"Lock & deadlock analysis",type:"SQL",desc:"Identify blockers and waiting sessions without terminating them."},
+  {path:"55-production-failure-and-chaos-labs/04-replication-and-recovery-evidence.sql",title:"Replication & recovery evidence",type:"SQL",desc:"Inspect recovery role, WAL, replicas and replication slots."},
+  {path:"55-production-failure-and-chaos-labs/05-incident-and-rca-template.md",title:"Incident & RCA template",type:"Reference",desc:"Capture timeline, root cause, recovery and prevention."}
+ ]},
+ {id:"56",title:"Physical Replication & Major Upgrade",desc:"Primary/standby, failover, lag and PostgreSQL major-upgrade rehearsal.",topics:[
+  {path:"56-physical-replication-and-upgrade-lab/README.md",title:"Lab architecture",type:"Reference",desc:"Physical replication and upgrade lab."},
+  {path:"56-physical-replication-and-upgrade-lab/01-primary-standby-checklist.md",title:"Primary/standby checklist",type:"Reference",desc:"Replication, replay, failover and RPO/RTO drill."},
+  {path:"56-physical-replication-and-upgrade-lab/02-major-upgrade-checklist.md",title:"Major upgrade checklist",type:"Reference",desc:"pg_upgrade, dump/restore and logical replication migration rehearsal."},
+  {path:"56-physical-replication-and-upgrade-lab/03-upgrade-evidence.sql",title:"Upgrade evidence",type:"SQL",desc:"Capture version, extensions and database-size evidence."}
+ ]},
+ {id:"57",title:"Runnable Client Integration Labs",desc:"Python, Java JDBC and Node.js PostgreSQL client examples with safe transaction patterns.",topics:[
+  {path:"57-client-integration-runnable-labs/README.md",title:"Client lab",type:"Reference",desc:"Runnable client integration architecture."},
+  {path:"57-client-integration-runnable-labs/python/client_example.py",title:"Python / psycopg",type:"Code",desc:"Parameterized queries and transaction handling."},
+  {path:"57-client-integration-runnable-labs/java/ClientExample.java",title:"Java JDBC",type:"Code",desc:"Prepared statements and explicit commit."},
+  {path:"57-client-integration-runnable-labs/node/client_example.mjs",title:"Node.js pg",type:"Code",desc:"Parameterized queries and rollback handling."},
+  {path:"57-client-integration-runnable-labs/01-security-checklist.md",title:"Client security checklist",type:"Reference",desc:"Secrets, timeouts, retries and parameter binding."}
+ ]},
+ {id:"58",title:"PostgreSQL 18 Operational Tools",desc:"Backup verification, integrity checks, benchmarking, client tooling and logical-upgrade prerequisites.",topics:[
+ {path:"58-postgresql-18-operational-tools/04-pg-stat-io-and-observability.sql",title:"pg_stat_io observability",type:"SQL",desc:"Inspect PostgreSQL I/O statistics and correlate them with performance evidence."},
+  {path:"58-postgresql-18-operational-tools/README.md",title:"Operational tools",type:"Reference",desc:"PostgreSQL 18 tools and specialized operational coverage."},
+  {path:"58-postgresql-18-operational-tools/01-client-and-tooling-checklist.md",title:"Client and tooling checklist",type:"Reference",desc:"pgbench, libpq pipeline, backup verification and integrity tooling."},
+  {path:"58-postgresql-18-operational-tools/02-logical-upgrade-checklist.md",title:"Logical upgrade checklist",type:"Reference",desc:"Publisher/subscriber upgrade prerequisites."},
+  {path:"58-postgresql-18-operational-tools/03-performance-evidence.sql",title:"Performance evidence",type:"SQL",desc:"Capture PostgreSQL settings and benchmark evidence metadata."}
+ ]},
+ {id:"59",title:"SQL Error Diagnostics",desc:"Structured SQLSTATE, PL/pgSQL exception diagnostics and safe retry classification.",topics:[
+  {path:"59-sql-error-diagnostics/README.md",title:"Error diagnostics guide",type:"Reference",desc:"SQLSTATE, exception context and retryability."},
+  {path:"59-sql-error-diagnostics/01-exception-diagnostics.sql",title:"GET STACKED DIAGNOSTICS",type:"SQL",desc:"Capture structured PL/pgSQL exception details."},
+  {path:"59-sql-error-diagnostics/02-retryability-matrix.md",title:"Retryability matrix",type:"Reference",desc:"Distinguish transient and non-transient database failures."}
+ ]},
+ {id:"60",title:"PostGIS & Geospatial SQL",desc:"Optional spatial SQL track covering geometry, geography, SRIDs and spatial indexes.",topics:[
+  {path:"60-postgis-geospatial/README.md",title:"PostGIS guide",type:"Reference",desc:"Spatial data concepts, SRIDs, distance and production concerns."},
+  {path:"60-postgis-geospatial/01-spatial-basics.sql",title:"Spatial basics",type:"SQL",desc:"Create points and calculate geography distance."},
+  {path:"60-postgis-geospatial/02-spatial-index-and-quality.md",title:"Spatial index & data quality",type:"Reference",desc:"GiST indexing, EXPLAIN and geometry validation."}
+ ]},
  {id:"61",title:"PostgreSQL Testing & Server Programming",desc:"Regression, isolation, recovery/replication testing and server-side programming.",topics:[
   {path:"61-postgresql-testing-and-server-programming/README.md",title:"Testing & server programming guide",type:"Reference",desc:"Advanced database testing and server-side extensibility roadmap."},
   {path:"61-postgresql-testing-and-server-programming/01-regression-and-isolation-testing.md",title:"Regression & isolation testing",type:"Reference",desc:"Deterministic regression, concurrency, recovery and replication test strategy."},
@@ -326,7 +378,10 @@ export default function Home(){
  const [material,setMaterial]=useState("");
  const [loadingMaterial,setLoadingMaterial]=useState(false);
  const [view,setView]=useState<"all"|"completed"|"theory">("all");
- const [labOpen,setLabOpen]=useState(false);\n const [repoFiles,setRepoFiles]=useState<{path:string;size:number;type:string}[]>([]);\n const [repoSearch,setRepoSearch]=useState("");\n const [repoLoading,setRepoLoading]=useState(false);
+ const [labOpen,setLabOpen]=useState(false);
+ const [repoFiles,setRepoFiles]=useState<{path:string;size:number;type:string}[]>([]);
+ const [repoSearch,setRepoSearch]=useState("");
+ const [repoLoading,setRepoLoading]=useState(false);
  const [done,setDone]=useState<string[]>(typeof window!=="undefined"?JSON.parse(localStorage.getItem("sql_done")||"[]"):[]);
  const allTopics=[...stages.flatMap(s=>s.topics),...rootTopics];
  const filteredStages=useMemo(()=>stages.map(s=>({...s,topics:s.topics.filter(t=>{
@@ -370,56 +425,3 @@ export default function Home(){
  {selected&&<section className="card material-view"><div className="between"><div><div className="eyebrow">{selected.type}</div><h2>{selected.title}</h2><p className="muted">{selected.desc}</p></div><button className="btn" onClick={()=>setSelected(null)}>Close</button></div><div className="row material-toolbar"><button className="btn primary" onClick={()=>toggle(selected.path)}>{done.includes(selected.path)?"Completed ✓":"Mark completed"}</button><a className="btn" href={repoBase+selected.path} target="_blank" rel="noreferrer">Open on GitHub <ExternalLink size={14}/></a></div><div className="material-content">{loadingMaterial?<p className="muted">Loading real material…</p>:<pre>{material}</pre>}</div></section>}
  </div></main>;
 }
-
- {id:"53",title:"Completeness Audit",desc:"Reproducibility, replication restrictions, version checks and acceptance criteria.",topics:[
-  {path:"53-completeness-audit/README.md",title:"Completeness audit",type:"Reference",desc:"Final PostgreSQL engineering coverage and test classification."},
-  {path:"53-completeness-audit/01-replication-restrictions.md",title:"Replication restrictions",type:"Reference",desc:"Schema, sequence, migration and monitoring considerations."},
-  {path:"53-completeness-audit/02-deterministic-tests.sql",title:"Deterministic tests",type:"SQL",desc:"Stable timezone, ordering and fixture assertions."},
-  {path:"53-completeness-audit/03-extension-and-version-check.sql",title:"Version and extension audit",type:"SQL",desc:"Inspect PostgreSQL version and installed extensions."},
-  {path:"53-completeness-audit/04-acceptance-criteria.md",title:"Acceptance criteria",type:"Reference",desc:"Definition of done for the curriculum."}
- ]},
- {id:"54",title:"Multi-Session & Cluster Labs",desc:"Concurrency, logical replication and backup/restore harnesses.",topics:[
-  {path:"54-multi-session-and-cluster-labs/README.md",title:"Lab architecture",type:"Reference",desc:"Environment and safety model."},
-  {path:"54-multi-session-and-cluster-labs/01-concurrency.sql",title:"Concurrency harness",type:"SQL",desc:"Two-session locking and queue patterns."},
-  {path:"54-multi-session-and-cluster-labs/02-logical-replication-checklist.md",title:"Logical replication harness",type:"Reference",desc:"Publisher/subscriber execution checklist."},
-  {path:"54-multi-session-and-cluster-labs/03-backup-restore-checklist.md",title:"Backup/restore harness",type:"Reference",desc:"Disposable restore verification workflow."},
-  {path:"54-multi-session-and-cluster-labs/docker-compose.yml",title:"PostgreSQL 18.6 lab container",type:"Config",desc:"Disposable PostgreSQL lab environment."}
- ]},
- {id:"55",title:"Production Failure & Chaos Labs",desc:"Safe, repeatable drills for connection, locking, WAL, replication, recovery and incident response.",topics:[
-  {path:"55-production-failure-and-chaos-labs/README.md",title:"Failure & chaos lab guide",type:"Reference",desc:"Safe production-failure drills and evidence requirements."},
-  {path:"55-production-failure-and-chaos-labs/01-failure-matrix.md",title:"Failure matrix",type:"Reference",desc:"Symptoms, evidence, safe mitigation and permanent improvements."},
-  {path:"55-production-failure-and-chaos-labs/02-connection-and-transaction-failure.sql",title:"Connection & transaction evidence",type:"SQL",desc:"Inspect sessions, transaction age and connection pressure."},
-  {path:"55-production-failure-and-chaos-labs/03-lock-and-deadlock-analysis.sql",title:"Lock & deadlock analysis",type:"SQL",desc:"Identify blockers and waiting sessions without terminating them."},
-  {path:"55-production-failure-and-chaos-labs/04-replication-and-recovery-evidence.sql",title:"Replication & recovery evidence",type:"SQL",desc:"Inspect recovery role, WAL, replicas and replication slots."},
-  {path:"55-production-failure-and-chaos-labs/05-incident-and-rca-template.md",title:"Incident & RCA template",type:"Reference",desc:"Capture timeline, root cause, recovery and prevention."}
- ]},
- {id:"56",title:"Physical Replication & Major Upgrade",desc:"Primary/standby, failover, lag and PostgreSQL major-upgrade rehearsal.",topics:[
-  {path:"56-physical-replication-and-upgrade-lab/README.md",title:"Lab architecture",type:"Reference",desc:"Physical replication and upgrade lab."},
-  {path:"56-physical-replication-and-upgrade-lab/01-primary-standby-checklist.md",title:"Primary/standby checklist",type:"Reference",desc:"Replication, replay, failover and RPO/RTO drill."},
-  {path:"56-physical-replication-and-upgrade-lab/02-major-upgrade-checklist.md",title:"Major upgrade checklist",type:"Reference",desc:"pg_upgrade, dump/restore and logical replication migration rehearsal."},
-  {path:"56-physical-replication-and-upgrade-lab/03-upgrade-evidence.sql",title:"Upgrade evidence",type:"SQL",desc:"Capture version, extensions and database-size evidence."}
- ]},
- {id:"57",title:"Runnable Client Integration Labs",desc:"Python, Java JDBC and Node.js PostgreSQL client examples with safe transaction patterns.",topics:[
-  {path:"57-client-integration-runnable-labs/README.md",title:"Client lab",type:"Reference",desc:"Runnable client integration architecture."},
-  {path:"57-client-integration-runnable-labs/python/client_example.py",title:"Python / psycopg",type:"Code",desc:"Parameterized queries and transaction handling."},
-  {path:"57-client-integration-runnable-labs/java/ClientExample.java",title:"Java JDBC",type:"Code",desc:"Prepared statements and explicit commit."},
-  {path:"57-client-integration-runnable-labs/node/client_example.mjs",title:"Node.js pg",type:"Code",desc:"Parameterized queries and rollback handling."},
-  {path:"57-client-integration-runnable-labs/01-security-checklist.md",title:"Client security checklist",type:"Reference",desc:"Secrets, timeouts, retries and parameter binding."}
- ]},
- {id:"58",title:"PostgreSQL 18 Operational Tools",desc:"Backup verification, integrity checks, benchmarking, client tooling and logical-upgrade prerequisites.",topics:[
- {path:"58-postgresql-18-operational-tools/04-pg-stat-io-and-observability.sql",title:"pg_stat_io observability",type:"SQL",desc:"Inspect PostgreSQL I/O statistics and correlate them with performance evidence."},
-  {path:"58-postgresql-18-operational-tools/README.md",title:"Operational tools",type:"Reference",desc:"PostgreSQL 18 tools and specialized operational coverage."},
-  {path:"58-postgresql-18-operational-tools/01-client-and-tooling-checklist.md",title:"Client and tooling checklist",type:"Reference",desc:"pgbench, libpq pipeline, backup verification and integrity tooling."},
-  {path:"58-postgresql-18-operational-tools/02-logical-upgrade-checklist.md",title:"Logical upgrade checklist",type:"Reference",desc:"Publisher/subscriber upgrade prerequisites."},
-  {path:"58-postgresql-18-operational-tools/03-performance-evidence.sql",title:"Performance evidence",type:"SQL",desc:"Capture PostgreSQL settings and benchmark evidence metadata."}
- ]},
- {id:"59",title:"SQL Error Diagnostics",desc:"Structured SQLSTATE, PL/pgSQL exception diagnostics and safe retry classification.",topics:[
-  {path:"59-sql-error-diagnostics/README.md",title:"Error diagnostics guide",type:"Reference",desc:"SQLSTATE, exception context and retryability."},
-  {path:"59-sql-error-diagnostics/01-exception-diagnostics.sql",title:"GET STACKED DIAGNOSTICS",type:"SQL",desc:"Capture structured PL/pgSQL exception details."},
-  {path:"59-sql-error-diagnostics/02-retryability-matrix.md",title:"Retryability matrix",type:"Reference",desc:"Distinguish transient and non-transient database failures."}
- ]},
- {id:"60",title:"PostGIS & Geospatial SQL",desc:"Optional spatial SQL track covering geometry, geography, SRIDs and spatial indexes.",topics:[
-  {path:"60-postgis-geospatial/README.md",title:"PostGIS guide",type:"Reference",desc:"Spatial data concepts, SRIDs, distance and production concerns."},
-  {path:"60-postgis-geospatial/01-spatial-basics.sql",title:"Spatial basics",type:"SQL",desc:"Create points and calculate geography distance."},
-  {path:"60-postgis-geospatial/02-spatial-index-and-quality.md",title:"Spatial index & data quality",type:"Reference",desc:"GiST indexing, EXPLAIN and geometry validation."}
- ]},
