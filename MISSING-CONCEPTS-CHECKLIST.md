@@ -675,3 +675,19 @@ Coverage alone is not enough. A module should be promoted to complete only after
 - [x] CDC replay/idempotency and downstream reconciliation
 - [x] 40 theory Q&As
 - [x] 30 production scenarios
+
+
+## Stage 67 — Server tools & deep observability audit
+- [x] pg_controldata and cluster-state evidence
+- [x] pg_checksums and corruption evidence
+- [x] pg_waldump and pg_walsummary
+- [x] pg_rewind and timeline-divergence recovery
+- [x] pg_archivecleanup safety
+- [x] pg_createsubscriber
+- [x] pg_test_fsync and pg_test_timing
+- [x] pg_resetwal emergency-use boundaries
+- [x] Dynamic tracing/probes
+- [x] Disk-full and I/O incident diagnosis
+- [x] Upgrade evidence and monitoring compatibility
+- [x] 40 theory Q&As
+- [x] 30 production scenarios
