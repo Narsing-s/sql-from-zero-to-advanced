@@ -44,3 +44,8 @@ Use the dedicated testing and server-programming bank for deeper PostgreSQL engi
 ## Stage 65 extension
 - [Deep internals theory](../65-postgresql-deep-internals/01-deep-internals-theory-qa.md)
 - [Deep internals scenarios](../65-postgresql-deep-internals/02-deep-internals-scenarios-qa.md)
+
+
+## Stage 66 — Logical Replication & CDC
+- [Theory Q&A](../66-logical-replication-and-cdc-deep-dive/01-logical-replication-theory-qa.md)
+- [Scenario Q&A](../66-logical-replication-and-cdc-deep-dive/02-logical-replication-scenarios-qa.md)
