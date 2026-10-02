@@ -39,6 +39,7 @@ Move from writing SQL to reasoning about database behavior, internals and produc
 - replication
 - recovery
 - plan regressions
+- prepared statements and generic/custom plan behavior
 
 ## Lesson structure
 Theory → Mental Model → Example → Explanation → Practice → Edge Cases → Performance → Security → Production → Interview
