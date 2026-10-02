@@ -85,3 +85,8 @@ Use the Q&A after studying the underlying theory. The answers are deliberately s
 ## Stage 67 — PostgreSQL Server Tools & Deep Observability
 - [Server tools theory Q&A](../67-postgresql-server-tools-and-deep-observability/01-server-tools-theory-qa.md) — 40 questions.
 - [Server tools scenario Q&A](../67-postgresql-server-tools-and-deep-observability/02-server-tools-scenarios-qa.md) — 30 production scenarios.
+
+
+## Stage 68 — PostgreSQL Client Interfaces & SQL Conformance
+- [Client interfaces theory Q&A](../68-postgresql-client-interfaces-and-conformance/01-client-interfaces-theory-qa.md) — 40 questions.
+- [Client interfaces scenario Q&A](../68-postgresql-client-interfaces-and-conformance/02-client-interfaces-scenarios-qa.md) — 30 production scenarios.
