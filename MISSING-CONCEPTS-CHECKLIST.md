@@ -580,3 +580,18 @@ Coverage alone is not enough. A module should be promoted to complete only after
 - [x] PostgreSQL 18 maintenance timing and lock-failure observability
 - [ ] reproducibility metadata captured
 - [ ] curriculum acceptance criteria documented
+
+
+## Stage 61 — PostgreSQL Testing & Server Programming
+- [x] Regression testing concepts and deterministic expected-output validation
+- [x] Concurrent/isolation testing strategy
+- [x] Recovery and physical-replication test strategy
+- [x] Logical-replication test strategy
+- [x] Database CI test-quality and failure taxonomy
+- [x] PL/pgSQL/server-side programming boundaries
+- [x] Trigger and event-trigger testing considerations
+- [x] Logical decoding/CDC testing considerations
+- [x] PostgreSQL extension testing and upgrade considerations
+- [x] Archive-module theory coverage
+- [x] OAuth validator module theory and security testing coverage
+- [x] 50 testing/server-programming interview scenarios with answers
