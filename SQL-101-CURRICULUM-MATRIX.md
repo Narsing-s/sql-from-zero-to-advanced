@@ -95,3 +95,4 @@ This matrix is an original navigation and coverage map. It does not reproduce th
 
 | 59. SQL Error Diagnostics | `59-sql-error-diagnostics/` | SQLSTATE, PL/pgSQL exception diagnostics and retry classification |
 | 60. PostGIS & Geospatial SQL | `60-postgis-geospatial/` | optional spatial data, SRIDs, distance, indexing and quality |
+| 61. PostgreSQL Testing & Server Programming | `61-postgresql-testing-and-server-programming/` | regression tests, isolation/concurrency tests, recovery/replication test strategy and server-side programming boundaries |
