@@ -97,3 +97,4 @@ This matrix is an original navigation and coverage map. It does not reproduce th
 | 60. PostGIS & Geospatial SQL | `60-postgis-geospatial/` | optional spatial data, SRIDs, distance, indexing and quality |
 | 61. PostgreSQL Testing & Server Programming | `61-postgresql-testing-and-server-programming/` | regression tests, isolation/concurrency tests, recovery/replication test strategy and server-side programming boundaries |
 | 62. Advanced PostgreSQL Internals & Interfaces | `62-postgresql-advanced-internals-and-interfaces/` | JIT, catalogs, protocol, libpq, FDW, sampling, access/extension interfaces and portability |
+| 63. Advanced PostgreSQL Internals & Extensibility | `63-postgresql-internals-extensibility/` | rewrite system, parser/analyzer/planner/executor, MVCC internals, WAL/recovery, procedural handlers, SPI, FDW, custom types, logical failover, MERGE and advanced scenario Q&A |
