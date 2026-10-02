@@ -39,3 +39,8 @@ Use the dedicated testing and server-programming bank for deeper PostgreSQL engi
 ## Stage 64 extension
 - [PostgreSQL 18 modern features theory](../64-postgresql-18-modern-features/01-modern-features-theory-qa.md)
 - [PostgreSQL 18 modern feature scenarios](../64-postgresql-18-modern-features/02-modern-features-scenarios-qa.md)
+
+
+## Stage 65 extension
+- [Deep internals theory](../65-postgresql-deep-internals/01-deep-internals-theory-qa.md)
+- [Deep internals scenarios](../65-postgresql-deep-internals/02-deep-internals-scenarios-qa.md)
