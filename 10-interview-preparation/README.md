@@ -80,3 +80,8 @@ Use the Q&A after studying the underlying theory. The answers are deliberately s
 ## Stage 66 — Logical Replication & CDC Deep Dive
 - [Logical replication theory Q&A](../66-logical-replication-and-cdc-deep-dive/01-logical-replication-theory-qa.md) — 40 questions.
 - [Logical replication scenario Q&A](../66-logical-replication-and-cdc-deep-dive/02-logical-replication-scenarios-qa.md) — 30 production scenarios.
+
+
+## Stage 67 — PostgreSQL Server Tools & Deep Observability
+- [Server tools theory Q&A](../67-postgresql-server-tools-and-deep-observability/01-server-tools-theory-qa.md) — 40 questions.
+- [Server tools scenario Q&A](../67-postgresql-server-tools-and-deep-observability/02-server-tools-scenarios-qa.md) — 30 production scenarios.
