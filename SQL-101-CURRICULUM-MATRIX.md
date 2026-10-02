@@ -87,3 +87,8 @@ This matrix is an original navigation and coverage map. It does not reproduce th
 | 52. Observability/performance | `52-observability-and-performance-lab/` | plans, waits, statistics and baselines |
 
 | 53. Completeness Audit | `53-completeness-audit/` | reproducibility, replication restrictions, version checks and acceptance criteria |
+| 54. Multi-Session & Cluster Labs | `54-multi-session-and-cluster-labs/` | concurrency, logical replication and backup/restore harnesses |
+| 55. Production Failure & Chaos Labs | `55-production-failure-and-chaos-labs/` | safe failure drills, recovery evidence, incident response and RCA |
+| 56. Physical Replication & Major Upgrade | `56-physical-replication-and-upgrade-lab/` | primary/standby, failover, lag and major-upgrade rehearsal |
+| 57. Runnable Client Integration Labs | `57-client-integration-runnable-labs/` | Python, Java JDBC and Node.js integration patterns |
+| 58. PostgreSQL 18 Operational Tools | `58-postgresql-18-operational-tools/` | integrity, backup verification, benchmarking and operational tooling |
