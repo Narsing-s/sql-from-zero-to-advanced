@@ -101,3 +101,6 @@ This matrix is an original navigation and coverage map. It does not reproduce th
 
 
 | 64. PostgreSQL 18 Modern Features | `64-postgresql-18-modern-features/` | AIO, B-tree skip scan, UUIDv7, virtual generated columns, temporal constraints, OAuth, upgrade compatibility and feature rollout scenarios |
+
+
+| 65. PostgreSQL Deep Internals & Access Methods | `65-postgresql-deep-internals/` | GEQO, index/table access methods, HOT/storage, XIDs, subtransactions, two-phase commit, backup manifests and planner statistics |
