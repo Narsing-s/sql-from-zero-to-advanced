@@ -11,11 +11,9 @@ SELECT pid,
        backup_total,
        backup_streamed,
        tablespaces_total,
-       tablespaces_streamed,
-       started_at,
-       now() - started_at AS elapsed
+       tablespaces_streamed
 FROM pg_stat_progress_basebackup
-ORDER BY started_at;
+ORDER BY pid;
 
 -- Correlate with the backend responsible for the backup.
 SELECT p.pid,
