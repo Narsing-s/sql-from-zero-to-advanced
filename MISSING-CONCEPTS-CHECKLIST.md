@@ -250,7 +250,7 @@ This is the repository's **master curriculum audit**. It covers language semanti
 - [ ] join ordering
 - [ ] CTE optimization/materialization
 - [ ] JIT
-- [ ] work_mem
+- [x] work_mem
 - [ ] shared_buffers
 - [ ] temp-file spills
 - [ ] sargability
@@ -267,7 +267,7 @@ This is the repository's **master curriculum audit**. It covers language semanti
 - [ ] Hash
 - [ ] GIN
 - [ ] GiST
-- [ ] SP-GiST
+- [x] SP-GiST
 - [ ] BRIN
 - [ ] multicolumn indexes
 - [ ] column order
@@ -314,7 +314,7 @@ This is the repository's **master curriculum audit**. It covers language semanti
 - [ ] long-running transactions
 - [ ] idle-in-transaction sessions
 - [ ] transaction ID wraparound
-- [ ] maintenance_work_mem
+- [x] maintenance_work_mem
 - [ ] visibility map and vacuum interaction
 
 ## 13. Security
@@ -560,7 +560,7 @@ Coverage alone is not enough. A module should be promoted to complete only after
 - [ ] JDBC transaction boundaries
 - [ ] psycopg transaction handling
 - [ ] node-postgres pooling
-- [ ] prepared statements
+- [x] prepared statements
 - [ ] parameter binding
 - [ ] retryable serialization/deadlock failures
 - [ ] idempotency
