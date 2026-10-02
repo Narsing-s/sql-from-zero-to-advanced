@@ -73,20 +73,20 @@ Use the Q&A after studying the underlying theory. The answers are deliberately s
 
 
 ## Stage 65 — PostgreSQL Deep Internals
-- [Deep internals theory Q&A](../65-postgresql-deep-internals/01-deep-internals-theory-qa.md) — 40 questions.
+- [Deep internals theory Q&A](../65-postgresql-deep-internals/01-deep-internals-theory-qa.md) — 50 questions.
 - [Deep internals scenario Q&A](../65-postgresql-deep-internals/02-deep-internals-scenarios-qa.md) — 30 production scenarios.
 
 
 ## Stage 66 — Logical Replication & CDC Deep Dive
-- [Logical replication theory Q&A](../66-logical-replication-and-cdc-deep-dive/01-logical-replication-theory-qa.md) — 40 questions.
+- [Logical replication theory Q&A](../66-logical-replication-and-cdc-deep-dive/01-logical-replication-theory-qa.md) — 50 questions.
 - [Logical replication scenario Q&A](../66-logical-replication-and-cdc-deep-dive/02-logical-replication-scenarios-qa.md) — 30 production scenarios.
 
 
 ## Stage 67 — PostgreSQL Server Tools & Deep Observability
-- [Server tools theory Q&A](../67-postgresql-server-tools-and-deep-observability/01-server-tools-theory-qa.md) — 40 questions.
+- [Server tools theory Q&A](../67-postgresql-server-tools-and-deep-observability/01-server-tools-theory-qa.md) — 50 questions.
 - [Server tools scenario Q&A](../67-postgresql-server-tools-and-deep-observability/02-server-tools-scenarios-qa.md) — 30 production scenarios.
 
 
 ## Stage 68 — PostgreSQL Client Interfaces & SQL Conformance
-- [Client interfaces theory Q&A](../68-postgresql-client-interfaces-and-conformance/01-client-interfaces-theory-qa.md) — 40 questions.
+- [Client interfaces theory Q&A](../68-postgresql-client-interfaces-and-conformance/01-client-interfaces-theory-qa.md) — 50 questions.
 - [Client interfaces scenario Q&A](../68-postgresql-client-interfaces-and-conformance/02-client-interfaces-scenarios-qa.md) — 30 production scenarios.
