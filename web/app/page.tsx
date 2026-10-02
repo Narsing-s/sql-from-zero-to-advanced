@@ -212,6 +212,11 @@ const stages:Stage[]=[
   {path:"62-postgresql-advanced-internals-and-interfaces/01-advanced-theory-qa.md",title:"Advanced theory Q&A",type:"Reference",desc:"50 advanced PostgreSQL internals and interface questions with answers."},
   {path:"62-postgresql-advanced-internals-and-interfaces/02-advanced-scenarios-qa.md",title:"Advanced scenario Q&A",type:"Reference",desc:"40 production troubleshooting scenarios with model answers."}
  ]},
+ {id:"63",title:"Advanced Internals, Extensibility & Failure Semantics",desc:"Query rewrite, execution internals, MVCC/storage, WAL/recovery, extensibility, logical failover and MERGE.",topics:[
+  {path:"63-postgresql-internals-extensibility/README.md",title:"Internals & extensibility guide",type:"Reference",desc:"Deep PostgreSQL internals and extensibility coverage."},
+  {path:"63-postgresql-internals-extensibility/01-internals-extensibility-theory-qa.md",title:"Internals & extensibility theory Q&A",type:"Reference",desc:"50 advanced theory questions with answers."},
+  {path:"63-postgresql-internals-extensibility/02-internals-extensibility-scenarios-qa.md",title:"Internals & extensibility scenario Q&A",type:"Reference",desc:"40 production scenarios with model answers."}
+ ]},
 ];
 
 const rootTopics:Topic[]=[
