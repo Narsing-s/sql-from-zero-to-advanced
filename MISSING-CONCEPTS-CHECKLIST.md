@@ -538,6 +538,8 @@ The broad topic coverage is now supplemented by dedicated runnable/operational m
 - [x] concurrent index maintenance guidance including REINDEX CONCURRENTLY
 - [x] production failure/chaos drill matrix
 - [x] incident response and RCA evidence template
+- [x] CLUSTER / VACUUM FULL progress monitoring (`pg_stat_progress_cluster`)
+- [x] replication-origin progress tracking (`pg_replication_origin_status`)
 
 ### Remaining validation rule
 Coverage alone is not enough. A module should be promoted to complete only after its SQL is executable on the documented PostgreSQL version, has setup/cleanup instructions, expected observations, and a verification step. Theory-only material should remain explicitly labeled as theory.
@@ -572,6 +574,6 @@ Coverage alone is not enough. A module should be promoted to complete only after
 - [ ] deterministic locale/timezone assertions
 - [ ] extension/version audit
 - [ ] logical replication restrictions documented
-- [ ] replication-origin concepts covered
+- [x] replication-origin concepts covered
 - [ ] reproducibility metadata captured
 - [ ] curriculum acceptance criteria documented
