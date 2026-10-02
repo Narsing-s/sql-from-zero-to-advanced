@@ -59,3 +59,9 @@ Use the Q&A after studying the underlying theory. The answers are deliberately s
 
 - [Advanced theory Q&A](../62-postgresql-advanced-internals-and-interfaces/01-advanced-theory-qa.md) — 50 advanced PostgreSQL internals/interface questions.
 - [Advanced scenario Q&A](../62-postgresql-advanced-internals-and-interfaces/02-advanced-scenarios-qa.md) — 40 production troubleshooting scenarios.
+
+
+## Stage 63 — Internals, Extensibility & Failure Semantics
+
+- [Advanced internals/extensibility theory Q&A](../63-postgresql-internals-extensibility/01-internals-extensibility-theory-qa.md) — 50 questions covering query rewrite, execution internals, MVCC/storage, WAL, extensibility, procedural handlers, SPI, FDW, logical replication failover and MERGE.
+- [Advanced internals/extensibility scenario Q&A](../63-postgresql-internals-extensibility/02-internals-extensibility-scenarios-qa.md) — 40 production troubleshooting scenarios with model answers.
