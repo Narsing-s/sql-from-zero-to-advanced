@@ -102,8 +102,8 @@ const stages:Stage[]=[
   {path:"11-expert-sql/08-materialized-views.md",title:"Materialized views",type:"Theory",desc:"Persist expensive query results and refresh them."},
   {path:"11-expert-sql/09-full-text-search.sql",title:"Full-text search",type:"SQL",desc:"tsvector, tsquery and indexed search."},
 
-  {path:"11-expert-sql/03-recursive-search-cycle.sql",title:"Recursive SEARCH & CYCLE",type:"SQL",desc:"Ordered recursive traversal and cycle detection."},
-  {path:"11-expert-sql/04-index-maintenance-concurrently.sql",title:"Concurrent index maintenance",type:"SQL",desc:"Safe guidance for concurrent index creation and reindexing."},  {path:"11-expert-sql/10-advisory-locks.sql",title:"Advisory locks",type:"SQL",desc:"Application-coordinated concurrency control."}
+  {path:"11-expert-sql/11-recursive-search-cycle.sql",title:"Recursive SEARCH & CYCLE",type:"SQL",desc:"Ordered recursive traversal and cycle detection."},
+  {path:"11-expert-sql/12-index-maintenance-concurrently.sql",title:"Concurrent index maintenance",type:"SQL",desc:"Safe guidance for concurrent index creation and reindexing."},  {path:"11-expert-sql/10-advisory-locks.sql",title:"Advisory locks",type:"SQL",desc:"Application-coordinated concurrency control."}
  ]},
  {id:"12",title:"Data Engineering",desc:"Build reliable data quality, analytics and loading workflows.",topics:[
   {path:"12-data-engineering/README.md",title:"Data engineering guide",type:"Theory",desc:"Data quality, analytics and incremental processing."},
