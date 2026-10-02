@@ -89,6 +89,12 @@ This repository combines the beginner-friendly learning style of a SQL 101 cours
 | 50 | Logical replication lab |
 | 51 | SQL quality, linting and style |
 | 52 | Observability and performance lab |
+| 53 | Completeness audit and acceptance criteria |
+| 54 | Multi-session and cluster labs |
+| 55 | Production failure and chaos labs |
+| 56 | Physical replication and major-upgrade labs |
+| 57 | Runnable Python, Java JDBC and Node.js client integration labs |
+| 58 | PostgreSQL 18 operational tools and upgrade-readiness checks |
 
 ## 🛠️ Installation — Start Here
 
@@ -233,7 +239,24 @@ For every topic:
 37-streaming-and-event-data/
 38-search-and-text/
 39-advanced-data-modeling/
-40-final-production-lab/
+41-runnable-labs/
+42-production-patterns/
+43-validation-and-automation/
+44-advanced-production-sql/
+45-ci-postgresql/
+46-database-client-integration/
+47-advanced-concurrency/
+48-data-loading-and-export/
+49-recovery-and-migration-drills/
+50-logical-replication-lab/
+51-sql-quality-and-linting/
+52-observability-and-performance-lab/
+53-completeness-audit/
+54-multi-session-and-cluster-labs/
+55-production-failure-and-chaos-labs/
+56-physical-replication-and-upgrade-lab/
+57-client-integration-runnable-labs/
+58-postgresql-18-operational-tools/
 datasets/
 docker/
 web/
