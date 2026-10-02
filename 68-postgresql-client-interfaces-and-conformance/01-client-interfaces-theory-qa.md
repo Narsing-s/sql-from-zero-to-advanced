@@ -119,3 +119,34 @@ Driver/library version, PostgreSQL version, TLS/auth mode, protocol expectations
 
 40. **What is the key client-interface lesson?**  
 Performance, correctness and reliability depend not only on SQL but also on protocol usage, result handling, cancellation, pooling, authentication and retry semantics.
+
+
+41. **What is the libpq password file used for?**  
+It supplies credentials through client configuration rather than embedding passwords in application source or command arguments. File permissions and secret rotation remain operational responsibilities.
+
+42. **What is asynchronous notification handling?**  
+It is client processing of PostgreSQL notification messages without treating them as ordinary query result rows.
+
+43. **Why can a connection service improve operations?**  
+A named service can standardize host, database, TLS and authentication-related parameters across applications while keeping environment configuration outside source code.
+
+44. **What is backpressure in a database client?**  
+A control mechanism that limits outstanding work or result consumption so client memory, network buffers, connection pools and server resources remain bounded.
+
+45. **Why can cancellation leave an application in a bad state?**  
+The statement may stop while the surrounding transaction remains open or aborted, so the client must explicitly determine whether rollback or connection disposal is required.
+
+46. **What should a compatibility matrix test after a PostgreSQL major upgrade?**  
+Test connectivity, authentication, TLS, driver/library versions, protocol behavior, SQL semantics, error handling, prepared statements, pooling and representative performance.
+
+47. **Why are protocol traces not a normal production debug setting?**  
+They can be verbose and may expose sensitive operational details. Use controlled capture, restricted access and appropriate redaction.
+
+48. **What is the difference between client-side and server-side timeout policy?**  
+A client timeout governs how long the application waits; a server-side statement or lock timeout can independently limit server work. They should be designed together rather than assumed equivalent.
+
+49. **Why is retrying an unknown transaction outcome dangerous?**  
+A network failure can occur after the server commits but before the client receives the response. Retrying without idempotency or reconciliation can duplicate a business operation.
+
+50. **What is the most important client-interface troubleshooting principle?**  
+Trace the complete path from application code through driver and protocol to authentication, server session, SQL execution, result delivery and transaction cleanup before changing the SQL itself.
