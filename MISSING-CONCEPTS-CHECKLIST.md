@@ -443,8 +443,8 @@ This is the repository's **master curriculum audit**. It covers language semanti
 - [ ] connection pools
 - [ ] pool sizing
 - [ ] pool exhaustion
-- [ ] prepared statements
-- [ ] generic/custom plans
+- [x] prepared statements
+- [x] generic/custom plans
 - [ ] ORM-generated SQL
 - [ ] lazy/eager loading
 - [ ] N+1 detection
