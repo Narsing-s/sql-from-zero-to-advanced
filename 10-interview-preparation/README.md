@@ -46,3 +46,10 @@ Do not memorize only the final query. Explain why it works.
 - [Production Scenario Questions & Answers](./production-scenarios-qa.md) — 60 production troubleshooting and design scenarios covering performance, locks, correctness, availability, backup/PITR, replication, security, migrations, ETL, capacity and incident response.
 
 Use the Q&A after studying the underlying theory. The answers are deliberately structured as definition/reasoning/evidence/trade-off guidance rather than memorization-only one-liners.
+
+
+## Stage 61 — Testing & Server Programming
+
+- [Regression & isolation testing](../61-postgresql-testing-and-server-programming/01-regression-and-isolation-testing.md)
+- [Server programming theory](../61-postgresql-testing-and-server-programming/02-server-programming-theory.md)
+- [Testing & server programming scenario Q&A](../61-postgresql-testing-and-server-programming/03-testing-and-server-programming-scenarios-qa.md) — 50 model-answer scenarios.
