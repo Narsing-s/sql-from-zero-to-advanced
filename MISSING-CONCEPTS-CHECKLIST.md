@@ -673,7 +673,7 @@ Coverage alone is not enough. A module should be promoted to complete only after
 - [x] DDL, sequence and large-object restrictions
 - [x] Major-version upgrade patterns
 - [x] CDC replay/idempotency and downstream reconciliation
-- [x] 40 theory Q&As
+- [x] 50 theory Q&As
 - [x] 30 production scenarios
 
 
@@ -689,7 +689,7 @@ Coverage alone is not enough. A module should be promoted to complete only after
 - [x] Dynamic tracing/probes
 - [x] Disk-full and I/O incident diagnosis
 - [x] Upgrade evidence and monitoring compatibility
-- [x] 40 theory Q&As
+- [x] 50 theory Q&As
 - [x] 30 production scenarios
 
 
@@ -705,5 +705,5 @@ Coverage alone is not enough. A module should be promoted to complete only after
 - [x] SQL conformance and PostgreSQL-specific portability boundaries
 - [x] protocol compatibility and client upgrade scenarios
 - [x] pooling, retries, idempotency and backpressure
-- [x] 40 theory Q&As
+- [x] 50 theory Q&As
 - [x] 30 production scenarios
