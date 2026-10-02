@@ -660,3 +660,18 @@ Coverage alone is not enough. A module should be promoted to complete only after
 - [x] planner and multivariate statistics internals
 - [x] 40 deep-internals theory Q&As
 - [x] 30 deep-internals production scenarios
+
+
+## Stage 66 — Logical Replication & CDC deep-dive audit
+- [x] Publisher/subscriber architecture and initial synchronization
+- [x] Replica identity, row filters and column lists
+- [x] Generated-column replication
+- [x] Conflicts and subscriber-side correctness
+- [x] Logical replication failover and two-phase behavior
+- [x] Replication slots, WAL retention and worker capacity
+- [x] Security and privilege boundaries
+- [x] DDL, sequence and large-object restrictions
+- [x] Major-version upgrade patterns
+- [x] CDC replay/idempotency and downstream reconciliation
+- [x] 40 theory Q&As
+- [x] 30 production scenarios
