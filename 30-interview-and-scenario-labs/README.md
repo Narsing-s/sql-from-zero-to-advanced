@@ -28,3 +28,9 @@ Use the dedicated testing and server-programming bank for deeper PostgreSQL engi
 
 - [Advanced theory Q&A](../62-postgresql-advanced-internals-and-interfaces/01-advanced-theory-qa.md)
 - [Advanced scenario Q&A](../62-postgresql-advanced-internals-and-interfaces/02-advanced-scenarios-qa.md)
+
+
+## Stage 63 extension
+
+- [Internals/extensibility theory Q&A](../63-postgresql-internals-extensibility/01-internals-extensibility-theory-qa.md)
+- [Internals/extensibility scenario Q&A](../63-postgresql-internals-extensibility/02-internals-extensibility-scenarios-qa.md)
