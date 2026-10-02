@@ -98,3 +98,6 @@ This matrix is an original navigation and coverage map. It does not reproduce th
 | 61. PostgreSQL Testing & Server Programming | `61-postgresql-testing-and-server-programming/` | regression tests, isolation/concurrency tests, recovery/replication test strategy and server-side programming boundaries |
 | 62. Advanced PostgreSQL Internals & Interfaces | `62-postgresql-advanced-internals-and-interfaces/` | JIT, catalogs, protocol, libpq, FDW, sampling, access/extension interfaces and portability |
 | 63. Advanced PostgreSQL Internals & Extensibility | `63-postgresql-internals-extensibility/` | rewrite system, parser/analyzer/planner/executor, MVCC internals, WAL/recovery, procedural handlers, SPI, FDW, custom types, logical failover, MERGE and advanced scenario Q&A |
+
+
+| 64. PostgreSQL 18 Modern Features | `64-postgresql-18-modern-features/` | AIO, B-tree skip scan, UUIDv7, virtual generated columns, temporal constraints, OAuth, upgrade compatibility and feature rollout scenarios |
