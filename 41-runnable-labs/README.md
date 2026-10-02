@@ -24,6 +24,8 @@ This stage turns the broad curriculum into repeatable, executable labs.
 - advanced index families (B-tree, Hash, GIN, GiST, SP-GiST, BRIN)
 - workload resource controls (work_mem, timeouts, temp limits)
 - progress monitoring for VACUUM, indexes, ANALYZE and COPY
+- CLUSTER / VACUUM FULL progress monitoring (pg_stat_progress_cluster)
 - event-trigger DDL auditing
+- replication-origin progress tracking (pg_replication_origin_status and replication-origin functions)
 
 Run production-style labs only in a disposable learning database.
