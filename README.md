@@ -98,7 +98,8 @@ This repository combines the beginner-friendly learning style of a SQL 101 cours
 | 59 | SQL error diagnostics, SQLSTATE and PL/pgSQL exception handling |
 | 60 | Optional PostGIS and geospatial SQL |
 | 61 | PostgreSQL testing, regression/isolation testing and server programming |
-|  | Advanced PostgreSQL Internals & Interfaces | `62-postgresql-advanced-internals-and-interfaces/` | JIT, catalogs, protocol, libpq, FDW, sampling, access/extension interfaces and portability |
+| 62 | Advanced PostgreSQL Internals & Interfaces | `62-postgresql-advanced-internals-and-interfaces/` | JIT, catalogs, protocol, libpq, FDW, sampling, access/extension interfaces and portability |
+| 63 | Advanced PostgreSQL internals, extensibility and failure semantics | `63-postgresql-internals-extensibility/` | query rewrite, parser/planner/executor, MVCC internals, WAL/recovery, procedural handlers, SPI, FDW, custom types, logical-replication failover, MERGE and 90 advanced theory/scenario Q&As |
 
 ## 🛠️ Installation — Start Here
 
@@ -220,7 +221,8 @@ For every topic:
 13-real-world-projects/
 14-production-operations/
 15-postgresql-internals/
-16-replication-and-ha/17-backup-and-recovery-labs/
+16-replication-and-ha/
+17-backup-and-recovery-labs/
 18-schema-migrations/
 19-advanced-types/
 20-sql-json/
@@ -264,6 +266,8 @@ For every topic:
 59-sql-error-diagnostics/
 60-postgis-geospatial/
 61-postgresql-testing-and-server-programming/
+62-postgresql-advanced-internals-and-interfaces/
+63-postgresql-internals-extensibility/
 datasets/
 docker/
 web/
