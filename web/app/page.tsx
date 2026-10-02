@@ -201,9 +201,13 @@ const stages:Stage[]=[
  {id:"52",title:"Observability & Performance Lab",desc:"Measure PostgreSQL behavior with evidence.",topics:[
   {path:"52-observability-and-performance-lab/README.md",title:"Performance lab",type:"Practice",desc:"Plans, waits, statistics, WAL and reproducible benchmarks."}
  ]},
-];
-
-const rootTopics:Topic[]=[
+ {id:"61",title:"PostgreSQL Testing & Server Programming",desc:"Regression, isolation, recovery/replication testing and server-side programming.",topics:[
+  {path:"61-postgresql-testing-and-server-programming/README.md",title:"Testing & server programming guide",type:"Reference",desc:"Advanced database testing and server-side extensibility roadmap."},
+  {path:"61-postgresql-testing-and-server-programming/01-regression-and-isolation-testing.md",title:"Regression & isolation testing",type:"Reference",desc:"Deterministic regression, concurrency, recovery and replication test strategy."},
+  {path:"61-postgresql-testing-and-server-programming/02-server-programming-theory.md",title:"Server programming theory",type:"Reference",desc:"PL/pgSQL, triggers, logical decoding, extensions, archive modules and OAuth validators."},
+  {path:"61-postgresql-testing-and-server-programming/03-testing-and-server-programming-scenarios-qa.md",title:"Testing & server programming scenario Q&A",type:"Reference",desc:"50 production and interview scenarios with model answers."}
+ ]},
+];\n\nconst rootTopics:Topic[]=[
  {path:"COMPLETE-SQL-THEORY.md",title:"Complete SQL Theory",type:"Reference",desc:"Modern theory-first reference from zero to production PostgreSQL."},
  {path:"CORE-CONCEPTS.md",title:"Core Concepts",type:"Reference",desc:"SQL and database definitions glossary."},
  {path:"ADVANCED-EXPERT-THEORY.md",title:"Advanced & Expert Theory",type:"Reference",desc:"Deep concepts for advanced and expert learners."},
@@ -217,8 +221,7 @@ const rootTopics:Topic[]=[
 
 
 type LabChallenge={id:string;level:"Beginner"|"Intermediate"|"Advanced"|"Expert";category:string;title:string;question:string;hint:string;sql:string;explanation:string};
-const LAB_SETUP=[
-"DROP SCHEMA IF EXISTS lab CASCADE;","CREATE SCHEMA lab;","SET search_path TO lab;",
+const LAB_SETUP=["DROP SCHEMA IF EXISTS lab CASCADE;","CREATE SCHEMA lab;","SET search_path TO lab;",
 "CREATE TABLE departments(id INT PRIMARY KEY,name TEXT NOT NULL);",
 "CREATE TABLE employees(id INT PRIMARY KEY,name TEXT NOT NULL,department_id INT REFERENCES departments(id),salary NUMERIC(10,2),manager_id INT);",
 "CREATE TABLE customers(id INT PRIMARY KEY,name TEXT NOT NULL,age INT,city TEXT,email TEXT);",
@@ -308,7 +311,7 @@ export default function Home(){
  };
  const toggle=(path:string)=>{const next=done.includes(path)?done.filter(x=>x!==path):[...done,path];setDone(next);localStorage.setItem("sql_done",JSON.stringify(next));};
 
- if(!user)return <main className="shell"><div className="container"><nav className="nav"><div className="brand">SQL<span>Lab</span></div><div className="pill">Open source learning</div></nav><section className="hero"><div className="eyebrow">From zero → production</div><h1>Learn SQL by <span className="green">building</span>.</h1><p className="sub">Every stage, every topic, theory, SQL, exercises, projects and interview material in one visible learning workspace — now through Stage 58.</p></section><div className="card login-card"><h2>Start your learning journey</h2><p className="muted">Enter an email for a browser-local demo login. No API key is required.</p><input className="input" placeholder="you@example.com" value={email} onChange={e=>setEmail(e.target.value)} onKeyDown={e=>{if(e.key==="Enter")login()}}/><button className="btn primary full" onClick={login}>Enter SQL Lab <ChevronRight size={16}/></button>{greeting&&<p className="green">{greeting}</p>}<p className="muted small">Your progress stays in this browser. Real email delivery is optional.</p></div></div></main>;
+ if(!user)return <main className="shell"><div className="container"><nav className="nav"><div className="brand">SQL<span>Lab</span></div><div className="pill">Open source learning</div></nav><section className="hero"><div className="eyebrow">From zero → production</div><h1>Learn SQL by <span className="green">building</span>.</h1><p className="sub">Every stage, every topic, theory, SQL, exercises, projects and interview material in one visible learning workspace — now through Stage 61.</p></section><div className="card login-card"><h2>Start your learning journey</h2><p className="muted">Enter an email for a browser-local demo login. No API key is required.</p><input className="input" placeholder="you@example.com" value={email} onChange={e=>setEmail(e.target.value)} onKeyDown={e=>{if(e.key==="Enter")login()}}/><button className="btn primary full" onClick={login}>Enter SQL Lab <ChevronRight size={16}/></button>{greeting&&<p className="green">{greeting}</p>}<p className="muted small">Your progress stays in this browser. Real email delivery is optional.</p></div></div></main>;
 
  return <main className="shell"><div className="container"><nav className="nav"><div className="brand">SQL<span>Lab</span></div><div className="row"><button className="btn primary" onClick={()=>setLabOpen(true)}><FlaskConical size={15}/> Practice Lab</button><span className="pill">{user}</span><button className="btn" onClick={()=>{localStorage.removeItem("sql_user");setUser(null)}}>Sign out</button></div></nav>
  <section className="hero"><div className="eyebrow">Your complete SQL workspace</div><h1>Every topic. <span className="green">One path.</span></h1><p className="sub">Click a topic to open its real repository material. Mark each topic completed as you learn.</p>
