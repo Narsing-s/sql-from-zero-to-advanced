@@ -207,6 +207,11 @@ const stages:Stage[]=[
   {path:"61-postgresql-testing-and-server-programming/02-server-programming-theory.md",title:"Server programming theory",type:"Reference",desc:"PL/pgSQL, triggers, logical decoding, extensions, archive modules and OAuth validators."},
   {path:"61-postgresql-testing-and-server-programming/03-testing-and-server-programming-scenarios-qa.md",title:"Testing & server programming scenario Q&A",type:"Reference",desc:"50 production and interview scenarios with model answers."}
  ]},
+ {id:"62",title:"Advanced PostgreSQL Internals & Interfaces",desc:"JIT, catalogs, client/server interfaces, FDW, sampling, extension APIs and portability.",topics:[
+  {path:"62-postgresql-advanced-internals-and-interfaces/README.md",title:"Advanced internals guide",type:"Reference",desc:"Advanced PostgreSQL interfaces and engineering topics."},
+  {path:"62-postgresql-advanced-internals-and-interfaces/01-advanced-theory-qa.md",title:"Advanced theory Q&A",type:"Reference",desc:"50 advanced PostgreSQL internals and interface questions with answers."},
+  {path:"62-postgresql-advanced-internals-and-interfaces/02-advanced-scenarios-qa.md",title:"Advanced scenario Q&A",type:"Reference",desc:"40 production troubleshooting scenarios with model answers."}
+ ]},
 ];
 
 const rootTopics:Topic[]=[
