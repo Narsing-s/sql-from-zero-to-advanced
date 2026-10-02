@@ -23,5 +23,7 @@ This stage turns the broad curriculum into repeatable, executable labs.
 - pg_stat_statements
 - advanced index families (B-tree, Hash, GIN, GiST, SP-GiST, BRIN)
 - workload resource controls (work_mem, timeouts, temp limits)
+- progress monitoring for VACUUM, indexes, ANALYZE and COPY
+- event-trigger DDL auditing
 
 Run production-style labs only in a disposable learning database.
