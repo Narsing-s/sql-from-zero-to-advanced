@@ -98,6 +98,7 @@ This repository combines the beginner-friendly learning style of a SQL 101 cours
 | 59 | SQL error diagnostics, SQLSTATE and PL/pgSQL exception handling |
 | 60 | Optional PostGIS and geospatial SQL |
 | 61 | PostgreSQL testing, regression/isolation testing and server programming |
+|  | Advanced PostgreSQL Internals & Interfaces | `62-postgresql-advanced-internals-and-interfaces/` | JIT, catalogs, protocol, libpq, FDW, sampling, access/extension interfaces and portability |
 
 ## 🛠️ Installation — Start Here
 
