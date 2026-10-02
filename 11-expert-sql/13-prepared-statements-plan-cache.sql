@@ -42,6 +42,11 @@ EXECUTE tenant_lookup(1);
 -- Inspect the server setting that controls the preference.
 SHOW plan_cache_mode;
 
+-- Inspect prepared statements and how often PostgreSQL selected each plan type.
+SELECT name, parameter_types, generic_plans, custom_plans
+FROM pg_prepared_statements
+WHERE name = 'tenant_lookup';
+
 -- Force custom planning for an experiment.
 SET LOCAL plan_cache_mode = 'force_custom_plan';
 EXPLAIN (ANALYZE, BUFFERS) EXECUTE tenant_lookup(2);
