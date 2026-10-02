@@ -65,3 +65,8 @@ Use the Q&A after studying the underlying theory. The answers are deliberately s
 
 - [Advanced internals/extensibility theory Q&A](../63-postgresql-internals-extensibility/01-internals-extensibility-theory-qa.md) — 50 questions covering query rewrite, execution internals, MVCC/storage, WAL, extensibility, procedural handlers, SPI, FDW, logical replication failover and MERGE.
 - [Advanced internals/extensibility scenario Q&A](../63-postgresql-internals-extensibility/02-internals-extensibility-scenarios-qa.md) — 40 production troubleshooting scenarios with model answers.
+
+
+## Stage 64 — PostgreSQL 18 Modern Features
+- [Modern features theory Q&A](../64-postgresql-18-modern-features/01-modern-features-theory-qa.md) — 35 version-specific theory questions.
+- [Modern features scenario Q&A](../64-postgresql-18-modern-features/02-modern-features-scenarios-qa.md) — 30 production scenarios.
