@@ -217,6 +217,11 @@ const stages:Stage[]=[
   {path:"63-postgresql-internals-extensibility/01-internals-extensibility-theory-qa.md",title:"Internals & extensibility theory Q&A",type:"Reference",desc:"50 advanced theory questions with answers."},
   {path:"63-postgresql-internals-extensibility/02-internals-extensibility-scenarios-qa.md",title:"Internals & extensibility scenario Q&A",type:"Reference",desc:"40 production scenarios with model answers."}
  ]},
+ {id:"64",title:"PostgreSQL 18 Modern Features & Operational Scenarios",desc:"AIO, B-tree skip scan, UUIDv7, virtual generated columns, temporal constraints, OAuth and upgrade compatibility.",topics:[
+  {path:"64-postgresql-18-modern-features/README.md",title:"Modern features guide",type:"Reference",desc:"PostgreSQL 18 release-level feature and rollout guidance."},
+  {path:"64-postgresql-18-modern-features/01-modern-features-theory-qa.md",title:"Modern features theory Q&A",type:"Reference",desc:"35 PostgreSQL 18 theory questions with answers."},
+  {path:"64-postgresql-18-modern-features/02-modern-features-scenarios-qa.md",title:"Modern features scenario Q&A",type:"Reference",desc:"30 PostgreSQL 18 production scenarios with model answers."}
+ ]},
 ];
 
 const rootTopics:Topic[]=[
