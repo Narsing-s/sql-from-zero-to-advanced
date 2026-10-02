@@ -691,3 +691,19 @@ Coverage alone is not enough. A module should be promoted to complete only after
 - [x] Upgrade evidence and monitoring compatibility
 - [x] 40 theory Q&As
 - [x] 30 production scenarios
+
+
+## Stage 68 — Client interfaces & SQL conformance audit
+- [x] libpq architecture and connection lifecycle
+- [x] asynchronous processing and pipeline mode
+- [x] chunked results, cancellation and COPY
+- [x] notices/errors and connection services
+- [x] SSL and PostgreSQL 18 OAuth client behavior
+- [x] large-object client semantics
+- [x] ECPG, host variables and dynamic SQL
+- [x] information_schema portability
+- [x] SQL conformance and PostgreSQL-specific portability boundaries
+- [x] protocol compatibility and client upgrade scenarios
+- [x] pooling, retries, idempotency and backpressure
+- [x] 40 theory Q&As
+- [x] 30 production scenarios
