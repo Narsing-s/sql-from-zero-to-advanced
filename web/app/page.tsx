@@ -101,7 +101,9 @@ const stages:Stage[]=[
   {path:"11-expert-sql/07-row-level-security.sql",title:"Row-level security",type:"SQL",desc:"Restrict visible rows by policy."},
   {path:"11-expert-sql/08-materialized-views.md",title:"Materialized views",type:"Theory",desc:"Persist expensive query results and refresh them."},
   {path:"11-expert-sql/09-full-text-search.sql",title:"Full-text search",type:"SQL",desc:"tsvector, tsquery and indexed search."},
-  {path:"11-expert-sql/10-advisory-locks.sql",title:"Advisory locks",type:"SQL",desc:"Application-coordinated concurrency control."}
+
+  {path:"11-expert-sql/03-recursive-search-cycle.sql",title:"Recursive SEARCH & CYCLE",type:"SQL",desc:"Ordered recursive traversal and cycle detection."},
+  {path:"11-expert-sql/04-index-maintenance-concurrently.sql",title:"Concurrent index maintenance",type:"SQL",desc:"Safe guidance for concurrent index creation and reindexing."},  {path:"11-expert-sql/10-advisory-locks.sql",title:"Advisory locks",type:"SQL",desc:"Application-coordinated concurrency control."}
  ]},
  {id:"12",title:"Data Engineering",desc:"Build reliable data quality, analytics and loading workflows.",topics:[
   {path:"12-data-engineering/README.md",title:"Data engineering guide",type:"Theory",desc:"Data quality, analytics and incremental processing."},
@@ -276,7 +278,7 @@ export default function Home(){
  };
  const toggle=(path:string)=>{const next=done.includes(path)?done.filter(x=>x!==path):[...done,path];setDone(next);localStorage.setItem("sql_done",JSON.stringify(next));};
 
- if(!user)return <main className="shell"><div className="container"><nav className="nav"><div className="brand">SQL<span>Lab</span></div><div className="pill">Open source learning</div></nav><section className="hero"><div className="eyebrow">From zero → production</div><h1>Learn SQL by <span className="green">building</span>.</h1><p className="sub">Every stage, every topic, theory, SQL, exercises, projects and interview material in one visible learning workspace — now through Stage 52.</p></section><div className="card login-card"><h2>Start your learning journey</h2><p className="muted">Enter an email for a browser-local demo login. No API key is required.</p><input className="input" placeholder="you@example.com" value={email} onChange={e=>setEmail(e.target.value)} onKeyDown={e=>{if(e.key==="Enter")login()}}/><button className="btn primary full" onClick={login}>Enter SQL Lab <ChevronRight size={16}/></button>{greeting&&<p className="green">{greeting}</p>}<p className="muted small">Your progress stays in this browser. Real email delivery is optional.</p></div></div></main>;
+ if(!user)return <main className="shell"><div className="container"><nav className="nav"><div className="brand">SQL<span>Lab</span></div><div className="pill">Open source learning</div></nav><section className="hero"><div className="eyebrow">From zero → production</div><h1>Learn SQL by <span className="green">building</span>.</h1><p className="sub">Every stage, every topic, theory, SQL, exercises, projects and interview material in one visible learning workspace — now through Stage 58.</p></section><div className="card login-card"><h2>Start your learning journey</h2><p className="muted">Enter an email for a browser-local demo login. No API key is required.</p><input className="input" placeholder="you@example.com" value={email} onChange={e=>setEmail(e.target.value)} onKeyDown={e=>{if(e.key==="Enter")login()}}/><button className="btn primary full" onClick={login}>Enter SQL Lab <ChevronRight size={16}/></button>{greeting&&<p className="green">{greeting}</p>}<p className="muted small">Your progress stays in this browser. Real email delivery is optional.</p></div></div></main>;
 
  return <main className="shell"><div className="container"><nav className="nav"><div className="brand">SQL<span>Lab</span></div><div className="row"><button className="btn primary" onClick={()=>setLabOpen(true)}><FlaskConical size={15}/> Practice Lab</button><span className="pill">{user}</span><button className="btn" onClick={()=>{localStorage.removeItem("sql_user");setUser(null)}}>Sign out</button></div></nav>
  <section className="hero"><div className="eyebrow">Your complete SQL workspace</div><h1>Every topic. <span className="green">One path.</span></h1><p className="sub">Click a topic to open its real repository material. Mark each topic completed as you learn.</p>
@@ -309,6 +311,14 @@ export default function Home(){
   {path:"54-multi-session-and-cluster-labs/02-logical-replication-checklist.md",title:"Logical replication harness",type:"Reference",desc:"Publisher/subscriber execution checklist."},
   {path:"54-multi-session-and-cluster-labs/03-backup-restore-checklist.md",title:"Backup/restore harness",type:"Reference",desc:"Disposable restore verification workflow."},
   {path:"54-multi-session-and-cluster-labs/docker-compose.yml",title:"PostgreSQL 18.6 lab container",type:"Config",desc:"Disposable PostgreSQL lab environment."}
+ ]},
+ {id:"55",title:"Production Failure & Chaos Labs",desc:"Safe, repeatable drills for connection, locking, WAL, replication, recovery and incident response.",topics:[
+  {path:"55-production-failure-and-chaos-labs/README.md",title:"Failure & chaos lab guide",type:"Reference",desc:"Safe production-failure drills and evidence requirements."},
+  {path:"55-production-failure-and-chaos-labs/01-failure-matrix.md",title:"Failure matrix",type:"Reference",desc:"Symptoms, evidence, safe mitigation and permanent improvements."},
+  {path:"55-production-failure-and-chaos-labs/02-connection-and-transaction-failure.sql",title:"Connection & transaction evidence",type:"SQL",desc:"Inspect sessions, transaction age and connection pressure."},
+  {path:"55-production-failure-and-chaos-labs/03-lock-and-deadlock-analysis.sql",title:"Lock & deadlock analysis",type:"SQL",desc:"Identify blockers and waiting sessions without terminating them."},
+  {path:"55-production-failure-and-chaos-labs/04-replication-and-recovery-evidence.sql",title:"Replication & recovery evidence",type:"SQL",desc:"Inspect recovery role, WAL, replicas and replication slots."},
+  {path:"55-production-failure-and-chaos-labs/05-incident-and-rca-template.md",title:"Incident & RCA template",type:"Reference",desc:"Capture timeline, root cause, recovery and prevention."}
  ]},
  {id:"56",title:"Physical Replication & Major Upgrade",desc:"Primary/standby, failover, lag and PostgreSQL major-upgrade rehearsal.",topics:[
   {path:"56-physical-replication-and-upgrade-lab/README.md",title:"Lab architecture",type:"Reference",desc:"Physical replication and upgrade lab."},
