@@ -108,3 +108,5 @@ This matrix is an original navigation and coverage map. It does not reproduce th
 | 66. Logical Replication & CDC Deep Dive | `66-logical-replication-and-cdc-deep-dive/` | Logical replication architecture, row/column filtering, conflicts, failover, security, upgrades, CDC idempotency |
 
 | 67. PostgreSQL Server Tools & Deep Observability | `67-postgresql-server-tools-and-deep-observability/` | Server utilities, dynamic tracing, low-level recovery evidence, disk/I/O diagnostics and observability scenarios |
+
+| 68. PostgreSQL Client Interfaces & SQL Conformance | `68-postgresql-client-interfaces-and-conformance/` | libpq, pipeline/asynchronous clients, large objects, ECPG, information_schema, SQL portability and client failure scenarios |
