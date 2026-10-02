@@ -9,7 +9,7 @@ type Stage={id:string;title:string;desc:string;topics:Topic[]};
 const repoBase="https://github.com/Narsing-s/sql-from-zero-to-advanced/blob/main/";
 const rawBase="https://raw.githubusercontent.com/Narsing-s/sql-from-zero-to-advanced/main/";
 
-const stages:Stage[]=[
+// Curriculum stages are defined once before the Home component.\nconst stages:Stage[]=[
  {id:"00",title:"Installation & Environment",desc:"Set up PostgreSQL, verify the environment and safely start learning.",topics:[
   {path:"00-installation/README.md",title:"Installation theory & process",type:"Theory",desc:"PostgreSQL, psql, pgAdmin, connections and safe setup."},
   {path:"00-installation/postgresql-setup.sql",title:"PostgreSQL setup",type:"SQL",desc:"Create the learning environment."},
