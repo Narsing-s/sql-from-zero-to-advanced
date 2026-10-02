@@ -95,6 +95,8 @@ This repository combines the beginner-friendly learning style of a SQL 101 cours
 | 56 | Physical replication and major-upgrade labs |
 | 57 | Runnable Python, Java JDBC and Node.js client integration labs |
 | 58 | PostgreSQL 18 operational tools and upgrade-readiness checks |
+| 59 | SQL error diagnostics, SQLSTATE and PL/pgSQL exception handling |
+| 60 | Optional PostGIS and geospatial SQL |
 
 ## 🛠️ Installation — Start Here
 
