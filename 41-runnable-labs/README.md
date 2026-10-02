@@ -27,5 +27,6 @@ This stage turns the broad curriculum into repeatable, executable labs.
 - CLUSTER / VACUUM FULL progress monitoring (pg_stat_progress_cluster)
 - event-trigger DDL auditing
 - replication-origin progress tracking (pg_replication_origin_status and replication-origin functions)
+- PostgreSQL 18 observability (recovery prefetch, WAL archiver, per-backend I/O/WAL and maintenance timing)
 
 Run production-style labs only in a disposable learning database.
