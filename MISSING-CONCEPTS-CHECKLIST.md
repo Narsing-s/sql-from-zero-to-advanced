@@ -265,10 +265,10 @@ This is the repository's **master curriculum audit**. It covers language semanti
 ## 10. Indexing
 - [ ] B-tree
 - [ ] Hash
-- [ ] GIN
-- [ ] GiST
+- [x] GIN
+- [x] GiST
 - [x] SP-GiST
-- [ ] BRIN
+- [x] BRIN
 - [ ] multicolumn indexes
 - [ ] column order
 - [ ] selectivity
