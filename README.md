@@ -97,6 +97,7 @@ This repository combines the beginner-friendly learning style of a SQL 101 cours
 | 58 | PostgreSQL 18 operational tools and upgrade-readiness checks |
 | 59 | SQL error diagnostics, SQLSTATE and PL/pgSQL exception handling |
 | 60 | Optional PostGIS and geospatial SQL |
+| 61 | PostgreSQL testing, regression/isolation testing and server programming |
 
 ## 🛠️ Installation — Start Here
 
@@ -174,6 +175,7 @@ Practice is part of the curriculum, not an afterthought.
 - JSONB
 - production troubleshooting
 - interview-style scenarios
+- regression, isolation and server-programming interview scenarios
 
 Try each problem before reading the solution.
 
@@ -217,8 +219,7 @@ For every topic:
 13-real-world-projects/
 14-production-operations/
 15-postgresql-internals/
-16-replication-and-ha/
-17-backup-and-recovery-labs/
+16-replication-and-ha/17-backup-and-recovery-labs/
 18-schema-migrations/
 19-advanced-types/
 20-sql-json/
@@ -259,6 +260,9 @@ For every topic:
 56-physical-replication-and-upgrade-lab/
 57-client-integration-runnable-labs/
 58-postgresql-18-operational-tools/
+59-sql-error-diagnostics/
+60-postgis-geospatial/
+61-postgresql-testing-and-server-programming/
 datasets/
 docker/
 web/
@@ -271,6 +275,7 @@ SQL-CHEAT-SHEET.md
 SQL-101-COMPATIBILITY-GUIDE.md
 EXERCISES-AND-SOLUTIONS.md
 MISSING-CONCEPTS-CHECKLIST.md
+61-postgresql-testing-and-server-programming/README.md
 ROADMAP.md
 CONTRIBUTING.md
 ```
