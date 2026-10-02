@@ -54,3 +54,8 @@ Use the dedicated testing and server-programming bank for deeper PostgreSQL engi
 ## Stage 67 — PostgreSQL Server Tools & Deep Observability
 - [Theory Q&A](../67-postgresql-server-tools-and-deep-observability/01-server-tools-theory-qa.md)
 - [Scenario Q&A](../67-postgresql-server-tools-and-deep-observability/02-server-tools-scenarios-qa.md)
+
+
+## Stage 68 — PostgreSQL Client Interfaces & SQL Conformance
+- [Theory Q&A](../68-postgresql-client-interfaces-and-conformance/01-client-interfaces-theory-qa.md)
+- [Scenario Q&A](../68-postgresql-client-interfaces-and-conformance/02-client-interfaces-scenarios-qa.md)
