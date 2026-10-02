@@ -368,3 +368,13 @@ export default function Home(){
   {path:"58-postgresql-18-operational-tools/02-logical-upgrade-checklist.md",title:"Logical upgrade checklist",type:"Reference",desc:"Publisher/subscriber upgrade prerequisites."},
   {path:"58-postgresql-18-operational-tools/03-performance-evidence.sql",title:"Performance evidence",type:"SQL",desc:"Capture PostgreSQL settings and benchmark evidence metadata."}
  ]},
+ {id:"59",title:"SQL Error Diagnostics",desc:"Structured SQLSTATE, PL/pgSQL exception diagnostics and safe retry classification.",topics:[
+  {path:"59-sql-error-diagnostics/README.md",title:"Error diagnostics guide",type:"Reference",desc:"SQLSTATE, exception context and retryability."},
+  {path:"59-sql-error-diagnostics/01-exception-diagnostics.sql",title:"GET STACKED DIAGNOSTICS",type:"SQL",desc:"Capture structured PL/pgSQL exception details."},
+  {path:"59-sql-error-diagnostics/02-retryability-matrix.md",title:"Retryability matrix",type:"Reference",desc:"Distinguish transient and non-transient database failures."}
+ ]},
+ {id:"60",title:"PostGIS & Geospatial SQL",desc:"Optional spatial SQL track covering geometry, geography, SRIDs and spatial indexes.",topics:[
+  {path:"60-postgis-geospatial/README.md",title:"PostGIS guide",type:"Reference",desc:"Spatial data concepts, SRIDs, distance and production concerns."},
+  {path:"60-postgis-geospatial/01-spatial-basics.sql",title:"Spatial basics",type:"SQL",desc:"Create points and calculate geography distance."},
+  {path:"60-postgis-geospatial/02-spatial-index-and-quality.md",title:"Spatial index & data quality",type:"Reference",desc:"GiST indexing, EXPLAIN and geometry validation."}
+ ]},
