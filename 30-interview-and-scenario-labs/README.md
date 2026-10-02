@@ -22,3 +22,9 @@ Use the dedicated testing and server-programming bank for deeper PostgreSQL engi
 - [Regression & isolation testing](../61-postgresql-testing-and-server-programming/01-regression-and-isolation-testing.md)
 - [Server programming theory](../61-postgresql-testing-and-server-programming/02-server-programming-theory.md)
 - [Testing & server programming scenarios Q&A](../61-postgresql-testing-and-server-programming/03-testing-and-server-programming-scenarios-qa.md)
+
+
+## Stage 62 extension
+
+- [Advanced theory Q&A](../62-postgresql-advanced-internals-and-interfaces/01-advanced-theory-qa.md)
+- [Advanced scenario Q&A](../62-postgresql-advanced-internals-and-interfaces/02-advanced-scenarios-qa.md)
