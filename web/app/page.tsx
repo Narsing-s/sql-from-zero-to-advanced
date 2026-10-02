@@ -334,6 +334,7 @@ export default function Home(){
   {path:"57-client-integration-runnable-labs/01-security-checklist.md",title:"Client security checklist",type:"Reference",desc:"Secrets, timeouts, retries and parameter binding."}
  ]},
  {id:"58",title:"PostgreSQL 18 Operational Tools",desc:"Backup verification, integrity checks, benchmarking, client tooling and logical-upgrade prerequisites.",topics:[
+ {path:"58-postgresql-18-operational-tools/04-pg-stat-io-and-observability.sql",title:"pg_stat_io observability",type:"SQL",desc:"Inspect PostgreSQL I/O statistics and correlate them with performance evidence."},
   {path:"58-postgresql-18-operational-tools/README.md",title:"Operational tools",type:"Reference",desc:"PostgreSQL 18 tools and specialized operational coverage."},
   {path:"58-postgresql-18-operational-tools/01-client-and-tooling-checklist.md",title:"Client and tooling checklist",type:"Reference",desc:"pgbench, libpq pipeline, backup verification and integrity tooling."},
   {path:"58-postgresql-18-operational-tools/02-logical-upgrade-checklist.md",title:"Logical upgrade checklist",type:"Reference",desc:"Publisher/subscriber upgrade prerequisites."},
