@@ -227,6 +227,11 @@ const stages:Stage[]=[
   {path:"65-postgresql-deep-internals/01-deep-internals-theory-qa.md",title:"Deep internals theory Q&A",type:"Reference",desc:"40 deep internals questions with answers."},
   {path:"65-postgresql-deep-internals/02-deep-internals-scenarios-qa.md",title:"Deep internals scenario Q&A",type:"Reference",desc:"30 production scenarios with model answers."}
  ]},
+ {id:"66",title:"Logical Replication & CDC Deep Dive",desc:"Architecture, synchronization, filtering, conflicts, failover, security, upgrades and CDC idempotency.",topics:[
+  {path:"66-logical-replication-and-cdc-deep-dive/README.md",title:"Logical replication & CDC guide",type:"Reference",desc:"PostgreSQL 18 logical replication and CDC operational coverage."},
+  {path:"66-logical-replication-and-cdc-deep-dive/01-logical-replication-theory-qa.md",title:"Logical replication theory Q&A",type:"Reference",desc:"40 logical replication and CDC theory questions with answers."},
+  {path:"66-logical-replication-and-cdc-deep-dive/02-logical-replication-scenarios-qa.md",title:"Logical replication scenario Q&A",type:"Reference",desc:"30 production troubleshooting scenarios with model answers."}
+ ]},
 ];
 
 const rootTopics:Topic[]=[
