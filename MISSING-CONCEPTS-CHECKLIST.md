@@ -614,3 +614,22 @@ Coverage alone is not enough. A module should be promoted to complete only after
 - [x] advanced authentication/OAuth client-server concepts
 - [x] 50 advanced internals theory questions
 - [x] 40 advanced production scenario questions
+
+
+## 24. Stage 63 deep internals/extensibility audit
+- [x] parser → analyzer → rewrite → planner → executor lifecycle
+- [x] query rewrite/rule system versus triggers
+- [x] MVCC snapshots, XID wraparound, visibility map, free-space map and TOAST theory
+- [x] WAL/checkpoint/crash-recovery internals
+- [x] extension WAL and crash-safety concepts
+- [x] procedural-language handlers and validators
+- [x] SPI and memory-context considerations
+- [x] FDW predicate pushdown and semantic-safety scenarios
+- [x] TABLESAMPLE/custom scan/table-access-method concepts
+- [x] custom data types and operator/index semantics
+- [x] logical replication architecture and PostgreSQL 18 failover theory/scenarios
+- [x] MERGE candidate classification, WHEN ordering, RETURNING and merge_action()
+- [x] 50 advanced theory Q&As
+- [x] 40 advanced production scenario Q&As
+
+> This stage is intentionally theory/scenario focused. It does not claim that every C-level PostgreSQL extension interface is runnable from ordinary SQL; such interfaces require compiled extension code and version-specific development environments.
