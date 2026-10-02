@@ -70,3 +70,8 @@ Use the Q&A after studying the underlying theory. The answers are deliberately s
 ## Stage 64 — PostgreSQL 18 Modern Features
 - [Modern features theory Q&A](../64-postgresql-18-modern-features/01-modern-features-theory-qa.md) — 35 version-specific theory questions.
 - [Modern features scenario Q&A](../64-postgresql-18-modern-features/02-modern-features-scenarios-qa.md) — 30 production scenarios.
+
+
+## Stage 65 — PostgreSQL Deep Internals
+- [Deep internals theory Q&A](../65-postgresql-deep-internals/01-deep-internals-theory-qa.md) — 40 questions.
+- [Deep internals scenario Q&A](../65-postgresql-deep-internals/02-deep-internals-scenarios-qa.md) — 30 production scenarios.
