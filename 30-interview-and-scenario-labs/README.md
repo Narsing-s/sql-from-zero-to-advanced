@@ -13,3 +13,12 @@ The broader interview bank lives in 10-interview-preparation/:
 - production-scenarios-qa.md — 60 production scenarios with model answers.
 
 Use these with the drills below: explain the concept, show evidence, state trade-offs, and describe safe production validation.
+
+
+## Stage 61 extension
+
+Use the dedicated testing and server-programming bank for deeper PostgreSQL engineering interviews:
+
+- [Regression & isolation testing](../61-postgresql-testing-and-server-programming/01-regression-and-isolation-testing.md)
+- [Server programming theory](../61-postgresql-testing-and-server-programming/02-server-programming-theory.md)
+- [Testing & server programming scenarios Q&A](../61-postgresql-testing-and-server-programming/03-testing-and-server-programming-scenarios-qa.md)
