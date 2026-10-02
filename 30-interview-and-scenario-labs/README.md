@@ -34,3 +34,8 @@ Use the dedicated testing and server-programming bank for deeper PostgreSQL engi
 
 - [Internals/extensibility theory Q&A](../63-postgresql-internals-extensibility/01-internals-extensibility-theory-qa.md)
 - [Internals/extensibility scenario Q&A](../63-postgresql-internals-extensibility/02-internals-extensibility-scenarios-qa.md)
+
+
+## Stage 64 extension
+- [PostgreSQL 18 modern features theory](../64-postgresql-18-modern-features/01-modern-features-theory-qa.md)
+- [PostgreSQL 18 modern feature scenarios](../64-postgresql-18-modern-features/02-modern-features-scenarios-qa.md)
