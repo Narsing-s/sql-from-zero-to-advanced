@@ -49,3 +49,8 @@ Use the dedicated testing and server-programming bank for deeper PostgreSQL engi
 ## Stage 66 — Logical Replication & CDC
 - [Theory Q&A](../66-logical-replication-and-cdc-deep-dive/01-logical-replication-theory-qa.md)
 - [Scenario Q&A](../66-logical-replication-and-cdc-deep-dive/02-logical-replication-scenarios-qa.md)
+
+
+## Stage 67 — PostgreSQL Server Tools & Deep Observability
+- [Theory Q&A](../67-postgresql-server-tools-and-deep-observability/01-server-tools-theory-qa.md)
+- [Scenario Q&A](../67-postgresql-server-tools-and-deep-observability/02-server-tools-scenarios-qa.md)
