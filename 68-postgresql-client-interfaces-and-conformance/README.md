@@ -21,5 +21,5 @@ PostgreSQL 18.6 has dedicated chapters for libpq, large objects, ECPG, informati
 - SQL standard vs PostgreSQL extensions
 - portability testing
 - client failure/retry behavior
-- 40 theory Q&As
+- 50 theory Q&As
 - 30 production scenarios
