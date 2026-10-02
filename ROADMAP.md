@@ -134,3 +134,18 @@ Do not stop at reading. For each major topic, run the corresponding lab, record 
 - logical replication restrictions
 - reproducibility metadata
 - curriculum acceptance criteria
+
+## Phase 17 — Production Failure & Chaos
+- Connection exhaustion and pool starvation
+- Long-running and idle-in-transaction failures
+- Blocking and deadlock evidence
+- WAL pressure and replication-slot retention
+- Replication lag and failover evidence
+- Recovery verification
+- Incident response and RCA drills
+
+## Phase 18 — Expert SQL Execution Depth
+- Recursive SEARCH/CYCLE
+- Concurrent index creation and reindexing
+- Lock-aware index maintenance
+- Safe operational evidence collection
