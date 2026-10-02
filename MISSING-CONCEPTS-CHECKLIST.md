@@ -633,3 +633,16 @@ Coverage alone is not enough. A module should be promoted to complete only after
 - [x] 40 advanced production scenario Q&As
 
 > This stage is intentionally theory/scenario focused. It does not claim that every C-level PostgreSQL extension interface is runnable from ordinary SQL; such interfaces require compiled extension code and version-specific development environments.
+
+
+## 25. Stage 64 PostgreSQL 18 modern-feature audit
+- [x] asynchronous I/O (AIO) theory and production scenarios
+- [x] B-tree skip-scan theory and plan-regression scenarios
+- [x] uuidv7() semantics and migration scenarios
+- [x] virtual generated-column behavior and workload trade-offs
+- [x] OLD/NEW RETURNING production patterns
+- [x] temporal constraints production validation
+- [x] OAuth authentication rollout/security scenarios
+- [x] pg_upgrade optimizer-statistics retention and plan validation
+- [x] mixed-version feature gating and rollback strategy
+- [x] PostgreSQL 18 feature benchmarking and observability guidance
