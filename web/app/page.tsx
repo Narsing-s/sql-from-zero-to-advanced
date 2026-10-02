@@ -232,6 +232,11 @@ const stages:Stage[]=[
   {path:"66-logical-replication-and-cdc-deep-dive/01-logical-replication-theory-qa.md",title:"Logical replication theory Q&A",type:"Reference",desc:"40 logical replication and CDC theory questions with answers."},
   {path:"66-logical-replication-and-cdc-deep-dive/02-logical-replication-scenarios-qa.md",title:"Logical replication scenario Q&A",type:"Reference",desc:"30 production troubleshooting scenarios with model answers."}
  ]},
+ {id:"67",title:"PostgreSQL Server Tools & Deep Observability",desc:"Server utilities, low-level recovery evidence, dynamic tracing, I/O and disk diagnostics.",topics:[
+  {path:"67-postgresql-server-tools-and-deep-observability/README.md",title:"Server tools & observability guide",type:"Reference",desc:"PostgreSQL 18 server utilities and deep observability coverage."},
+  {path:"67-postgresql-server-tools-and-deep-observability/01-server-tools-theory-qa.md",title:"Server tools theory Q&A",type:"Reference",desc:"40 server-tools and observability theory questions with answers."},
+  {path:"67-postgresql-server-tools-and-deep-observability/02-server-tools-scenarios-qa.md",title:"Server tools scenario Q&A",type:"Reference",desc:"30 production troubleshooting scenarios with model answers."}
+ ]},
 ];
 
 const rootTopics:Topic[]=[
