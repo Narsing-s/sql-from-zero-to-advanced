@@ -92,3 +92,6 @@ This matrix is an original navigation and coverage map. It does not reproduce th
 | 56. Physical Replication & Major Upgrade | `56-physical-replication-and-upgrade-lab/` | primary/standby, failover, lag and major-upgrade rehearsal |
 | 57. Runnable Client Integration Labs | `57-client-integration-runnable-labs/` | Python, Java JDBC and Node.js integration patterns |
 | 58. PostgreSQL 18 Operational Tools | `58-postgresql-18-operational-tools/` | integrity, backup verification, benchmarking and operational tooling |
+
+| 59. SQL Error Diagnostics | `59-sql-error-diagnostics/` | SQLSTATE, PL/pgSQL exception diagnostics and retry classification |
+| 60. PostGIS & Geospatial SQL | `60-postgis-geospatial/` | optional spatial data, SRIDs, distance, indexing and quality |
