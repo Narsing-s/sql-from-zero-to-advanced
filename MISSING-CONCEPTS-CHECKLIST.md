@@ -575,5 +575,8 @@ Coverage alone is not enough. A module should be promoted to complete only after
 - [ ] extension/version audit
 - [ ] logical replication restrictions documented
 - [x] replication-origin concepts covered
+- [x] PostgreSQL 18 recovery-prefetch and WAL-archiver observability
+- [x] PostgreSQL 18 per-backend I/O/WAL statistics
+- [x] PostgreSQL 18 maintenance timing and lock-failure observability
 - [ ] reproducibility metadata captured
 - [ ] curriculum acceptance criteria documented
