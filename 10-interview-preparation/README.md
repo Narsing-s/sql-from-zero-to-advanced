@@ -53,3 +53,9 @@ Use the Q&A after studying the underlying theory. The answers are deliberately s
 - [Regression & isolation testing](../61-postgresql-testing-and-server-programming/01-regression-and-isolation-testing.md)
 - [Server programming theory](../61-postgresql-testing-and-server-programming/02-server-programming-theory.md)
 - [Testing & server programming scenario Q&A](../61-postgresql-testing-and-server-programming/03-testing-and-server-programming-scenarios-qa.md) — 50 model-answer scenarios.
+
+
+## Stage 62 — Advanced Internals & Interfaces
+
+- [Advanced theory Q&A](../62-postgresql-advanced-internals-and-interfaces/01-advanced-theory-qa.md) — 50 advanced PostgreSQL internals/interface questions.
+- [Advanced scenario Q&A](../62-postgresql-advanced-internals-and-interfaces/02-advanced-scenarios-qa.md) — 40 production troubleshooting scenarios.
