@@ -222,6 +222,11 @@ const stages:Stage[]=[
   {path:"64-postgresql-18-modern-features/01-modern-features-theory-qa.md",title:"Modern features theory Q&A",type:"Reference",desc:"35 PostgreSQL 18 theory questions with answers."},
   {path:"64-postgresql-18-modern-features/02-modern-features-scenarios-qa.md",title:"Modern features scenario Q&A",type:"Reference",desc:"30 PostgreSQL 18 production scenarios with model answers."}
  ]},
+ {id:"65",title:"PostgreSQL Deep Internals & Access Methods",desc:"GEQO, index/table access methods, HOT/storage, XIDs, two-phase commit, backup manifests and planner statistics.",topics:[
+  {path:"65-postgresql-deep-internals/README.md",title:"Deep internals guide",type:"Reference",desc:"PostgreSQL internals and access-method coverage."},
+  {path:"65-postgresql-deep-internals/01-deep-internals-theory-qa.md",title:"Deep internals theory Q&A",type:"Reference",desc:"40 deep internals questions with answers."},
+  {path:"65-postgresql-deep-internals/02-deep-internals-scenarios-qa.md",title:"Deep internals scenario Q&A",type:"Reference",desc:"30 production scenarios with model answers."}
+ ]},
 ];
 
 const rootTopics:Topic[]=[
