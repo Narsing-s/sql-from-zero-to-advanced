@@ -112,3 +112,6 @@ This matrix is an original navigation and coverage map. It does not reproduce th
 | 68. PostgreSQL Client Interfaces & SQL Conformance | `68-postgresql-client-interfaces-and-conformance/` | libpq, pipeline/asynchronous clients, large objects, ECPG, information_schema, SQL portability and client failure scenarios |
 
 | 69. Reproducible SQL Engineering & Curriculum Acceptance | `69-reproducible-sql-engineering/` | Deterministic fixtures, executable assertions, lab safety classification, concurrency reproducibility, benchmark metadata and curriculum acceptance criteria |
+
+
+| 70. Production Integration & Verification | `70-production-integration-and-verification/` | transaction boundaries, parameter binding, retryable failures, pooling, streaming, timeout hierarchy, CI database verification, backup rehearsal, replication verification and production acceptance |
