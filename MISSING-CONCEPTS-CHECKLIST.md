@@ -718,3 +718,19 @@ Coverage alone is not enough. A module should be promoted to complete only after
 - [x] curriculum theory/lab/production acceptance criteria
 
 > Stage 69 closes the remaining engineering-practice gaps without duplicating concepts already covered by Stages 43–58. Existing checklist items that point to those stages should be treated as covered when the referenced material satisfies the checklist's evidence standard.
+
+
+## Stage 70 — Production Integration & Verification
+- [x] application transaction boundaries
+- [x] parameter binding
+- [x] retryable serialization/deadlock failures
+- [x] connection-pool behavior and exhaustion
+- [x] cursor/streaming patterns
+- [x] application timeout hierarchy
+- [x] CI PostgreSQL database verification
+- [x] repository structure/link audit
+- [x] backup/restore rehearsal
+- [x] logical replication verification
+- [x] deterministic locale/timezone testing
+- [x] extension/version audit
+- [x] production acceptance criteria
