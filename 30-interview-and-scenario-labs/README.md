@@ -59,3 +59,7 @@ Use the dedicated testing and server-programming bank for deeper PostgreSQL engi
 ## Stage 68 — PostgreSQL Client Interfaces & SQL Conformance
 - [Theory Q&A](../68-postgresql-client-interfaces-and-conformance/01-client-interfaces-theory-qa.md)
 - [Scenario Q&A](../68-postgresql-client-interfaces-and-conformance/02-client-interfaces-scenarios-qa.md)
+
+
+## Stage 69 — Reproducible SQL Engineering
+- [Reproducible SQL engineering guide](../69-reproducible-sql-engineering/README.md)
