@@ -99,7 +99,18 @@ This repository combines the beginner-friendly learning style of a SQL 101 cours
 | 60 | Optional PostGIS and geospatial SQL |
 | 61 | PostgreSQL testing, regression/isolation testing and server programming |
 | 62 | Advanced PostgreSQL Internals & Interfaces | `62-postgresql-advanced-internals-and-interfaces/` | JIT, catalogs, protocol, libpq, FDW, sampling, access/extension interfaces and portability |
-| 63 | Advanced PostgreSQL internals, extensibility and failure semantics | `63-postgresql-internals-extensibility/` | query rewrite, parser/planner/executor, MVCC internals, WAL/recovery, procedural handlers, SPI, FDW, custom types, logical-replication failover, MERGE and 90 advanced theory/scenario Q&As |
+| 63 | Advanced PostgreSQL internals, extensibility and failure semantics | `63-postgresql-internals-extensibility/` | query rewrite, parser/planner/executor, MVCC internals, WAL/recovery, procedural handlers, SPI, FDW, custom types, logical-replication failover, MERGE and advanced theory/scenario Q&As |
+| 64 | PostgreSQL 18 modern features and rollout scenarios | `64-postgresql-18-modern-features/` | AIO, B-tree skip scan, UUIDv7, virtual generated columns, temporal constraints, OAuth and upgrade compatibility |
+| 65 | PostgreSQL deep internals and access methods | `65-postgresql-deep-internals/` | GEQO, access methods, HOT/storage, XIDs, subtransactions, two-phase commit, backup manifests and planner statistics |
+| 66 | Logical replication and CDC deep dive | `66-logical-replication-and-cdc-deep-dive/` | logical replication architecture, filtering, conflicts, failover, security, upgrades and CDC idempotency |
+| 67 | PostgreSQL server tools and deep observability | `67-postgresql-server-tools-and-deep-observability/` | server utilities, recovery evidence, dynamic tracing, disk/I/O diagnostics and observability scenarios |
+| 68 | PostgreSQL client interfaces and SQL conformance | `68-postgresql-client-interfaces-and-conformance/` | libpq, asynchronous/pipeline clients, large objects, ECPG, information_schema, portability and client failure scenarios |
+
+## 🔎 Curriculum synchronization
+
+The repository currently contains **Stages 00–68**. The curriculum table, interview/scenario indexes, and SQL Learning Hub are kept aligned with the stage directories; when adding a new stage, update all three surfaces so no lesson becomes hidden from learners.
+
+The Learning Hub also includes a browser-local PostgreSQL practice engine (PGlite), local progress tracking, repository-file exploration, and an optional server-side welcome-email integration. No database, API key, or external authentication provider is required for the core learning experience.
 
 ## 🛠️ Installation — Start Here
 
