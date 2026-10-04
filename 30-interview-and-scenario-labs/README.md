@@ -63,3 +63,8 @@ Use the dedicated testing and server-programming bank for deeper PostgreSQL engi
 
 ## Stage 69 — Reproducible SQL Engineering
 - [Reproducible SQL engineering guide](../69-reproducible-sql-engineering/README.md)
+
+
+## Stage 70 — Production Integration & Verification
+
+See [`70-production-integration-and-verification/README.md`](../70-production-integration-and-verification/README.md) for transaction boundaries, parameter binding, retryable failures, pooling, streaming, timeout hierarchy, CI database verification, recovery rehearsal and production acceptance.
