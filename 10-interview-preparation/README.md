@@ -90,3 +90,7 @@ Use the Q&A after studying the underlying theory. The answers are deliberately s
 ## Stage 68 — PostgreSQL Client Interfaces & SQL Conformance
 - [Client interfaces theory Q&A](../68-postgresql-client-interfaces-and-conformance/01-client-interfaces-theory-qa.md) — 50 questions.
 - [Client interfaces scenario Q&A](../68-postgresql-client-interfaces-and-conformance/02-client-interfaces-scenarios-qa.md) — 30 production scenarios.
+
+
+## Stage 69 — Reproducible SQL Engineering
+- [Reproducible SQL engineering guide](../69-reproducible-sql-engineering/README.md) — fixtures, assertions, safe lab classification, concurrency reproducibility and benchmark metadata.
