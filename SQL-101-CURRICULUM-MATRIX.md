@@ -110,3 +110,5 @@ This matrix is an original navigation and coverage map. It does not reproduce th
 | 67. PostgreSQL Server Tools & Deep Observability | `67-postgresql-server-tools-and-deep-observability/` | Server utilities, dynamic tracing, low-level recovery evidence, disk/I/O diagnostics and observability scenarios |
 
 | 68. PostgreSQL Client Interfaces & SQL Conformance | `68-postgresql-client-interfaces-and-conformance/` | libpq, pipeline/asynchronous clients, large objects, ECPG, information_schema, SQL portability and client failure scenarios |
+
+| 69. Reproducible SQL Engineering & Curriculum Acceptance | `69-reproducible-sql-engineering/` | Deterministic fixtures, executable assertions, lab safety classification, concurrency reproducibility, benchmark metadata and curriculum acceptance criteria |
