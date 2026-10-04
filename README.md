@@ -106,10 +106,11 @@ This repository combines the beginner-friendly learning style of a SQL 101 cours
 | 67 | PostgreSQL server tools and deep observability | `67-postgresql-server-tools-and-deep-observability/` | server utilities, recovery evidence, dynamic tracing, disk/I/O diagnostics and observability scenarios |
 | 68 | PostgreSQL client interfaces and SQL conformance | `68-postgresql-client-interfaces-and-conformance/` | libpq, asynchronous/pipeline clients, large objects, ECPG, information_schema, portability and client failure scenarios |
 | 69 | Reproducible SQL engineering and curriculum acceptance | `69-reproducible-sql-engineering/` | deterministic fixtures, executable assertions, lab safety classification, multi-session reproducibility, benchmark metadata and theory/lab/production acceptance criteria |
+| 70 | Production integration and verification | `70-production-integration-and-verification/` | transaction boundaries, parameter binding, retryable failures, pooling, streaming, timeout hierarchy, CI database verification, backup rehearsal, replication verification and production acceptance |
 
 ## 🔎 Curriculum synchronization
 
-The repository currently contains **Stages 00–69**. The curriculum table, interview/scenario indexes, and SQL Learning Hub are kept aligned with the stage directories; when adding a new stage, update all three surfaces so no lesson becomes hidden from learners.
+The repository currently contains **Stages 00–70**. The curriculum table, interview/scenario indexes, and SQL Learning Hub are kept aligned with the stage directories; when adding a new stage, update all three surfaces so no lesson becomes hidden from learners.
 
 The Learning Hub also includes a browser-local PostgreSQL practice engine (PGlite), local progress tracking, repository-file exploration, and an optional server-side welcome-email integration. No database, API key, or external authentication provider is required for the core learning experience.
 
